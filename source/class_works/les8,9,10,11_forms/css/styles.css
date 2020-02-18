@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap');
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    height: 100%;
+    font-size: 10px;
+}
+
+body {
+    background: #000;
+    text-align: center;
+    font-size: 0;
+    margin: 4rem;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+a,
+button {
+    transition: all .25s ease-in-out;
+    text-decoration: none;
+}
+
+.pass {
+    display: inline-block;
+    background-color: #fff;
+    width: calc(100%/3);
+    font-size: 1.8rem;
+    text-align: left;
+    padding: 0 3rem 3rem;
+}
+
+.pass__label {
+    display: block;
+    line-height: 3rem;
+    font-size: 1.8rem;
+    color: #648880;
+    font-weight: 700;
+    margin: 3rem 0 0;
+}
+
+.pass__input {
+    display: block;
+    width: 100%;
+    border-radius: 0.5rem;
+    line-height: 3rem;
+    font-size: 1.8rem;
+    border: 1px solid #648880;
+}
+
+.pass__input--sm {
+    width: 10%;
+}
+
+.btn {
+    margin: 2rem 2rem 2rem 0;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    border: 1px solid #648880;
+    background-color: #648880;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+    color: #648880;
+    background: #fff;
+}

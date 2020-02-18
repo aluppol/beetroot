@@ -1,0 +1,84 @@
+@import 'normalize';
+
+@import 'variables';
+
+@import 'mixins';
+
+@import 'socials';
+
+@import 'slider';
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+html {
+    font-size: 10px;
+}
+
+a,
+button {
+    transition: all .25s ease-in-out;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100%;
+    @include font(1.6rem, $text-color, 400, $text-ff, 1.8);
+}
+
+.container {
+    max-width: 1140px;
+    margin: 55px auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 125px);
+    gap: 55px;
+    &--c4 {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 210px);
+        gap: 0;
+    }
+
+    &__item {
+        // outline: 1px solid green;
+        background-color: rgba(97, 22, 22, 0.507);
+        min-height: 20px;
+        grid-row: span 2;
+
+        &--2w {
+            grid-column: span 2;
+        }
+        &--2h {
+            grid-row: span 4;
+        }
+
+        &--1-5h {
+            grid-row: span 3;
+        }
+    }
+}
+
+.poster {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+
+    &__img {
+        @include pCenter ();
+        min-width: 100%;
+        min-height: 100%;
+
+        .poster--dark & {
+            opacity: .4;
+        }
+    }
+
+    &--dark {
+        background-color: #000;
+    }
+
+}

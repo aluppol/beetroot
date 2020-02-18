@@ -1,0 +1,66 @@
+@import 'normalize';
+
+@import 'variables';
+
+@import 'mixins';
+
+@import 'socials';
+
+@import 'slider';
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+html {
+    height: 100%;
+    font-size: 10px;
+}
+
+a,
+button {
+    transition: all .25s ease-in-out;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100%;
+    @include font(1.4rem, $text-color, 500, $text-ff, 1.8);
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid purple;
+
+    &__head{
+        border-bottom: 3px solid purple;
+        border-top: 3px solid purple;
+
+        &--number{
+            width: 5%;
+        }
+        &--name{
+            width: 35%;
+        }
+        &--hw{
+            width: 30%;
+        }
+        &--cw{
+            width: 30%;
+        }
+    }
+
+    & tbody tr {
+        border: 1px solid purple;
+    }
+    & tbody td {
+        padding: 0 1rem;
+    }
+  }

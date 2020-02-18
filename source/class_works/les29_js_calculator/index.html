@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <script src="https://kit.fontawesome.com/617acb0166.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+
+    <div class="calc">
+        <div class="calc__display">
+            <span>0</span>
+        </div>
+        <button class="calc__btn calc__btn--grey calc__btn--smallfont" data-operator="clear">AC</button>
+        <button class="calc__btn calc__btn--grey" data-operator="undo">&#8612;</button>
+        <button class="calc__btn calc__btn--grey"data-display="&#37" data-operator="&#37">&#37</button>
+        <button class="calc__btn calc__btn--orange"data-display="&divide" data-operator="/">&divide</button>
+        <button class="calc__btn" data-display="7">7</button>
+        <button class="calc__btn" data-display="8">8</button>
+        <button class="calc__btn" data-display="9">9</button>
+        <button class="calc__btn calc__btn--orange" data-display="&times" data-operator="*">&times</button>
+        <button class="calc__btn" data-display="4">4</button>
+        <button class="calc__btn" data-display="5">5</button>
+        <button class="calc__btn" data-display="6">6</button>
+        <button class="calc__btn calc__btn--orange" data-display="-" data-operator="-" >-</button>
+        <button class="calc__btn" data-display="1">1</button>
+        <button class="calc__btn" data-display="2">2</button>
+        <button class="calc__btn" data-display="3">3</button>
+        <button class="calc__btn calc__btn--orange" data-display="+" data-operator="+">+</button>
+        <button class="calc__btn calc__btn--large" data-display="0">0</button>
+        <button class="calc__btn" data-display=".">.</button>
+        <button class="calc__btn calc__btn--orange" data-display="=" data-operator="=">=</button>
+    </div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/scripts.js" ></script>
+</body>
+
+</html>

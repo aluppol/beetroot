@@ -1,0 +1,71 @@
+@import 'normalize';
+
+@import 'variables';
+
+@import 'mixins';
+
+
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+html {
+    height: 100%;
+    font-size: 10px;
+}
+
+a,
+button {
+    transition: all .25s ease-in-out;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100%;
+    @include font(1.4rem, $text-color, 500, $text-ff, 1.8);
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+#map {
+    min-height: 100vh;
+}
+
+.cities{
+    position: absolute;
+    top: 10px;
+    left: 210px;
+    @include font(1.4rem, $text-color, 500, $text-ff, 1.8);
+    border-radius: 2px;
+    padding: 7px 14px 8px;
+    border: 0px solid #fff;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .3);
+    font-size: 18px;
+    cursor: pointer;
+
+    @include hover{
+        background-color: rgb(207, 207, 207);
+    };
+}
+
+.popup{
+    position: relative;
+
+    &__address{
+        position: absolute;
+        color: #fff;
+        top: 10px;
+        left: 50%;
+        padding: 10px;
+        font-size: 20px;
+        text-align: center;
+        text-shadow: 2px 2px 10px #000;
+        font-weight: 700;
+        transform: translate(-50%, 0);
+        width: max-content;
+    }
+}

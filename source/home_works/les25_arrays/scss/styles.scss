@@ -1,0 +1,141 @@
+@import 'normalize';
+
+@import 'variables';
+
+@import 'mixins';
+
+@import 'socials';
+
+@import 'slider';
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    height: 100%;
+    font-size: 10px;
+}
+
+a,
+button {
+    transition: all .25s ease-in-out;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100%;
+    @include font(1.4rem, $text-color, 300, $text-ff, 1.3);
+}
+
+h1 {
+    @include font(2rem, $text-color, 400, $text-ff, 1.5);
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+h2 {
+    padding: 0 10px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.arrays {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    &__item {
+        width: 300px;
+        border: 1px solid gray;
+        overflow: hidden;
+
+        &--university{
+            width: 500px;
+        }
+    }
+}
+
+.list{
+    &__item{
+        display: flex;
+            justify-content: space-between;
+            padding: 10px 30px 10px 10px;
+    }
+}
+
+.bill{
+    padding-left: 20px;
+    &__item{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 5px 10px 0px;
+
+        &--name{
+            // display: block;
+            min-width: 150px;
+        }
+        &--amount{
+            // display: block;
+            min-width: 50px;
+        }
+        &--price{
+            min-width: 70px;
+            text-align: right;
+        }
+
+        &--result{
+            padding: 10px;
+        }
+    }
+
+    &__result{
+        @include font(1.7rem, $text-color, 500, $text-ff, 1.3);
+    }
+}
+
+.university{
+    padding-left: 20px;
+
+    &__item{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 5px 10px 0px;
+
+        &--name{
+            // display: block;
+            margin-left: 30px;
+            min-width: 150px;
+        }
+        &--amount{
+            // display: block;
+            min-width: 150px;
+        }
+        &--faculty{
+            min-width: 150px;
+        }
+
+        &--result{
+            padding: 10px;
+        }
+    }
+
+    &__result{
+        @include font(1.7rem, $text-color, 500, $text-ff, 1.3);
+    }
+}
+
+.line {
+    width: 100%;
+    border-top: 1px solid grey;
+}
+
+.line-dashed {
+    width: 100%;
+    border-top: 1px dashed grey;
+}

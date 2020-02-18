@@ -1,0 +1,10 @@
+.no-flexbox .ba-pricing__col {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 50px 5px; }
+
+.no-flexbox .ba-price__body {
+  margin-left: -85px; }
+
+.no-flexbox .ba-pricing__col--center .ba-price__body {
+  margin-left: -60px; }

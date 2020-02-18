@@ -1,0 +1,87 @@
+.tabs {
+    margin: 4rem;
+    width: 60rem;
+    box-shadow: 0 0 4rem .2rem rgba(0, 0, 0, .4);
+    height:  min-content;
+    
+
+    &__nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: #2b3040;
+    }   
+
+    &__btn {
+        height: 11.5rem;
+        width: 15rem;
+        overflow: hidden;
+        border-bottom: .2rem solid rgba(255, 255, 255, 0);
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        @include font(1.6rem, #bdc3c7, 400, $ff, 1.75);
+        user-select: none;
+
+        @include hover {
+            border-bottom: 2px solid rgba(255, 255, 255, 1); 
+            color: $text-color;
+            path {
+                @include tr;    
+                fill: #ffffff;
+            } 
+        }
+
+        & path {
+            position: relative;
+            fill: #bdc3c7;
+            @include tr;
+        }
+
+        &>*:first-child,
+        &>*:last-child {
+            display: block;
+            margin: .3rem;
+        
+            &>* {
+                margin: 0;
+                text-align: center;
+                max-height: 2.8rem;
+                overflow: hidden;
+            }
+        }
+
+        &[data-state="active"]{
+
+            border-bottom: .2rem solid rgba(255, 255, 255, 1); 
+            color: $text-color;
+            @include tr;
+
+            path {
+                fill:rgb(255, 255, 255);
+                @include tr;
+            }
+        }
+    }
+
+    &__tab{
+        background-color: $tab-bg-color;
+        padding: 5rem 4rem 6rem 4rem;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+    }
+
+    &__tabs{
+        overflow: hidden;
+        transition: all 1s ease-in-out;
+        height: 0px;
+        opacity: 1;
+        position: relative;
+    }
+}

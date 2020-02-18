@@ -1,0 +1,76 @@
+// import
+
+@import 'mixins';
+@import 'fav';
+
+// variables
+
+$loader-color: rgb(1, 128, 85);
+$loder-add-color:  rgb(255, 255, 255);
+$loader-border: 1vw;
+
+.with-loader {
+    overflow: hidden;
+}
+
+.loader {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: $loader-color;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    @include tr;
+    .with-loader & {
+        opacity: 1;
+    }
+    
+
+
+    &__svg {
+        width: 30vw;
+        @include pCenter();
+    }
+
+    &__inner {
+        stroke: $loader-color;stroke-width: $loader-border;
+        fill: $loder-add-color;
+    }
+
+    &__outer {
+        stroke: $loder-add-color;
+        stroke-width: $loader-border; 
+        fill: transparent;
+    }
+    
+
+    &__group {
+        animation-name: rotate;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        
+        transform-origin: 50% 0%;
+        
+        .with-loader & {
+            animation-name: rotate;
+        }
+    }
+
+    &__item {
+         fill: $loader-color;
+         r: 170;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg) translate(0%, -50%);;
+    }
+    to {
+        transform: rotate(360deg) translate(0%, -50%);;
+    }
+}

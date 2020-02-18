@@ -1,0 +1,121 @@
+@import 'normalize';
+
+@import 'variables';
+
+@import 'mixins';
+
+
+@import 'animate';
+  
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+html {
+    height: 100%;
+    font-size: 10px;
+}
+
+a,
+button {
+    transition: all .25s ease-in-out;
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    @include font(1.4rem, $text-color, 500, $text-ff, 1.8);
+    background-image: linear-gradient(to top, rgb(97, 97, 97) 0%, rgb(206, 206, 206) 100%);
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.table {
+    margin: auto;
+    height: 30vw;
+    width: 80vw;
+    background-image: radial-gradient(rgb(0, 163, 8) 0%, #000 100%);
+    border-radius: 50%;
+    border-bottom: 1vw solid rgb(0, 15, 0);
+    display: flex;
+    justify-content: center;
+    // border-top: none;
+}
+
+.cards {
+    // position: absolute;
+    // outline: 1px solid red;
+    margin: auto;
+    display: flex;
+}
+
+.card-place {
+    margin: auto 1vw;
+    border-radius: $card-radius;
+    width: $card-width;
+    height: $card-height;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        .card {
+        transform: rotateY(180deg);
+        }
+    }
+}
+
+.card {
+    // border: 1px solid rgb(0, 0, 129);
+    border-radius: $card-radius;
+    // overflow: hidden;
+    position: relative;
+    width: $card-width;
+    height: $card-height;
+    box-shadow: 0 0 5px 2px #000;
+    transition: all .7s ease-out;
+    transform-style: preserve-3d;
+    perspective: 1500px;
+    user-select: none;
+
+
+    &__front,
+    &__back {
+        position: absolute;
+        overflow: hidden;
+        backface-visibility: hidden;
+        width: $card-width;
+        height: $card-height;
+        border-radius: $card-radius;
+    }
+
+    &__front {
+        // outline: 1px solid red;
+        transform: rotateY(180deg);
+        // background: #fff;
+            .suit {
+                width: $card-width;
+                height: $card-height;
+            }
+    }
+
+    &__back {
+        transform-style: preserve-3d;
+        // perspective: 15px;
+        img {
+            @include pCenter;
+            max-width: 107.5%;
+        }
+        
+    }
+}
+
+.display-none {
+    display: none;
+}

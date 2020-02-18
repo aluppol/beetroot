@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../fonts/bebasneue_thin.eot');
+    src: url('../fonts/bebasneue_thin.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/bebasneue_thin.woff2') format('woff2'),
+         url('../fonts/bebasneue_thin.woff') format('woff'),
+         url('../fonts/bebasneue_thin.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue ';
+    src: url('../fonts/bebasneue_regular.eot');
+    src: url('../fonts/bebasneue_regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/bebasneue_regular.woff2') format('woff2'),
+         url('../fonts/bebasneue_regular.woff') format('woff'),
+         url('../fonts/bebasneue_regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../fonts/bebasneue_bold.eot');
+    src: url('../fonts/bebasneue_bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/bebasneue_bold.woff2') format('woff2'),
+         url('../fonts/bebasneue_bold.woff') format('woff'),
+         url('../fonts/bebasneue_bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@import 'normalize';
+
+@import 'variables';
+
+@import 'mixins';
+
+@import 'socials';
+
+@import 'slider';
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+html {
+    height: 100%;
+    font-size: 10px;
+}
+
+a,
+button {
+    transition: all .25s ease-in-out;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100%;
+    @include font(1.6rem, $text-color, 300, $text-ff, 1.1);
+    background-color: #9789f9;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+
+
+/* Layout */
+.ba-container{
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+  }
+  
+.ba-pricing {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    // min-height: 100vh;
+    // height: 100vh;
+    align-items: center;
+    &__col {
+        // overflow: hidden;
+        box-shadow: 0 0 60px 5px rgba(122,107,231,1);
+        text-align: center;
+        background-color: #f5f4f9;
+        padding: 30px;
+        min-height: 615px;
+        width: 330px;
+        margin: 1%;
+        position: relative;
+        &--center {
+            min-height: 700px;
+            width: 370px;
+            z-index: 1;
+        }
+    }
+
+    &__footer {
+        @include font(1.1rem, #a9a9a9, 300, $text-ff, 1);
+    }
+}
+
+.ba-price {
+    position: relative;
+    &__rate {
+        @include font(6rem, $text-color, 300, $price-ff, .6);
+        margin: 15px 0;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        padding: 0 30px;
+        &:before,
+        &:after {
+            font-size: 1.6rem;
+        }
+
+        &:before {
+            content: "$";
+            position: absolute;
+            top: 0px;
+            left: 20px;
+        }
+
+        &:after {
+            content: "/hr";
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    }
+    &__position {
+        @include font(2.4rem, $text-color, 700, $price-ff, 1);
+        letter-spacing: 1px;
+        margin: 15px 0;
+    }
+
+    &__body-wrap {
+        overflow: hidden;
+        // width: calc(100%+60px);
+        margin: 0 -30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__body {
+        // outline: 1px solid red;
+        padding: 30px 100px 50px;
+        background-color: #fff;
+        border-radius: 50% 50% 0 0;
+        width: 500px;
+        margin: 15px 0 60px;
+        // position: relative;
+        // left: 50%;
+        // transform: translate(-50%, 0);
+        svg {
+            display: block;
+            margin: 0 auto 10px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            display: inline-block;
+            text-align: left;
+            li {
+                padding: 15px 0;
+            }
+        }
+        .ba-pricing__col--center & {
+            padding: 30px 80px 50px;
+        }
+    }
+}
+
+.ba-button {
+    position: absolute;
+    bottom: -30px;
+    transform: translate(-50%, 50%);
+    left: 50%;
+    @include font(1.8rem, $btn-color, 700, $price-ff, 1);
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: $brand-color;
+    padding: 20px 45px;
+    border: 2px solid $brand-color;
+    border-radius: 30px;
+    display: inline-block;
+    white-space: nowrap;
+    @include hover {
+        background-color: $btn-color;
+        color: $brand-color;
+        border-color: $brand-color;
+    }
+
+    .ba-pricing__col--center & {
+        bottom: 60px;
+        background-color: #fd8d7b;
+        border-color: #fd8d7b;
+        @include hover {
+            background-color: $btn-color;
+            color: $sub-brand-color;
+            border-color: $sub-brand-color;
+        }
+    }
+}
+
+.ba-badge {
+    @include font(2.4rem, #fff, 700, $price-ff, 1);
+    z-index: 1;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #fd8d7b;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: inline-block;
+    cursor: pointer;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background-color: #fd8d7b;
+        display: inline-block;
+    }
+
+    &::before {
+        width: 14px;
+        height: 14px;
+        left: 90%;
+        bottom: 90%;
+    }
+
+    &::after {
+        width: 6px;
+        height: 6px;
+        left: 125%;
+        bottom: 125%;
+    }
+    
+    &__popup {
+        opacity: 0;
+        z-index: -1;
+        transition: all .3s ease-in-out;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        background: #3b4040;
+        padding: 7px 24px;
+        border-radius: 15px;
+        letter-spacing: 1px;
+        position: absolute;
+        top: 50%;
+        left: 130%;
+        line-height: 1;
+        transform: translate(0, -50%);
+        .ba-badge:hover &,
+        .ba-badge:focus &,
+        .ba-badge:active & {
+            opacity: 1;
+            z-index: 1;
+        }
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            right: 96%;
+            top: 50%;
+            transform: translate(0, -50%);
+            width: 0;
+            height: 0;
+            border: 10px solid rgba(0,0,0,0);
+            border-right-color: #3b4040;
+        }
+    }
+}

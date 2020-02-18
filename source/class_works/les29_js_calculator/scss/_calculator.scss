@@ -1,0 +1,81 @@
+.calc{
+
+    // width: 400px;
+    // min-height: 600px;
+    user-select: none;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0 , .9);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 2fr repeat(5, 1fr);
+    gap: $gap;
+    padding: 20px;
+
+    &__display{
+        grid-column: span 4;
+        font-size: 3rem;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        @include font(4rem, #fff, 700, $title-ff, 1.8);
+    }
+
+    &__btn{
+
+        font-size: 3rem;
+        width: $btn-size;
+        height: $btn-size;
+        border-radius: $btn-rad;
+        border: $border-size solid #333;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+
+
+        @include hover{
+            color: #333;
+            background-color: #fff;
+            border: $border-size solid #fff;
+        }
+
+
+        &--grey{
+            border: $border-size solid #989898;
+            background-color: #989898;
+            color: #333;
+            @include hover{
+                color: #989898;
+                background-color: #333;
+                border: $border-size solid #333;
+            }
+        }
+
+        &--orange{
+            border: $border-size solid #ff9501;
+            background-color: #ff9501;
+            color: #fff;
+            @include hover{
+                color: #ff9501;
+                background-color: #fff;
+                border: $border-size solid #fff;
+            }
+        }
+
+        &--large{
+            grid-column: span 2;
+            width: $lg-btn-size;
+            text-align: left;
+            padding-left: $gap;
+        }
+
+        &--smallfont{
+            font-size: 2rem;
+        }
+    }
+}

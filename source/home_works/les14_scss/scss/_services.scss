@@ -1,0 +1,154 @@
+.section {
+    &--services {
+        background-color: #70bfff;
+        display: flex;
+        color: #fff;
+        background-size: auto;
+        background-position-x: 80% ;
+        justify-content: space-between;
+        .title-box {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        .section__btns {
+            margin-top: 150px;
+            margin-bottom: 150px;
+        }
+    }
+
+    &__btn {
+        &--services {
+            background: #fff;
+            color: $text-color;
+            fill: $text-color;
+            font-weight: 900;
+            font-size: 2rem;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            margin: 20px 100px;
+            width: 400px;;
+            .text-box {
+                width: 300px;
+                min-height: 100px;
+                display: flex;
+                border-right: 1px solid #9d9d9d;
+                padding: 0 25px;
+                span {
+                    margin: auto;
+                    text-align: center;
+                }
+            }
+            
+            .svg {
+                margin: auto;
+            }
+
+            @include  hover {
+                background: $text-color;
+                color: #fff;
+                .svg {
+                    fill: #fff;
+                }
+
+            }
+        }
+
+    }
+}
+
+.svg {
+    &--services {
+        // outline: 1px solid green;
+        border-left: #9d9d9d;
+        display: inline-block;   
+        
+    }
+}
+
+@media screen and (max-width:1125px)
+{
+    .section {
+        &__title--services {
+            font-size: 7rem;
+        }
+
+        &--services {
+        background-position-x: 100% ;
+        }
+    }
+}
+
+
+@media screen and (max-width:1000px)
+{
+    .section {
+        &__title--services {
+            font-size: 7rem;
+        }
+
+        &__btn {
+            &--services {
+                margin: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:960px) {
+
+    .section {
+        &__btn {
+            &--services {
+                margin: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    .section {
+        &--services {
+            flex-wrap: wrap;
+            .title-box {
+                margin: 75px auto 20px;
+            }
+            .section__btns {
+                order: 1;
+                margin: 0 auto 75px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:576px) {
+    .section {
+        &--services {
+            .title-box {
+                margin-top: 0;
+            }
+        }
+
+        &__btn {
+            &--services {
+                width: 300px;
+
+                .svg {
+                    min-width: 100px;
+                }
+            }
+        }
+    }
+}
+
+
+.flexboxtweener {
+    .section__btn--services .text-box span {
+        margin-top: 20px;
+    }
+}

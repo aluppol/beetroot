@@ -1,0 +1,229 @@
+@import 'normalize';
+
+@import 'variables';
+
+@import 'mixins';
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+html {
+    height: 100%;
+    font-size: .85vw;
+}
+
+a,
+button {
+    transition: all .25s ease-in-out;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100%;
+    @include font(1.4rem, $text-color, 500, $text-ff, 1.8);
+    background-color: #000;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 25px 25px 25px 15px; 
+    width: 96vw;
+    background:
+    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    background-color: #131313;
+    background-size: 20px 20px;
+
+    background-color: hsl(219, 8%, 43%);
+    background-image: repeating-linear-gradient(transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+    repeating-linear-gradient(270deg, transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+    repeating-linear-gradient(125deg, transparent, transparent 2px, rgba(0,0,0,.2) 2px, rgba(0,0,0,.2) 3px, transparent 3px, transparent 5px, rgba(0,0,0,.2) 5px);
+}
+
+.parent-grid {
+    box-shadow: 0 0 10px 2px #000;
+    display: grid;
+    grid-template-columns: calc((96vw - 40px) / 2) calc((96vw - 40px) / 2);
+    grid-template-rows: repeat(6, calc((96vw - 40px) / 4));
+
+    &__item {
+        // outline: 1px solid red;
+        overflow: hidden;
+        position: relative;
+        &--lg {
+            grid-row: span 2;
+        }
+    }
+
+    // &__img {}
+
+}
+
+.child-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: calc((96vw - 40px) / 4);
+
+    &__item {
+        // outline: 1px solid blue;
+        background-color: rgb(255, 255, 255);
+        position: relative;
+        overflow: hidden;
+        &--left-arrow {
+            background-color: rgb(179, 179, 179);
+            &:before {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                width: 0; 
+                height: 0; 
+                border-top: $arrow-size solid transparent;
+                border-bottom: $arrow-size solid transparent;
+                border-right: $arrow-size solid #fff;
+                right: 0;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
+        }
+
+        &--right-arrow {
+            background-color: rgb(179, 179, 179);
+            &:after {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                width: 0; 
+                height: 0; 
+                border-top: $arrow-size solid transparent;
+                border-bottom: $arrow-size solid transparent;
+                border-left: $arrow-size solid #fff;
+                left: 0;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
+        }
+    }
+
+    // &__img {}
+}
+
+.img {
+    @include pCenter;
+    min-width: 100%;
+    min-height: 100%;
+    // &--wide {
+    //     height: 100%;
+    //     width: auto;
+    // }
+
+    // &--tall {
+    //     width: 100%;
+    //     height: auto;
+    // }
+}
+
+.content {
+    // outline: 1px solid orange;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    &--img {
+        background-color: rgba(0, 0, 0, 0.459);
+    }
+    // &__arrow {
+    //     font-size: 5rem;
+    //     color: #fff;
+
+    //     &--right {
+    //         margin: auto auto auto -5px;
+    //     }
+
+    //     &--left {
+    //         margin: auto -5px auto auto;
+    //     }
+    // }
+
+    &__date {
+        text-transform: uppercase;
+        display: block;
+        text-align: center;
+
+        &--sm {
+            color: rgb(248, 54, 54);
+        }
+
+        &--lg {
+            color: #fff;
+        }
+    }
+
+    &__title {
+        text-align: center;
+        max-height: 50%;
+        overflow: hidden;
+        margin: 10px;
+        
+        &--sm {
+            font-size: 2rem;
+            color: #000;
+            line-height: 1.4;
+        }
+
+        &--lg {
+            font-size: 3rem;
+            color: #fff;
+            line-height: 1.55;
+        }
+    }
+
+    &__symbols{
+        display: block;
+        text-align: center;
+        font-size: 2rem;;
+        line-height: 1;
+        color: rgb(248, 54, 54);
+    }
+}
+
+@media screen and (min-width:1187.5px) {
+   
+    html {
+        font-size: 10px;
+    }
+
+    .parent-grid {
+        grid-template-columns: calc((1140px - 40px) / 2) calc((1140px - 40px) / 2);
+        grid-template-rows: repeat(6, calc((1140px - 40px) / 4));
+    }
+
+    .child-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: calc((1140px - 40px) / 4);
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    html {
+        font-size: 1.6vw;
+    }
+
+    .parent-grid {
+        grid-template-columns: calc(96vw - 40px);
+        grid-template-rows: repeat(12, calc((96vw - 40px) / 2));
+    }
+
+    .child-grid {
+        grid-template-rows: calc((96vw - 40px) / 2);
+    }
+}

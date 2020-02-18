@@ -1,0 +1,30 @@
+
+.main {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    background: rgb(37, 37, 37);
+}
+.container {
+    background-image: radial-gradient(circle at -50% -50%, rgb(255, 255, 0) 0%, rgb(132, 140, 252) 130%);
+    max-width: 1140px;
+    width: 80vw;
+    height: 90vh;
+    margin: auto;
+    display: flex;
+    // border: 1px solid red;
+    border-radius: 20px;
+    box-shadow: 0 0 2px 7px rgb(78, 78, 78);
+    // overflow: hidden;
+    animation-name: sun;
+  animation-duration: 4s;
+
+    &__bg {
+        display: flex;
+        min-width: 100%;
+        min-height: 100%;
+        border-radius: 20px;
+        background-image: repeating-linear-gradient(-45deg, #017e73 0,#1abeb1a2 37px, transparent 38px 42px, #002b26 43px, #005851 80px, #00b4a8 81px, #002220 82px);
+        box-shadow: 0 0 3px 3px rgb(145, 145, 145)
+    }
+}

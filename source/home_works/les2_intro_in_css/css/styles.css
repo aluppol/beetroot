@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a,
+button {
+    transition: all .4s ease-in;
+}
+
+html {
+    font-size: 10px;
+    height: 100%;
+}
+
+body {
+    background-color: #000;
+    min-height: 100%;
+    font-size: 1.8rem;
+    margin: 0px;
+}
+
+.page {
+    background-color: #fff;
+    width: 60%;
+    margin: 0px auto;
+    padding: 30px 0px 30px 10px;
+}
+
+header {
+    background-color: #A52A2A;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cars {
+    border: 3px dashed #000;
+}
+
+.sunset {
+    width: 100%;
+    padding-right: 20px;
+}
+
+article p {
+    margin: 20px 20px 20px 0px;
+}
+
+.photoset {
+    text-align: center;
+}
+
+footer {
+    font-size: 2rem;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+button {
+    background-color: #000;
+    /* Green */
+    border: none;
+    color: yellow;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 2px solid yellow;
+    margin: 25px auto;
+}
+
+button:hover {
+    color: black;
+    background-color: yellow;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #A52A2A;
+}

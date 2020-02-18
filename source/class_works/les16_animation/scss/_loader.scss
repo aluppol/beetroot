@@ -1,0 +1,94 @@
+$loader-color: rgb(1, 128, 85);
+$loder-add-color:  rgb(255, 255, 255);
+$loader-border: 1vw;
+
+.with-loader {
+    overflow: hidden;
+}
+
+.loader {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: $loader-color;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    @include tr;
+    .with-loader & {
+        opacity: 1;
+    }
+    
+
+
+    &__outer {
+        box-sizing: content-box;
+        width: 30%;
+        padding-top: 30%;
+        // outline: 1px solid $brand-color;
+        border: $loader-border solid $loder-add-color;
+        border-radius: 50%;
+        @include pCenter();
+        overflow: hidden;
+    }
+    
+    &__inner {
+        width: 100%;
+        height: 100%;
+        // outline: 1px solid $brand-color;
+        border: $loader-border solid $loader-color;
+        border-radius: 50%;
+        @include pCenter();
+        background-color: $loder-add-color;
+    }
+
+    &__group {
+        @include pCenter();
+        width: 100%;
+        height: 100%;
+        top: 15%;
+        animation-name: rotate;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        transform-origin: 0 0;
+        
+        .with-loader & {
+            animation-name: rotate;
+        }
+    }
+
+    &__item {
+        background-color: $loader-color;
+        width: 120%;
+        padding-top: 120%;
+        border-radius: 50%;
+        @include pCenter();
+        &:nth-child(1) {
+            left: 40%;
+        }
+        &:nth-child(2) {
+            left: 60%;
+            top: 35%;
+        }
+        &:nth-child(3){
+            left: 40%;
+            top: 40%;
+        }
+        &:nth-child(4){
+            left: 60%;
+            top: 50%;
+        }
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg) translate(-50%, -50%);
+    }
+    to {
+        transform: rotate(360deg) translate(-50%, -50%);
+    }
+}

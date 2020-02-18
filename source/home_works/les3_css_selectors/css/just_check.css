@@ -1,0 +1,19 @@
+.hotdog p.mustard {
+    background: yellow;
+}
+
+.hotdog p {
+    background: brown;
+}
+
+.btn {
+    font-size: 25px;
+}
+
+.btn-danger {
+    background: red;
+}
+
+.btn-success {
+    background: green;
+}

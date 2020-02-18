@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a,
+button {
+    transition: all .4s ease-in;
+    text-decoration: none;
+}
+
+html {
+    font-size: 10px;
+    height: 100%;
+}
+
+body {
+    background-color: #fff;
+    font-size: 2rem;
+    margin: 0px;
+    /* min-height: 100%; */
+    font-family: "Trebuchet MS", Trebuchet, Arial, sans-serif;
+    /* max-height: 100vh; */
+    /* overflow: hidden; */
+}
+
+header {
+    background-color: #4a4f56;
+    color: #eb797f;
+    text-align: center;
+    padding: 1%;
+    line-height: 1.5;
+}
+
+h1 {
+    text-transform: capitalize;
+}
+
+.container {
+    width: 60%;
+}
+
+.page {
+    background-color: #3b3f45;
+    width: 98%;
+    margin: 1%;
+    padding: 0% 0% 4% 0%;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .8);
+    min-height: 97vh;
+}
+
+main {
+    margin: 3% auto;
+}
+
+
+
+.prod_string {
+    display: block;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid transparent;
+}
+
+.prod__ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.prod__li:nth-child(even) {
+    background-color: #88839E;
+}
+
+.prod__li:nth-child(odd) {
+    background-color: #7a7593;
+}
+
+.prod_name,
+.prod__comment {
+    display: inline-block;
+    color: white;
+    margin: 12px 0px;
+    cursor: pointer;
+}
+
+
+/* Hide the browser's default checkbox */
+
+.prod_string input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.prod_string:hover {
+    border-bottom: 3px solid #fff;
+    border-top: 3px solid #fff;
+    background-color: #625e77;
+}
+
+.prod_string:active {
+    border-bottom: 3px solid #fff;
+    border-top: 3px solid #fff;
+    background-color: #eb797f;
+}
+
+
+/* Create a custom checkbox */
+
+.mark {
+    display: inline-block;
+    height: 1.8rem;
+    width: 1.8rem;
+    margin: auto 1rem;
+    background-color: #dedede;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.mark:after {
+    content: "";
+    /* position: inherit; */
+    height: 1.5rem;
+    width: 1.5rem;
+    display: none;
+    margin: 0 0 0 0.5rem;
+}
+
+
+/* Show the checkmark when checked */
+
+.prod_string input:checked~.mark:after {
+    display: block;
+}
+
+.prod_string input:checked+.mark+.prod_name,
+.prod_string input:checked+span+span+.prod__comment {
+    text-decoration-line: line-through;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+label input:checked+span+span:after {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* Style the checkmark/indicator */
+
+.prod_string .mark:after {
+    width: 0.5rem;
+    height: 1rem;
+    border: solid black;
+    border-width: 0 0.3rem 0.3rem 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+label span+span+span {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.prod__li label span+span+span:after {
+    content: ")";
+}
+
+.prod__li label span+span+span:before {
+    content: "(";
+}
+
+
+footer {
+    background-color: #4a4f56;
+    color: #eb797f;
+    text-align: center;
+    padding: 0.5%;
+    line-height: 1.5;
+    display: block;
+    margin: 0% auto;
+    font-weight: 300;
+    letter-spacing: -0.1rem;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+footer a {
+    width: 100%;
+    height: 100%;
+}
+
+footer:hover {
+    letter-spacing: 1rem;
+}
+
+footer:hover a::before {
+    content: "<<";
+}
+
+footer:hover a::after {
+    content: "<<";
+}
+
+footer a {
+    color: #eb797f;
+    text-decoration: none;
+}

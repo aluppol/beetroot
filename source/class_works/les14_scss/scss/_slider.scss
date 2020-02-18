@@ -1,0 +1,59 @@
+.slider {
+    position: relative;
+    // &__slide {}
+    &__arrow {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        bottom: 0;
+        padding: 20px;
+        font-size: 2em;
+        color: $brand-color;
+        background-color: transparent;
+        border: 0;
+        &--left {
+            left: 0;
+        }
+        &--right {
+            right: 0;
+        }
+        @include hover {
+            background-color: $brand-color;
+            color: #fff;
+        }
+    }
+    &__dots {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+
+        & li {
+            display: inline-block;
+            font-size: 0;
+            vertical-align: middle;
+        }
+
+        & button {
+            cursor: pointer;
+            margin: 0 5px;
+            width: 13px;
+            height: 13px;
+            line-height: 13px;
+            border: $b-size solid #fff;
+            background-color: $brand-color;
+            padding: 0;
+            border-radius: 50%;
+    
+            @include hover {
+                background-color: #fff;
+                border-color: $brand-color;
+            }
+        }
+        & .slick-active button {
+            background-color: #fff;
+            border-color: $brand-color;
+        }
+    }
+    
+}

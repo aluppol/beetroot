@@ -1,0 +1,29 @@
+@keyframes rotateY {
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.link {
+    transition: all 3s ease-in-out;
+    position: relative;
+    width: 30px;
+    animation: rotateY 6s linear infinite;
+}
+
+.fav-link:hover .link,
+.fav-link:focus .link {
+    animation: rotateY 1s linear infinite;
+}
+
+.fav-link:active .link {
+    animation-play-state: paused;
+}
+
+.fav-link {
+    /* border: 1px solid black; */
+    position: fixed;
+    z-index: 100;
+    top: 2rem;
+    right: 2rem;
+}

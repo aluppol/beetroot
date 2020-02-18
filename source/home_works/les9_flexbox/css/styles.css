@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300&display=swap');
+@font-face {
+    font-family: "Miso";
+    src: url("../fonts/miso/miso.eot") format("eot");
+    src: url("../fonts/miso/miso.eot") format("eot"), url("../fonts/miso/miso.woff") format("woff"), url("../fonts/miso/miso.ttf") format("truetype"), url("../fonts/miso/miso.svg") format("svg"), url("../fonts/miso/miso.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Miso Bold";
+    src: url("../fonts/miso_bold/miso-bold.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    transition: all .3s ease-in;
+    text-decoration: none;
+    color: #000;
+    /* border: 1px solid green; */
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    background: #fdde7e;
+    font-weight: 300;
+    color: #000;
+    font-size: 0rem;
+}
+
+.price {
+    font-size: 7rem;
+    font-family: 'Miso Bold', sans-serif;
+    font-weight: bold;
+    color: #02995b;
+}
+
+h2 {
+    font-size: 5.6rem;
+    font-family: 'Miso', sans-serif;
+}
+
+h3 {
+    font-family: 'Miso Bold', sans-serif;
+    font-weight: bold;
+    color: #fdde7e;
+    font-size: 6rem;
+    text-shadow: 0 0.2rem .3rem rgba(0, 0, 0, 1);
+    mix-blend-mode: overlay;
+}
+
+img {
+    -webkit-user-drag: none;
+}
+
+article {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    background: linear-gradient(rgba( 0, 0, 0, 0), rgba( 0, 0, 0, 0.1), rgba( 0, 0, 0, 0.6), rgba( 0, 0, 0, 0.8), rgba( 0, 0, 0, 0.9));
+    /* top: 0; */
+    /* right: 0; */
+}
+
+.container {
+    /* border: 1px solid green; */
+    display: flex;
+    margin: 5rem auto;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 1140px;
+  }
+
+.cardzone {
+    flex-basis: 30%;
+    /* min-height: 55rem; */
+    /* background: #fff; */
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    perspective: 150rem;
+    user-select: none;
+    cursor: pointer;
+}
+
+.cardzone:nth-child(2) {
+    flex-basis: 33%;
+}
+
+.cardzone__card {
+    width: 90%;
+    min-width: 16rem;
+    height: 45.5rem;
+    box-shadow: 0 .2rem 0.2rem rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    position: relative;
+    transition: all .3s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.cardzone:hover .cardzone__card,
+.cardzone:focus .cardzone__card {
+    transform: scale(1.07);
+    box-shadow: 0 .2rem 1.2rem rgba(0, 0, 0, 0.5);
+}
+
+.cardzone:active .cardzone__card {
+    box-shadow: 0 .2rem 1.2rem rgba(0, 0, 0, 0.5);
+    transform: scale(1.07) rotateY(180deg);
+    transition: transform 0.8s;
+}
+
+.cardzone:nth-child(2) .cardzone__card {
+    height: 50rem;
+}
+
+.cardzone__card__inner__back,
+.cardzone__card__inner__front {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.cardzone__card__inner__front {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    border-radius: 0.3rem;
+}
+
+.cardzone__card__inner__front p {
+    width: 16rem;
+    font-size: 2rem;
+    max-height: 5rem;
+    overflow: hidden;
+}
+
+.cardzone__card__inner__back {
+    background: #fff;
+    border-radius: 0.3rem;
+    transform: rotateY(180deg);
+    overflow: hidden;
+}
+
+.cardzone__card__inner__back img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardzone:nth-child(1) .cardzone__card__inner__back img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardzone__card__inner__back p {
+    margin: 0rem 2rem 0;
+    font-size: 3.2rem;
+    max-height: 41rem;
+    text-align: justify;
+    color: #fdde7e;
+    text-shadow: 0 0.1rem .4rem rgba(0, 0, 0, 1);
+    font-family: 'Miso', sans-serif;
+    overflow: hidden;
+}

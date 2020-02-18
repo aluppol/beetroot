@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'Material Icons';
+    src: url(https://fonts.gstatic.com/s/materialiconsoutlined/v14/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUce.woff2) format('woff2');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a,
+button {
+    transition: all .4s ease-in;
+    text-decoration: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #fff;
+    font-size: 1.8rem;
+    margin: 0px;
+}
+
+.page {
+    background: repeating-linear-gradient(90deg, #ffe5e5, #ffe5e5 5.8%, #fff 5.8%, #fff 7.25%);
+    width: 70%;
+    margin: 0px auto;
+    font-size: 0rem;
+    padding: 0% 4.5%;
+}
+
+.back_block {
+    text-align: center;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100%/3);
+    font-family: "Trebuchet MS", Trebuchet, Arial, sans-serif;
+    padding: 5%;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    color: #fff;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 200;
+    display: inline-block;
+    border: 1px solid #2a69a6;
+    padding: 6%;
+    border-radius: 50%;
+    background: rgba(42, 105, 166, 0.8);
+}
+
+
+/* .material-icons { 
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+*/
+
+a:hover {
+    color: rgba(42, 105, 166, 1);
+    background: rgba(42, 105, 166, 0);
+}
+
+h3 {
+    margin: 10px 0px;
+}
+
+p {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+button {
+    background-color: #fff;
+    /* Green */
+    border: none;
+    color: #1275b9;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 2px solid #1275b9;
+    margin: 25px auto;
+    cursor: pointer;
+}
+
+button:hover {
+    color: #fff;
+    background-color: #1275b9;
+}

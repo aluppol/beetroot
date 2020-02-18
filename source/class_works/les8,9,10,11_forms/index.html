@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <script src="https://kit.fontawesome.com/617acb0166.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Forms</title>
+</head>
+
+<body>
+
+    <form action="" method="POST" name="pass" class="pass">
+        <label for="name" class="pass__label">
+            Name
+        </label>
+        <input type="text" name="name" id="name" class="pass__input" placeholder="Full name" required>
+
+
+        <label for="email" class="pass__label">
+            Email
+        </label>
+        <input type="email" name="email" id="email" class="pass__input" placeholder="Email" required>
+
+        <label for="passes" class="pass__label">
+            Number of Passes
+        </label>
+        <select name="passes" id="passes" class="pass__input  pass__input--sm">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+
+        <label for="com" class="pass__label">
+            Comments
+        </label>
+        <textarea name="com" id="com" rows="5" class="pass__input"></textarea>
+
+        <button id="contactsSubmit" type="submit" class="btn">Purchase</button>
+
+    </form>
+
+    <script>
+        let inputs = document.querySelectorAll('.contacts__input');
+        inputs.forEach(function(input) {
+            input.addEventListener('input', function() {
+                // console.log(input.value);
+                // console.log(input.value.length);
+                if (input.value.length) {
+                    input.classList.add('filled');
+                } else {
+                    input.classList.remove('filled');
+                }
+            });
+        });
+
+        let btn = document.querySelector('#contactsSubmit');
+        let form = document.querySelector('.contacts');
+        btn.addEventListener('click', function() {
+            form.classList.add('validated');
+        });
+    </script>
+</body>
+
+</html>

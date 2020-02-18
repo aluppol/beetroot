@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <script src="https://kit.fontawesome.com/617acb0166.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/nike.css">
+    <title>BEM</title>
+</head>
+
+<body>
+
+    <div class="bg" style="background-image: url(img-2/bg.jpg);">
+        <main class="container">
+            <div class="section section--left">
+
+                <img src="img-2/logo.png" alt="" class="section__logo">
+                <div class="section__pic-container">
+                    <input type="radio" name="pic" id="boot1" class="radio hide" checked>
+                    <img src="img-2/boot.png" alt="" class="section__pic">
+                    <input type="radio" name="pic" id="boot2" class="radio hide">
+                    <img src="img-2/boot2.png" alt="" class="section__pic">
+                    <input type="radio" name="pic" id="boot3" class="radio hide">
+                    <img src="img-2/boot3.png" alt="" class="section__pic">
+                    <input type="radio" name="pic" id="boot4" class="radio hide">
+                    <img src="img-2/boot4.png" alt="" class="section__pic">
+                </div>
+                <div class="section__circles">
+                    <label for="boot1">
+                        <svg width="15px" height="15px" class="circle">
+                            <use xlink:href="#circle"></use>
+                        </svg>
+                    </label>
+
+                    <label for="boot2">
+                        <svg width="15px" height="15px" class="circle circle--white">
+                            <use xlink:href="#circle"></use>
+                        </svg>
+                    </label>
+
+                    <label for="boot3">
+                        <svg width="15px" height="15px" class="circle circle--red">
+                            <use xlink:href="#circle"></use>
+                        </svg>
+                    </label>
+
+                    <label for="boot4">
+                        <svg width="15px" height="15px" class="circle circle--blue">
+                            <use xlink:href="#circle"></use>
+                        </svg>
+                    </label>
+                </div>
+            </div>
+            <div class="section section--right">
+                <h1 class="section__title">
+                    Nike SB Stefan <br> Janoski Max
+                </h1>
+                <h2 class="section__subtitle">
+                    Unisex Skateboarding Shoe
+                </h2>
+                <div class="section__stars">
+                    <i class="fas fa-star gold"></i>
+                    <i class="fas fa-star gold"></i>
+                    <i class="fas fa-star gold"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <form action="" class="form">
+
+                    <div class="form__select">
+                        <span>Size <i class="fas fa-angle-down"></i></span>
+                    </div>
+
+                    <div class="form__select">
+                        <span>Qty <i class="fas fa-angle-down"></i></span>
+                    </div>
+
+                    <input type="submit" id="add" class="hide">
+                    <label for="add" class="form__btn">Add to cart</label>
+                </form>
+            </div>
+        </main>
+    </div>
+    <svg style="display: none;">
+
+        <!--  width="10px" height="9px" -->
+        <symbol id="circle" viewBox="0 0 9 9">
+            <path fill-rule="evenodd" d=" M4.531,0.000 C7.033,0.000 9.061,2.015 9.061,4.500 C9.061,6.985 7.033,9.000 4.531,9.000 C2.028,9.000
+                0.000,6.985 0.000,4.500 C0.000,2.015 2.028,0.000 4.531,0.000 Z" />
+        </symbol>
+    </svg>
+
+
+    <script src="js/select.js"></script>
+</body>
+
+</html>

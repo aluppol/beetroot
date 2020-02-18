@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a,
+button {
+    text-decoration: none;
+    transition: all .4s ease-in;
+    color: #fff;
+}
+
+a:hover {
+    color: yellow;
+}
+
+html {
+    font-size: 10px;
+    height: 100%;
+}
+
+body {
+    background-color: #000;
+    min-height: 100%;
+    font-size: 1.8rem;
+    margin: 0px;
+}
+
+.page {
+    background-color: #990909;
+    width: 70%;
+    margin: 35px auto;
+    padding: 10px 0px 20px 10px;
+}
+
+header {
+    background-color: #000;
+    text-align: center;
+    margin-bottom: 2px;
+    font-size: 0rem;
+}
+
+.site_navigation {
+    display: inline-block;
+    width: 25%;
+    font-size: 1.8rem;
+    padding: 2% 4% 0px;
+}
+
+img {
+    width: 100%;
+}
+
+.title {
+    display: block;
+    width: 60%;
+    margin: 0px auto 5px;
+}
+
+main {
+    font-size: 0rem;
+    margin: 0;
+    display: block;
+    height: fit-content;
+    padding: 0px 3px;
+}
+
+aside {
+    font-size: 1.8rem;
+}
+
+.left {
+    vertical-align: top;
+    display: inline-block;
+    background-color: #7d0909;
+    width: 22%;
+    min-height: 300px;
+    min-width: 120px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.left_aside_buttons {
+    color: #E9490C;
+    text-decoration: underline;
+    display: inline-block;
+    font-weight: 100;
+    margin: 2px 2px 10px 1px;
+}
+
+article {
+    vertical-align: top;
+    font-size: 1.8rem;
+    display: inline-block;
+    width: 60%;
+    text-align: justify;
+    padding: 0px 10px 0px 5px;
+}
+
+article p {
+    line-height: 1;
+    margin: 20px 3px 10px 1px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.right {
+    vertical-align: top;
+    display: inline-block;
+    background-color: #E3DDDD;
+    width: 18%;
+    min-width: 50px;
+    padding: 1px;
+    height: fit-content;
+}
+
+h5 {
+    text-align: center;
+    background-color: #bdbdbd;
+}
+
+.right ul li a {
+    display: block;
+    margin: 15px 0px 5px 0px;
+    color: black;
+}
+
+.bottom_border {
+    width: 60%;
+    border-bottom: 1px solid #686868;
+    padding: 0px 0px 10px 0px;
+    margin: 0px auto;
+}
+
+.upper_border {
+    width: 60%;
+    border-top: 1px solid #ffffff;
+    margin: 0px auto;
+}
+
+footer {
+    font-size: 2rem;
+    background-color: #e95b11;
+    color: #fff;
+    text-align: center;
+    margin: 20px 2px 20px 3px;
+}
+
+button {
+    background-color: #000;
+    border: none;
+    color: yellow;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    font-size: 1.6rem;
+    border-radius: 12px;
+    border: 2px solid yellow;
+    margin: 25px auto;
+}
+
+button:hover {
+    color: black;
+    background-color: yellow;
+}

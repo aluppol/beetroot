@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <!-- <script src="https://kit.fontawesome.com/617acb0166.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="css/styles.css">
+    <title>JQuery - Tabs</title>
+</head>
+
+<body>
+   
+
+    <div class="tabs">
+        <nav class="tabs__nav">
+            <a class="tabs__btn" data-name="info" data-state="active">
+                <svg  width="2.2375rem" height="2.2375rem" viewBox="0 0 22.375 22.375">
+                    <path d="M362.4,197h-3.62l-3.79,3.79h0a1.4,1.4,0,0,1-1.98,0h0L349.22,197H345.6a2.8,2.8,0,0,1-2.8-2.8V181.6a2.8,2.8,0,0,1,2.8-2.8h16.8a2.8,2.8,0,0,1,2.8,2.8v12.6A2.8,2.8,0,0,1,362.4,197Zm0-14a1.4,1.4,0,0,0-1.4-1.4H347a1.4,1.4,0,0,0-1.4,1.4v9.8a1.4,1.4,0,0,0,1.4,1.4h2.8a1.4,1.4,0,0,1,.99.41h0l3.21,3.209,3.21-3.209h0a1.392,1.392,0,0,1,.99-0.41H361a1.4,1.4,0,0,0,1.4-1.4V183Zm-4.2,8.4h-8.4a1.4,1.4,0,0,1,0-2.8h8.4A1.4,1.4,0,1,1,358.2,191.4Zm0-4.2h-8.4a1.4,1.4,0,0,1,0-2.8h8.4A1.4,1.4,0,1,1,358.2,187.2Z" transform="translate(-342.813 -178.813)"></path>
+                </svg>
+                <div>
+                    <p>information</p>
+                </div>
+            </a>
+            <a class="tabs__btn" data-name="rating" data-state="disabled">
+                <svg  width="1.9rem" height="2.1rem" viewBox="0 0 19 21">
+                    <path fill-rule="evenodd"
+                     d="M18.993,11.308 C18.993,13.986 16.868,16.157 14.246,16.157 C12.692,16.157 11.332,15.382 10.472,14.200 L10.449,14.217 L9.500,12.924 L8.550,14.217 L8.537,14.207 C7.671,15.384 6.306,16.157 4.753,16.157 C2.132,16.157 0.007,13.986 0.007,11.308 C0.007,10.216 0.373,9.218 0.969,8.408 L0.956,8.398 C0.956,8.398 7.918,-0.008 9.500,-0.008 C11.082,-0.008 18.043,8.398 18.043,8.398 L18.030,8.408 C18.626,9.218 18.993,10.216 18.993,11.308 ZM7.918,17.773 L7.918,16.157 C7.918,15.265 8.626,14.540 9.500,14.540 C10.374,14.540 11.082,15.265 11.082,16.157 L11.082,17.773 C11.956,17.773 12.664,18.497 12.664,19.390 C12.664,20.282 11.956,21.007 11.082,21.007 L7.918,21.007 C7.044,21.007 6.336,20.282 6.336,19.390 C6.336,18.497 7.044,17.773 7.918,17.773 Z"></path>
+                </svg>
+                <div>
+                    <p>rating info</p>
+                </div>
+            </a>
+            <a class="tabs__btn" data-name="buy" data-state="disabled">
+                <svg width="2rem" height="2rem" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"  
+                    d="M19.946,7.765 L19.970,7.771 L17.470,19.021 L17.446,19.015 C17.321,19.574 16.846,19.999 16.250,19.999 L3.750,19.999 C3.154,19.999 2.679,19.574 2.554,19.015 L2.530,19.021 L0.030,7.771 L0.054,7.765 C0.034,7.677 -0.000,7.594 -0.000,7.500 C-0.000,6.809 0.560,6.250 1.250,6.250 L3.750,6.250 C3.750,2.798 6.548,-0.001 10.000,-0.001 C13.452,-0.001 16.250,2.798 16.250,6.250 L18.750,6.250 C19.440,6.250 20.000,6.809 20.000,7.500 C20.000,7.594 19.966,7.677 19.946,7.765 ZM10.000,2.499 C7.929,2.499 6.250,4.178 6.250,6.250 L13.750,6.250 C13.750,4.178 12.071,2.499 10.000,2.499 ZM15.000,11.250 C14.310,11.250 13.750,10.690 13.750,9.999 L13.750,8.750 L6.250,8.750 L6.250,9.999 C6.250,10.690 5.690,11.250 5.000,11.250 C4.310,11.250 3.750,10.690 3.750,9.999 L3.750,8.750 L2.808,8.750 L4.753,17.499 L15.247,17.499 L17.192,8.750 L16.250,8.750 L16.250,9.999 C16.250,10.690 15.690,11.250 15.000,11.250 Z"></path>
+                </svg>
+                <div>
+                    <p>where to buy</p>
+                </div>
+            </a>
+        </nav>
+        <div class="tabs__tabs">
+            <main class="tabs__tab" id="info">
+                <div class="container">
+                    <div class="poster">
+                        <div class="poster__wrap">
+                            <img src="img/poster.jpg" alt="Farcry 4" class="poster__img">
+                        </div>
+                        <div class="poster__stars">
+                            <svg class="poster__star poster__star--full">
+                                <use xlink:href="#star"></use>
+                            </svg>
+                            <svg class="poster__star poster__star--full">
+                                <use xlink:href="#star"></use>
+                            </svg>
+                            <svg class="poster__star poster__star--full">
+                                <use xlink:href="#star"></use>
+                            </svg>
+                            <svg class="poster__star poster__star--full">
+                                <use xlink:href="#star"></use>
+                            </svg>
+                            <svg class="poster__star">
+                                <use xlink:href="#star"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <header class="description__header">
+                            <div class="description__titles">
+                                <h1 class="description__title">FarCry 4</h1>
+                                <h2 class="description__subtitle">First Released Nov 17, 2014</h2>
+                            </div>
+                            <div class="description__rank">
+                                <div class="rate">
+                                    <div class="rate__maximal"></div>
+                                    <svg class="rate__current">
+                                        <defs>
+                                            <linearGradient id="rate__gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                <stop offset="5%" stop-color="#01d5bc" ></stop>
+                                                <stop offset="95%" stop-color="#1ae681"></stop>
+                                            </linearGradient>
+                                        </defs>
+                                        <circle stroke="url(#rate__gradient)"></circle>
+                                    </svg>  
+                                    <span class="rate__amount">7.8</span>
+                                </div>
+                            </div>
+                        </header>
+                        <main class="description__main">
+                            <p>In Far Cry 4, players find themselves in Kyrat, a breathtaking, perilous and wild region of the Hima
+                                layas struggling under the regime of a despotic self-appointed king.</p>
+                        </main>
+                        <footer class="description__footer">
+                        <div class="description__pricing">
+                            <span class="description__sale">20% off!</span>
+                            <span class="description__price">&#36;59.96</span>
+                        </div> 
+                        <button class="description__btn">buy it now</button>
+                        </footer>
+                    </div>
+                </div>
+            </main>
+            <main class="tabs__tab" id="rating" hidden>Raiting Info</main>
+            <main class="tabs__tab" id="buy" hidden>Where to Buy</main>
+        </div>
+    </div>
+    
+
+    <svg hidden>
+        <symbol viewBox="0 0 20 20" id="star">
+            <path fill-rule="evenodd" 
+            d="M5.335,18.302 C7.055,17.487 10.050,16.067 10.050,16.067 C10.050,16.067 12.993,17.448 14.865,18.327 C14.258,18.042 16.431,19.568 16.231,17.451 C16.038,15.415 15.729,12.145 15.729,12.145 C15.729,12.145 17.876,9.754 19.217,8.261 C18.657,8.884 20.757,7.182 18.802,6.813 C16.825,6.441 13.282,6.179 13.282,6.179 C13.282,6.179 11.873,2.924 10.833,1.124 C11.317,1.962 10.284,-0.727 9.246,1.085 C8.214,2.885 6.702,6.193 6.702,6.193 C6.702,6.193 3.266,6.461 1.288,6.840 C2.063,6.692 -0.522,6.760 0.791,8.215 C2.131,9.698 4.361,12.168 4.361,12.168 C4.361,12.168 4.063,15.452 3.877,17.487 C3.925,16.961 3.201,19.313 5.335,18.302 Z"></path>
+        </symbol>
+    </svg>
+
+    <script src="./js/modernizr-custom.js"></script>
+    <script src="./js/scripts.js" ></script>
+</body>
+
+</html>

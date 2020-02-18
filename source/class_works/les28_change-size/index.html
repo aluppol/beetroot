@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <script src="https://kit.fontawesome.com/617acb0166.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Change size</title>
+</head>
+
+<body>
+
+    <div class="draggable">
+
+        <div class="box box--left">
+            <span class="box__inner ball" draggable="true"></span>
+            <span class="box__inner ball" draggable="true"></span>
+            <span class="box__inner ball" draggable="true"></span>
+            <span class="box__inner ball" draggable="true"></span>
+            <div class="box__count">0</div>
+        </div>
+
+        <div class="box box--right">
+            <span class="box__inner square" draggable="true"></span>
+            <span class="box__inner square" draggable="true"></span>
+            <span class="box__inner square" draggable="true"></span>
+            <span class="box__inner square" draggable="true"></span>
+            <div class="box__count">0</div>
+        </div>
+    </div>
+
+    <div class="resizer" hidden>
+        <div class="resizer__corner left-top"></div>
+        <div class="resizer__corner left-bottom"></div>
+        <div class="resizer__corner right-top"></div>
+        <div class="resizer__corner right-bottom"></div>
+    </div>
+
+
+    <!-- <script src="./js/scripts.js" ></script> -->
+    <script src="./js/draggable.js" ></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+a,
+button {
+    transition: all .4s ease-in;
+}
+
+.grid {
+    font-size: 0;
+}
+
+.col {
+    border: 1px solid #f7a005;
+    display: inline-block;
+    padding: 15px;
+}
+
+.col-1-2 {
+    width: 50%;
+}
+
+.content {
+    background: #68c5b8;
+    height: 100px;
+}
+
+.content-large {
+    background: #68c5b8;
+    height: 200px;
+}
+
+.col-1-3 {
+    width: calc(100%/3);
+}
+
+.col-1-6 {
+    width: calc(100%/6);
+}
+
+.col .col {
+    padding: 0;
+}
