@@ -1,0 +1,285 @@
+@import 'normalize';
+
+@import 'variables';
+
+@import 'mixins';
+
+@import 'slider';
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+html {
+    height: 100%;
+    font-size: 10px;
+}
+
+a,
+button {
+    transition: all .25s ease-in-out;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100%;
+    min-width: 100%;
+    @include font(1.4rem, $text-color, 500, $text-ff, 1.8);
+    text-align: center;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.title{
+    font-size: 8.6rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    max-width: 105rem;
+    margin: 0;
+    text-align: center;
+    max-height: 28.2rem;
+    overflow: hidden;
+    position: relative;
+
+    &__before{
+        position: absolute;
+        transform: scale(calc(1rem / 10));
+        left: -6rem;
+        top: 14rem;
+    }
+
+    &__after{
+        position: absolute;
+        transform: scale(calc(1rem / 10));
+        right: 15rem;
+        top: -6rem;
+    }
+
+    &__box{
+        display: inline-block;
+        position: relative;
+        margin: 0 auto 9rem;
+    }
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    line-height: 1.1;
+    font-weight: 600;
+    padding-top: 6rem;
+    margin: 0 auto 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    max-height: 8rem;
+    overflow: hidden;
+}
+
+.slider{
+    text-align: left;
+    user-select: none;
+    // width: 100%;
+    
+
+    &__slide{
+        overflow: hidden;
+        position: relative;
+        cursor: grab;
+
+        &:active{
+            cursor: grabbing;
+        }
+
+        &-wraper{
+            width: 44rem;
+            height: 40rem;
+            min-height: 473px;
+            min-width: 430px;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+
+            &--green{
+                background-color: rgba(27, 241, 173 ,0.9);
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+        }
+
+        &-title{
+            text-transform: uppercase;
+            font-size: 2.8rem;
+            font-weight: 400;
+            padding: 0 3rem;
+            margin: 0;
+            max-width: 70%;
+            line-height: 1;
+            max-height: 5.6rem;
+            overflow: hidden;
+        
+        }
+        
+        &-subtitle{
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 0 3rem;
+            margin: 0 0 3rem;
+            max-height: 2.1rem;
+            overflow: hidden;
+        }
+        
+        &-image {
+            @include pCenter;
+            z-index: -1;
+        }
+
+
+    }
+
+    &__nav{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    &__btn{
+        user-select: none;
+
+        display: flex;
+        position: absolute;
+        font-size: 7rem;
+        font-weight: 200;
+        line-height: .5;
+        border: 1px solid black;
+        color: black;
+        border-radius: 50%;
+        height: 10rem;
+        width: 10rem;
+        cursor: pointer;
+        z-index: 10;
+        transform: translate( 0, -50%);
+
+        & span {
+            margin: auto;
+        }
+
+        &--next{
+            top: 50%;
+            right: 1rem;
+        }
+
+        &--prev{
+            top: 50%;
+            left: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width:1140px) {
+    html {
+        font-size: 8px;
+    }
+    .title{
+    
+        &__before{
+            transform: scale(.8);
+        }
+    
+        &__after{
+
+            transform: scale(.8);
+        }
+    }
+}
+
+@media screen and (max-width:960px) {
+    html {
+        font-size: 6px;
+    }
+    .title{
+    
+        &__before{
+            transform: scale(.6);
+        }
+    
+        &__after{
+
+            transform: scale(.6);
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 5px;
+    }
+    .title{
+    
+        &__before{
+            transform: scale(.5);
+        }
+    
+        &__after{
+
+            transform: scale(.5);
+        }
+    }
+}
+
+@media screen and (max-width:576px) {
+    html {
+        font-size: 4px;
+    }
+    .title{
+    
+        font-size: 5rem;
+        &__before{
+            transform: scale(.3);
+            left: -5rem;
+            top: 3rem;
+        }
+    
+        &__after{
+            transform: scale(.3);
+            right: 11rem;
+            top: -6rem;
+        }
+
+        &__box{
+           width: 80%;
+        }
+    }
+
+    .slider {
+
+    
+        &__slide{
+
+            &-wraper{
+                width: 35rem;
+                height: 31.8rem;
+            }
+
+            &-title{
+                font-size: 4rem;
+                max-height: 9rem;
+            
+            }
+            
+            &-subtitle{
+                font-size: 2.4rem;
+                max-height: 5rem;
+
+            }
+        }
+    }
+
+}
