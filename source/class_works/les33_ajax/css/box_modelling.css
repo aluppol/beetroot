@@ -28,8 +28,9 @@ body {
 
 .container {
     background-color: #2793cb;
-    margin: 1rem;
-    padding: 2rem 8rem 2rem 8rem;
+    margin: 1rem auto;
+    padding: 2rem;
+    max-width: 700px;
 }
 
 header h1,
@@ -40,9 +41,17 @@ i {
 }
 
 main ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     padding: 0;
     background-color: #fff;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    border: .15rem solid white;
+    grid-auto-flow: dense;
 }
+
+
 
 ul li {
     list-style: none;
@@ -50,11 +59,10 @@ ul li {
     font-size: 1rem;
     text-align: center;
     border: 0.15rem solid #fff;
+    text-shadow: 1px 1px 3px #000;
+    
 }
 
-main {
-    border: .15rem solid white;
-}
 
 ul h2 {
     font-weight: lighter;
@@ -63,7 +71,7 @@ ul h2 {
 
 ul span {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.753);
+    color: rgba(255, 255, 255, 1    );
 }
 
 ul span:after{
@@ -72,60 +80,60 @@ ul span:after{
 
 ul i {
     font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.753);
+    color: rgba(255, 255, 255, 1);
 }
 
-.lisbon {
+ul li:nth-child(1) {
     width: 50%;
     background-color: #2793cb;
 }
 
-.paris {
+ul li:nth-child(2) {
     width: 25%;
     background-color: #26bcc6;
 }
 
-.belgrade {
+ul li:nth-child(3) {
     width: 25%;
     background-color: #9a6e97;
 }
 
-.moskow {
+ul li:nth-child(4) {
     width: 25%;
     background-color: #c75442;
 }
 
-.tel-aviv {
+ul li:nth-child(5)  {
     width: 25%;
     background-color: #e77145;
 }
 
-.cairo {
+ul li:nth-child(6) {
     width: 25%;
     background-color: #fccc5d;
 }
 
-.new-york {
+ul li:nth-child(7) {
     width: 25%;
     background-color: #92c292;
 }
 
-.new-delhi {
+ul li:nth-child(8) {
     width: 25%;
     background-color: #5e9396;
 }
 
-.san-francisco {
+ul li:nth-child(9) {
     width: 50%;
     background-color: #cf7294
 }
 
-.tokyo {
+ul li:nth-child(10) {
     width: 25%;
     background-color: #288D62;
 }
 
-.sydney {
+ul li:nth-child(11) {
     width: 100%;
     background-color: #656996;
 }
