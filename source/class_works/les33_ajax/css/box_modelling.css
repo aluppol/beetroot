@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    font-style: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+a,
+button {
+    transition: all .4s ease-in;
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    padding: 0rem 1rem 0rem 1rem;
+    background: transparent .2;
+}
+
+body {
+    background-color: #247bac;
+    color: #fff;
+    font-size: 0rem;
+}
+
+.container {
+    background-color: #2793cb;
+    margin: 1rem;
+    padding: 2rem 8rem 2rem 8rem;
+}
+
+header h1,
+i {
+    font-size: 1.5rem;
+    display: inline-block;
+    margin: 0rem 0.5rem 1rem 0rem;
+}
+
+main ul {
+    padding: 0;
+    background-color: #fff;
+}
+
+ul li {
+    list-style: none;
+    display: inline-block;
+    font-size: 1rem;
+    text-align: center;
+    border: 0.15rem solid #fff;
+}
+
+main {
+    border: .15rem solid white;
+}
+
+ul h2 {
+    font-weight: lighter;
+    font-size: 1.2rem;
+}
+
+ul span {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.753);
+}
+
+ul span:after{
+    content: " ℃ ";
+}
+
+ul i {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.753);
+}
+
+.lisbon {
+    width: 50%;
+    background-color: #2793cb;
+}
+
+.paris {
+    width: 25%;
+    background-color: #26bcc6;
+}
+
+.belgrade {
+    width: 25%;
+    background-color: #9a6e97;
+}
+
+.moskow {
+    width: 25%;
+    background-color: #c75442;
+}
+
+.tel-aviv {
+    width: 25%;
+    background-color: #e77145;
+}
+
+.cairo {
+    width: 25%;
+    background-color: #fccc5d;
+}
+
+.new-york {
+    width: 25%;
+    background-color: #92c292;
+}
+
+.new-delhi {
+    width: 25%;
+    background-color: #5e9396;
+}
+
+.san-francisco {
+    width: 50%;
+    background-color: #cf7294
+}
+
+.tokyo {
+    width: 25%;
+    background-color: #288D62;
+}
+
+.sydney {
+    width: 100%;
+    background-color: #656996;
+}
+
+footer {
+    font-size: 1.2rem;
+    letter-spacing: 0.03rem;
+}
+
+
+/* .container li {
+    filter: grayscale(1);
+} */
+
+.container li {
+    opacity: 0.5;
+    transition: all .25s ease-in;
+}
+
+.container li:hover {
+    opacity: 1;
+}
+
+.box {
+    /* min-height: 160px; */
+}

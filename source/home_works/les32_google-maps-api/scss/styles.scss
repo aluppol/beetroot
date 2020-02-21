@@ -1,0 +1,37 @@
+@import 'normalize';
+
+@import 'variables';
+
+@import 'mixins';
+
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+html {
+    height: 100%;
+    font-size: 10px;
+}
+
+a,
+button {
+    transition: all .25s ease-in-out;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100%;
+    @include font(1.4rem, $text-color, 500, $text-ff, 1.8);
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+#map{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
