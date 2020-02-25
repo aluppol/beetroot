@@ -1,28 +1,50 @@
 .socials {
-    padding: 0;
-}
+    padding: 10px 0;
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
 
-.social {
-    display: inline-block;
-    margin: 0 2px;
-    &__link {
+    &__social {
+        display: inline-block;
+        margin: 0 2px;
         display: flex;
-        color: $title-color;
-        font-size: 1.2em;
-        height: 30px;
-        width: 30px;
-        line-height: 30px;
-        border: 2px solid $title-color;
+        color: #fff;
+        font-size: 22px;
+        height:45px;
+        width: 45px;
+        line-height: 45px;
+        border: 1px solid #fff;
         border-radius: 50%;
-        opacity: .6;
         align-items: center;
         justify-content: center;
 
         @include hover {
-            color: #fff;
-            background-color: $title-color;
-        }
+            color: $btn-color;
+            background-color: #fff;
+        } 
     }
+}
 
+
+@media screen and (max-width:960px) {
+    .socials--top{
+        display: none;
+    }
+}
+
+
+
+
+@media screen and (max-width:768px) {
+    html{
+        font-size: 6px;
+    } 
+}
+
+@media screen and (max-width:576px) {
+
+    html{
+        font-size: 4px;
+    } 
     
 }

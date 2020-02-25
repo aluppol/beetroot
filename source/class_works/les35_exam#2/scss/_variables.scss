@@ -1,13 +1,43 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:700|Raleway:400,500|Roboto:700,900&display=swap');
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/Gotham\ Medium\ Regular/gotham-medium-webfont.woff2') format('woff2'), url('../fonts/Gotham\ Medium\ Regular/gotham-medium-webfont.woff') format('woff'), url('../fonts/Gotham\ Medium\ Regular/gotham-medium-webfont.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+}
 
 
-$brand-color: #ffcc00;
-$text-color: #333;
-$title-color: #666;
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/gothambold/gothambold1.woff') format('woff'), url('../fonts/gothambold/gothambold1.eot') format('eot'), url('../fonts/gothambold/gothambold1.ttf') format('ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamBook';
+    src: url('../fonts/GothamBook/GothamBook.woff') format('woff'), url('../fonts/GothamBook/GothamBook.eot') format('eot'), url('../fonts/GothamBook/GothamBook.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i&display=swap');
+
+
+$bg-gradient: linear-gradient(to right top,  #55b7ff,#7e5aff );
+// $brand-color: #ffcc00;
+$text-color: #4b5562;
+// $title-color: #666;
+$btn-color: #2c4058;
 
 
 $b-size: 1px;
 
-$text-ff: 'Raleway', sans-serif;
-$title-ff: 'Roboto', sans-serif;
-$btn-ff: 'Open Sans', sans-serif;
+$text-ff: 'Open Sans', sans-serif;
+$title-ff: 'Gotham', sans-serif;
+$btn-ff: 'GothamBook', sans-serif;
+
+
+$menu-top: 100px;
+
+$menu-step: 75px

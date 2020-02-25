@@ -11,9 +11,135 @@
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <title>Monticello</title>
+
+    <!--[if IE]>
+		<script src="js/modernizr.js"></script>
+    <![endif]-->
+    
+
 </head>
 
 <body>
+
+    <!-- header -->
+
+    <header class="header">
+
+        <a href="#" class="logo-box"><img class="logo-box__logo" src="img/logo.png" alt="Monticello International Group"></a>
+
+        <!-- nav -->
+        <nav class="nav full-view">
+            <input type="checkbox" id="burger" hidden>
+            <div class="nav__logo" hidden><img class="logo" src="img/logo.png" alt="Monticello International Group"></div>
+            <label for="burger" class="nav__burger">
+                <i class="fas fa-bars"></i>
+            </label>
+            <div class="nav__links">
+                <a href="#home" class="nav__link"><span class="nav__dot"></span>About Us
+                    <i class="nav__symbol fas fa-home"></i>
+                </a>
+                <a href="#projects" class="nav__link"> <span class="nav__dot"></span> Projects
+                    <i class="nav__symbol far fa-id-badge"></i>
+                </a>
+                <a href="#news" class="nav__link"><span class="nav__dot"></span>News
+                    <i class="nav__symbol fas fa-concierge-bell"></i>
+                </a>
+                <a href="#contact" class="nav__link"><span class="nav__dot"></span>contact
+                    <i class="nav__symbol fas fa-phone-square-alt"></i>
+                </a>
+            </div>
+        </nav>
+
+        <div class="socials socials--top">
+
+            <a href="http://facebook.com" target="_blank"  class="socials__social">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="http://twitter.com" target="_blank" class="socials__social">
+                <i class="fab fa-twitter"></i>
+            </a>
+
+            <a href="http://instagram.com" target="_blank" class="socials__social">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+        </div>
+
+
+
+
+    </header>
+
+
+    <!-- hero -->
+
+    <section class="section section--hero" id="home">
+        <img src="./img/hero-bg.png" alt="Background Hero" class="section__background">
+        <div class="swiper-container slider--hero">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slider--hero__slide">
+                    <h1 class="title title--hero">Simple & modern</h1>
+                    <h2 class="subtitle subtitle--hero">We make the world's beautiful every day</h2>
+                </div>
+                <div class="swiper-slide slider--hero__slide">
+                    <h1 class="title title--hero">hard & grand</h1>
+                    <h2 class="subtitle subtitle--hero">We make the world's beautiful every day</h2></div>
+                <div class="swiper-slide slider--hero__slide">
+                    <h1 class="title title--hero">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, vitae?</h1>
+                    <h2 class="subtitle subtitle--hero">Overflow presentation</h2>
+                </div>
+                <div class="swiper-slide slider--hero__slide">
+                    <h1 class="title title--hero">Again</h1>
+                    <h2 class="subtitle subtitle--hero">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam illum laborum sed exercitationem officia incidunt, saepe, rerum inventore asperiores, ex laboriosam! Corrupti autem voluptatibus esse maxime minima tenetur neque nostrum.</h2>
+                </div>
+                <div class="swiper-slide slider--hero__slide">
+                    <h1 class="title title--hero">Just Title</h1>
+                    <h2 class="subtitle subtitle--hero">Using BEM</h2>
+                </div>
+            </div>
+            
+            <!-- Add Pagination -->
+            <div class="swiper-pagination slider--hero__pag"></div>
+
+                <!-- Add Arrows -->
+            <div class="slider--hero__next">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- we-do -->
+
+    <section class="section section--we-do" id="projects"></section>
+
+
+    <!-- news -->
+
+    <section class="section section--news" id="news"></section>
+
+
+    <!-- gallery -->
+
+    <section class="section section--gallery"></section>
+
+
+    <!-- location -->
+
+    <section class="section section--location" id="contacts">
+
+        <!-- contact -->
+
+    </section>
+
+
+    <!-- footer -->
+
+    <footer class="footer"></footer>
+
+
+
 
     <script src="./js/jquery.min.js" ></script>
     <script src="./js/swiper.min.js" ></script>
