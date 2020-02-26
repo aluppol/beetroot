@@ -4,7 +4,22 @@
   'use strict';
 
   sliderHero();
-  handleSwipes(); // functions
+  handleSwipes();
+  hideShowLogo();
+  window.addEventListener('scroll', documentOnScroll); // functions
+
+  function documentOnScroll(e) {
+    hideShowLogo();
+  }
+
+  function hideShowLogo() {
+    // alert(pageYOffset > document.getElementById('home'));
+    if (pageYOffset > document.getElementById('home').offsetHeight) {
+      document.body.querySelector('.nav>.nav__logo').style.display = "block";
+    } else {
+      document.body.querySelector('.nav>.nav__logo').style.display = "none";
+    }
+  }
 
   function handleSwipes() {
     document.addEventListener('touchstart', handleTouchStart, false);

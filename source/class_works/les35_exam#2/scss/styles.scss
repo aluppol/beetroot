@@ -44,7 +44,7 @@ body {
 }
 
 .btn {
-    @include font(1.4rem, $btn-color, 400, $btn-ff, 1.6);
+    @include font(14px, $btn-color, 400, $btn-ff, 1.6);
     text-transform: uppercase;
     max-height: 2.2rem;
     overflow: hidden;

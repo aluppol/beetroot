@@ -8,6 +8,10 @@
     flex-wrap: nowrap;
     // width: 100%;
 
+
+    &__logo{
+        display: none;
+    }
     &__dot {
         display: inline-block;
         margin-right: 10px;
@@ -46,11 +50,10 @@
         background: rgba(0, 0, 0, 0);
         border: none;
         outline: none;
-        display: flex;
         justify-content: space-around;
         align-items: center;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        font-size: 4rem;
+        font-size: 30px;
         display: none;
     }
 
@@ -71,39 +74,36 @@
         position: absolute;
         left: -99999px;
         top: 0;
-        // width: 200px;
-        overflow: hidden;
         margin: 0;
         padding: 0;
         &__logo {
-            // display: inline-block;
-            padding: 0 1rem;
-            text-shadow: 0 0 1rem #000;
-            width: auto;
             position: fixed;
-            top: -5px;
+            display: block;
+            padding: 0 1rem;
+            width: auto;
+            top: 15px;
             left: -100%;
             transform: translate(-50%);
-            font-size: 4rem;
+            box-shadow: 0 0 10px 10px #7e5aff;
+            background-color: #7e5aff;
             @include tr;
         }
 
         &__symbol {
             display: flex;
-            background-color: #ff5f3300;
             @include tr;
-            color: rgb(0, 0, 0);
+            color: #fff;
         }
 
         &__links {
             flex-direction: column;
-            position: fixed;
+            position: absolute;
             left: 99999px;
         }
 
         &__link {
-            overflow: hidden;
             position: fixed;
+            overflow: hidden;
             width: 200px;
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
             min-width: auto;
@@ -114,13 +114,14 @@
             padding: 0;
             padding-left: 3rem;
             left: -200px;
-            color: rgb(0, 0, 0);
+            color: #fff;
             margin-top: 1rem;
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.7);
-            background: rgba(255, 246, 246, 0.623);
-            border-radius: 0 1rem 1rem 0;
+            box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.7);
+            text-shadow: -1px -1px 2px #000;
+            background: rgba(0, 0, 0, 0.623);
+            border-radius: 0 10px 10px 0;
             @include hover {
-                border-color: $btn-color;
+                box-shadow: 3px 5px 4px 0 rgba(255, 255, 255, 0.7);
                 &:nth-child(1){
                     transition-delay: 0s;
                 }
@@ -172,16 +173,17 @@
         }
 
         &__burger {
-            display: flex;
             position: fixed;
-            left: 0px;
-            top: 0px;
-            transform-origin: left;
+            color: #fff;
+            display: flex;
+            left:15px;
+            top: 25px;
+            transform-origin: center;
             cursor: pointer;
-            transform: translate(-50%, -50%) rotateZ(0deg);
-            transform-origin: 50%;
+            text-shadow: -1px -1px 2px #000;
+            transform: rotateZ(0deg);
             @include hover {
-                color: $btn-color;
+                text-shadow: -1px -1px 5px #000;
             }
         }
     }
@@ -189,8 +191,8 @@
 
 #burger:checked + .nav__logo {
     & + .nav__burger {
-    transform: translate(-50%, -50%) rotateZ(-90deg);
-    left: 7vw;
+    transform: rotateZ(-90deg);
+    left: 40px;
     @include tr;
 
         & + .nav__links {
@@ -206,7 +208,7 @@
         left: 50%;
 
         & + .nav__burger {
-            left: 93vw;
+            left: 90vw;
             & + .nav__links {
                 .nav__link {
                     left: -25px;
