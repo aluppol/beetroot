@@ -46,8 +46,16 @@ body {
 .btn {
     @include font(14px, $btn-color, 400, $btn-ff, 1.6);
     text-transform: uppercase;
-    max-height: 2.2rem;
+    max-height: 60px;
     overflow: hidden;
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid $btn-color;
+
+    @include hover {
+        color : #fff;
+        background-color: $btn-color;
+    }
 }
 
 .title {
@@ -72,13 +80,17 @@ body {
     @include font(1.8rem, $btn-color, 400, $text-ff, 1.8, italic);
     max-height: 3.3rem;
     overflow: hidden;
+
+    @include hover {
+        text-decoration: underline;
+    }
 }
 
 @import 'header-and-footer';
 
 @import 'hero';
 
-@import 'we-do';
+@import 'projects';
 
 @import 'news';
 
