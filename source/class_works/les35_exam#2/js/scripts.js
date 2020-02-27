@@ -6,7 +6,89 @@
   sliderHero();
   handleSwipes();
   hideShowLogo();
-  window.addEventListener('scroll', documentOnScroll); // functions
+  window.addEventListener('scroll', documentOnScroll);
+  sliderNews(); // functions
+
+  function sliderNews() {
+    var sliderHero = new Swiper('.swiper-container.slider-news', {
+      loop: true,
+      allowTouchMove: false,
+      // centeredSlides: true,
+      setWrapperSize: 1180,
+      // slidesOffsetBefore: 100,
+      // slidesOffsetAfter: 100,
+      breakpoints: {
+        350: {
+          slidesPerView: 1,
+          spaceBetween: 10
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30
+        },
+        960: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        },
+        1600: {
+          slidesPerView: 4,
+          spaceBetween: 30
+        }
+      },
+      autoplay: {
+        delay: 3000
+      },
+      navigation: {
+        nextEl: '.slider-news__btn--right',
+        prevEl: '.slider-news__btn--left'
+      },
+      pagination: {
+        el: '.slider-news__pag',
+        clickable: true,
+        renderBullet: function renderBullet(index, className) {
+          return '<span class="slider-news__bullet ' + className + '"><span class="slider__dot"></span></span>';
+        }
+      },
+      mousewheel: false,
+      keyboard: true
+    });
+    bulletControl(); //doesn't work from css
+    // functions
+
+    function bulletControl() {
+      var bullets = document.body.querySelectorAll('.slider-news__bullet'),
+          slider = document.body.querySelector('.swiper-container.slider-news'),
+          bulletsContainer = document.body.querySelector('.slider-news__pag');
+      bulletsContainer.style.cssText = "\n                display: -webkit-box;\n                display: -moz-box;\n                display: -webkit-flex;\n                display: -ms-flexbox;\n                display: flex;\n                position: relative;\n                width: 100%;\n                // left: 50%;\n                // transform: translate(-50%, 0);\n                -webkit-box-pack: center;\n                -moz-box-pack: center;\n                -ms-flex-pack: center;\n                -webkit-justify-content: center;\n                justify-content: center;\n                z-index: 10;\n            ";
+      setBullets();
+
+      function setBullets() {
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+          for (var _iterator = bullets[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var bullet = _step.value;
+            bullet.style.cssText = "\n                        width: 50px;\n                        height: 50px;\n                        display: -webkit-box;\n                        display: -ms-flexbox;\n                        display: -webkit-flex;\n                        display: flex;\n                        border-radius: 0;\n                        background: none;\n                        opacity: 1;\n                        margin: 4rem 5px 12rem 5px;\n                        background: rgba(255,255,255,0);\n                    "; //only from JS works
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator.return != null) {
+              _iterator.return();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+      }
+    }
+  }
 
   function documentOnScroll(e) {
     hideShowLogo();
@@ -89,6 +171,9 @@
       loop: true,
       direction: 'vertical',
       allowTouchMove: false,
+      autoplay: {
+        delay: 3000
+      },
       navigation: {
         nextEl: '.slider--hero__next'
       },
@@ -113,26 +198,26 @@
       setBullets();
 
       function setBullets() {
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
+        var _iteratorNormalCompletion2 = true;
+        var _didIteratorError2 = false;
+        var _iteratorError2 = undefined;
 
         try {
-          for (var _iterator = bullets[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var bullet = _step.value;
+          for (var _iterator2 = bullets[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+            var bullet = _step2.value;
             bullet.style.cssText = "\n                        width: 50px;\n                        height: 50px;\n                        display: -webkit-box;\n                        display: -ms-flexbox;\n                        display: -webkit-flex;\n                        display: flex;\n                        border-radius: 0;\n                        background: none;\n                        opacity: 1;\n                        margin: 10px 0;\n                        background: rgba(255,255,255,0);\n                    "; //only from JS works
           }
         } catch (err) {
-          _didIteratorError = true;
-          _iteratorError = err;
+          _didIteratorError2 = true;
+          _iteratorError2 = err;
         } finally {
           try {
-            if (!_iteratorNormalCompletion && _iterator.return != null) {
-              _iterator.return();
+            if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
+              _iterator2.return();
             }
           } finally {
-            if (_didIteratorError) {
-              throw _iteratorError;
+            if (_didIteratorError2) {
+              throw _iteratorError2;
             }
           }
         }

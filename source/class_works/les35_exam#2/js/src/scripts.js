@@ -9,8 +9,107 @@
 
     window.addEventListener('scroll', documentOnScroll);
 
+    sliderNews();
+
 
     // functions
+
+    function sliderNews(){
+
+        let sliderHero = new Swiper('.swiper-container.slider-news', {
+            loop: true,
+            allowTouchMove: false,
+            // centeredSlides: true,
+            setWrapperSize: 1180,
+            // slidesOffsetBefore: 100,
+            // slidesOffsetAfter: 100,
+            breakpoints: {
+                350: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                  },
+                
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 30
+                },
+               
+                960: {
+                  slidesPerView: 3,
+                  spaceBetween: 30
+                },
+                1600: {
+                    slidesPerView: 4,
+                    spaceBetween: 30
+                  },
+            },
+            autoplay: {
+                delay: 3000,
+              },
+            navigation: {
+              nextEl: '.slider-news__btn--right',
+              prevEl: '.slider-news__btn--left',
+            },
+            pagination: {
+              el: '.slider-news__pag',
+              clickable: true,
+              renderBullet: function (index, className) {
+                    return '<span class="slider-news__bullet ' + className + '"><span class="slider__dot"></span></span>';
+                }
+            },
+            mousewheel: false,
+            keyboard: true,
+        });
+
+        bulletControl(); //doesn't work from css
+
+        // functions
+
+        function bulletControl(){
+            let bullets = document.body.querySelectorAll('.slider-news__bullet'),
+                slider = document.body.querySelector('.swiper-container.slider-news'),
+                bulletsContainer = document.body.querySelector('.slider-news__pag');
+
+            bulletsContainer.style.cssText = `
+                display: -webkit-box;
+                display: -moz-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                position: relative;
+                width: 100%;
+                // left: 50%;
+                // transform: translate(-50%, 0);
+                -webkit-box-pack: center;
+                -moz-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                z-index: 10;
+            `;
+            
+            setBullets();
+
+            function setBullets(){
+                for (let bullet of bullets){
+
+                    bullet.style.cssText = `
+                        width: 50px;
+                        height: 50px;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: -webkit-flex;
+                        display: flex;
+                        border-radius: 0;
+                        background: none;
+                        opacity: 1;
+                        margin: 4rem 5px 12rem 5px;
+                        background: rgba(255,255,255,0);
+                    `;  //only from JS works
+                }
+            }
+        }
+    }
 
 
     function documentOnScroll(e){
@@ -97,7 +196,9 @@
             loop: true,
             direction: 'vertical',
             allowTouchMove: false,
-    
+            autoplay: {
+                delay: 3000,
+              },
             navigation: {
               nextEl: '.slider--hero__next',
             },
