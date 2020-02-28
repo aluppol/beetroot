@@ -29,9 +29,20 @@
     max-width: 770px;
     padding: 6rem 6rem 8rem 6rem;
     width: 90vw;
+    overflow: hidden;
 
+
+    &__bg {
+        position: absolute;
+        transform: translate(-50%, 0);
+        bottom: 0;
+        min-height: auto;
+        height: 80%;
+    }
 
     &__box{
+        position: relative;
+
         display: -webkit-box;
         display: -moz-box;
         display: -webkit-flex;
@@ -146,6 +157,9 @@
         width: 100vw;
         padding-bottom: 80px;
         
+        &__bg {
+            height: 80%;
+        }
     
         &__box{
 

@@ -1358,8 +1358,19 @@ footer {
   transform: translate(-50%, 30%);
   max-width: 770px;
   padding: 6rem 6rem 8rem 6rem;
-  width: 90vw; }
+  width: 90vw;
+  overflow: hidden; }
+  .contact__bg {
+    position: absolute;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    bottom: 0;
+    min-height: auto;
+    height: 80%; }
   .contact__box {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1404,7 +1415,8 @@ footer {
   .contact__input {
     margin-top: 3rem; }
     .contact__input--btn {
-      margin: 3rem 0 0 auto; }
+      margin: 3rem 0 0 auto;
+      background-color: #fff; }
     .contact__input--text {
       font-family: "GothamBook", sans-serif;
       font-weight: 400;
@@ -1445,6 +1457,8 @@ footer {
     transform: translate(0);
     width: 100vw;
     padding-bottom: 80px; }
+    .contact__bg {
+      height: 80%; }
     .contact__box {
       -webkit-box-direction: normal;
       -webkit-box-orient: vertical;
