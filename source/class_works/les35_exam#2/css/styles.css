@@ -736,7 +736,7 @@ header {
   -ms-flex-pack: space-evenly;
   -webkit-justify-content: space-evenly;
   position: absolute;
-  z-index: 10;
+  z-index: 101;
   width: 100%;
   top: 45px;
   display: flex;
