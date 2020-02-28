@@ -11,8 +11,52 @@
 
     sliderNews();
 
+    preloadGalleryImg();
+
 
     // functions
+
+
+
+    function preloadGalleryImg(){
+        let imgs = document.body.querySelectorAll('img.preload');
+
+        imgs.forEach(img=>{
+            if(img.complete) return;
+            let loader = document.createElement('img');
+            loader.src = './img/loader.svg';
+            loader.style.cssText = `
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                min-width: 100%;
+                min-height: 100%;
+                opacity: 1;
+                transition: all 0.5s ease-in-out;
+                z-index: 100;
+            `
+            img.insertAdjacentElement('beforebegin', loader);
+            img.onload = img.onerror = (e)=>{
+                loader.style.cssText = `
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    min-width: 100%;
+                    min-height: 100%;
+                    opacity: 0;
+                    transition: all 0.5s ease-in-out;
+                    z-index: 100;
+                `;
+                loader.ontransitionend = ()=>{
+                    loader.remove();
+                    // alert('done');
+                };
+            };
+        });
+    }
+
 
     function sliderNews(){
 
@@ -254,3 +298,194 @@
 })();
 
 
+let map, marker, geocoder;
+
+document.addEventListener('click', clickDOMListener);
+
+function initMap() {
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 40.680090, lng: -73.901845},
+        zoom: 14,
+        styles: mapStyle,
+        disableDefaultUI: true,
+    });
+
+    marker = new google.maps.Marker({
+        position: {lat: 40.680090, lng: -73.901845},
+        map: map,
+        icon: {
+            url: './img/marker.png',
+            scaledSize: new google.maps.Size(100,100)
+        },
+    });
+
+    geocoder = new google.maps.Geocoder();
+    setMapWith("Brooklyn, NY 11207 USA");
+}
+
+function setMapWith(address){
+    geocoder.geocode( { 'address': address}, function(results, status) {
+        // console.log(JSON.stringify(results) + " : " + status);
+        // console.log(results);
+        if (status == 'OK') {
+            let latLng = results[0].geometry.location;
+
+            map.setCenter(latLng);
+            marker.setPosition(latLng);
+            map.panBy(0, document.documentElement.clientHeight / 4);
+
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+}
+
+
+function clickDOMListener(e){
+
+    if(!e.target) return;
+
+    if (e.target.closest('a[data-address]')){
+
+        setMapWith(e.target.closest('a[data-address]').dataset.address);
+        return;
+    }
+
+    if(e.target == document.getElementById('contact-form-submit')){
+        e.preventDefault();
+        alert('Submited!');
+        return;
+    }
+
+    if(e.target.closest('#contact') && e.target.tabIndex < 0){
+        if(!document.forms[0].name.value)
+        {
+            document.forms[0].name.focus();
+        } else if(document.forms[0].querySelector('input:invalid')){
+            document.forms[0].querySelector('input:invalid').focus();
+        } else {
+            document.getElementById('contact-form-submit').focus();
+        }
+        return;
+    }
+
+    if(e.target.closest('#contact-link-time') && !e.target.closest('#contact-link-time').querySelector('span')) {
+        showTimeTo();
+        setInterval(showTimeTo, 10000);
+        return;
+    }
+}
+
+let message = document.createElement('span');
+message.style.cssText = `
+        position: absolute;
+        transform: translate(0, 100%);
+        left: 0;
+        bottom: 0;
+        color: green;
+        z-index: 100;
+    `;
+
+function showTimeTo(){
+
+    let time = getTimeTo(),
+        box = document.getElementById('contact-link-time');
+    
+    message.innerHTML = `${time.openState ? 'Open. We will wait for you within ' : 'Close. We will be ready to serve you in '}${time.h} hours and ${time.min} minutes!`;
+
+    if(!time.openState) message.style.color = "red";
+
+    box.append(message);
+
+    // functions
+
+
+    function getTimeTo(){
+
+        let text = document.getElementById('contact-link-time').innerText,
+            openAt = {
+                min: +text.split('AM')[0].slice(-2),
+                h: +text.split('AM')[0].slice(-5,-3)
+            },
+            closeAt = {
+                min: +text.split('PM')[0].slice(-2),
+                h: +text.split('PM')[0].slice(-5,-3)
+            },
+            timeNow = new Date().toLocaleString("en-US", {timeZone: "America/New_York"}),
+            openState;
+    
+        if(timeNow.includes('AM')){
+    
+            timeNow = extractTime(timeNow);
+    
+            let diff = openAt.h * 60 + openAt.min - timeNow.h * 60 - timeNow.min;
+
+            if(diff > 0){
+    
+                openState = false;
+
+                return {
+                    min: diff % 60,
+                    h: (diff - (diff % 60)) / 60,
+                    openState: openState
+                };
+    
+            } else {
+
+                openState = true;
+
+                diff = 12 * 60 - timeNow.h*60 - timeNow.min + closeAt.h * 60 + closeAt.min;
+
+                return {
+                    min: diff % 60,
+                    h: (diff - (diff % 60)) / 60,
+                    openState: openState
+                };
+            }
+            
+        } else {
+    
+            timeNow = extractTime(timeNow);
+    
+            let diff = closeAt.h*60 + closeAt.min - timeNow.h*60 - timeNow.min;
+            
+            if(diff > 0){
+    
+                openState = true;
+
+                return {
+                    min: diff % 60,
+                    h: (diff - (diff % 60)) / 60,
+                    openState: openState
+                };
+    
+            } else {
+
+                openState = false;
+
+                diff = 12 * 60 - timeNow.h*60 - timeNow.min + openAt.h * 60 + openAt.min;
+
+                return {
+                    min: diff % 60,
+                    h: (diff - (diff % 60)) / 60,
+                    openState: openState
+                };
+            }
+        }
+
+    }
+
+
+    function extractTime(timeNow){
+
+        timeNow = timeNow.slice(-11, -6);
+        timeNow = timeNow.split(':');
+        timeNow = {
+            min : +timeNow[1],
+            h: +timeNow[0]
+        }
+
+        return timeNow;
+    }
+}

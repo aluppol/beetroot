@@ -1293,6 +1293,22 @@ footer {
     min-width: 100%;
     min-height: 100%; }
 
+@media screen and (max-width: 1200px) {
+  .gallery {
+    margin: 0 calc( (100vw - 22.6vw * 4 - 30px) / 2);
+    -ms-grid-rows: 17vw 10px 17vw;
+    grid-template-rows: repeat(2, 17vw);
+    -ms-grid-columns: 22.6vw 10px 22.6vw 10px 22.6vw 10px 22.6vw;
+    grid-template-columns: repeat(4, 22.6vw); } }
+
+@media screen and (max-width: 576px) {
+  .gallery {
+    margin: 0 calc( (100vw - 45.2vw * 2 - 10px) / 2);
+    -ms-grid-rows: 34vw 10px 34vw 10px 34vw 10px 34vw;
+    grid-template-rows: repeat(4, 34vw);
+    -ms-grid-columns: 45.2vw 10px 45.2vw;
+    grid-template-columns: repeat(2, 45.2vw); } }
+
 /* IE10+ CSS styles go here */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .gallery__wrapper:nth-child(1) {
@@ -1313,6 +1329,185 @@ footer {
     -ms-grid-row: 3;
     -ms-grid-column: 7; } }
 
+#map {
+  width: 100vw;
+  height: 100vh; }
+
+.map-wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
+
+.section--location {
+  position: relative;
+  overflow: visible; }
+
+.title--contact {
+  margin: 0;
+  margin-bottom: 1.5rem; }
+
+.contact {
+  z-index: 10;
+  position: absolute;
+  background: #fff;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 30%);
+  -ms-transform: translate(-50%, 30%);
+  -o-transform: translate(-50%, 30%);
+  transform: translate(-50%, 30%);
+  max-width: 770px;
+  padding: 6rem 6rem 8rem 6rem;
+  width: 90vw; }
+  .contact__box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  .contact__links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 49%; }
+  .contact__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 49%; }
+  .contact__link {
+    font-family: "GothamBook", sans-serif;
+    font-weight: 400;
+    line-height: 34px;
+    font-size: 18px;
+    font-style: inherit;
+    color: #2c4058;
+    max-height: 34px;
+    overflow: hidden;
+    margin-top: 3rem;
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out; }
+    .contact__link i {
+      color: #7e5aff; }
+    .contact__link:hover, .contact__link:focus, .contact__link:active {
+      text-decoration: underline; }
+  .contact__input {
+    margin-top: 3rem; }
+    .contact__input--btn {
+      margin: 3rem 0 0 auto; }
+    .contact__input--text {
+      font-family: "GothamBook", sans-serif;
+      font-weight: 400;
+      line-height: 34px;
+      font-size: 18px;
+      font-style: inherit;
+      color: #2c4058;
+      max-height: 58px;
+      padding: 20px 10px;
+      overflow: hidden;
+      opacity: .7;
+      border: 0;
+      border-bottom: 1px solid #2c4058;
+      -webkit-transition: all .25s ease-in-out;
+      -o-transition: all .25s ease-in-out;
+      transition: all .25s ease-in-out; }
+      .contact__input--text:hover, .contact__input--text:focus, .contact__input--text:active {
+        opacity: 1; }
+      .contact__input--text:valid {
+        opacity: 1;
+        font-weight: 700; }
+      .contact__input--text:focus:invalid {
+        border-bottom: 1px solid #640000; }
+      .contact__input--text:focus:valid {
+        border-bottom: 1px solid #1d9100; }
+
+#contact-link-time {
+  position: relative;
+  overflow: visible; }
+
+@media screen and (max-width: 768px) {
+  .contact {
+    position: relative;
+    left: 0;
+    -webkit-transform: translate(0);
+    -ms-transform: translate(0);
+    -o-transform: translate(0);
+    transform: translate(0);
+    width: 100vw;
+    padding-bottom: 80px; }
+    .contact__box {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+    .contact__links {
+      -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 2;
+      order: 2;
+      width: 90%; }
+    .contact__form {
+      width: 90%; }
+    .contact__link {
+      font-family: "GothamBook", sans-serif;
+      font-weight: 400;
+      line-height: 34px;
+      font-size: 18px;
+      font-style: inherit;
+      color: #2c4058;
+      max-height: 34px;
+      overflow: hidden;
+      margin-top: 3rem;
+      -webkit-transition: all .25s ease-in-out;
+      -o-transition: all .25s ease-in-out;
+      transition: all .25s ease-in-out; }
+      .contact__link i {
+        color: #7e5aff; }
+      .contact__link:hover, .contact__link:focus, .contact__link:active {
+        text-decoration: underline; }
+    .contact__input {
+      margin-top: 3rem; }
+      .contact__input--btn {
+        margin: 3rem 0 0 auto; }
+      .contact__input--text {
+        font-family: "GothamBook", sans-serif;
+        font-weight: 400;
+        line-height: 34px;
+        font-size: 18px;
+        font-style: inherit;
+        color: #2c4058;
+        max-height: 58px;
+        padding: 20px 10px;
+        overflow: hidden;
+        opacity: .7;
+        border: 0;
+        border-bottom: 1px solid #2c4058;
+        -webkit-transition: all .25s ease-in-out;
+        -o-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out; }
+        .contact__input--text:hover, .contact__input--text:focus, .contact__input--text:active {
+          opacity: 1; }
+        .contact__input--text:valid {
+          opacity: 1;
+          font-weight: 700; }
+        .contact__input--text:focus:invalid {
+          border-bottom: 1px solid #640000; }
+        .contact__input--text:focus:valid {
+          border-bottom: 1px solid #1d9100; } }
+
+/* IE10+ CSS styles go here */
 @media screen and (max-width: 960px) {
   html {
     font-size: 8px; } }

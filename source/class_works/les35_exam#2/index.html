@@ -175,7 +175,7 @@
                         </p>
                     </main>
                     <a href="#projects" class="btn article__btn">more details</a><br>
-                    <a href="#location" class="location article__location"><i class="fas fa-map-marker-alt"></i> New York City, United States - 1776 feet</a>
+                    <a href="#location" data-address='New York City, United States' class="location article__location"><i class="fas fa-map-marker-alt"></i> New York City, United States - 1776 feet</a>
                 </article>
             </div>
         </div>
@@ -214,7 +214,7 @@
                         </p>
                     </main>
                     <a href="#projects" class="btn article__btn">more details</a> <br>
-                    <a href="#location" class="location article__location"><i class="fas fa-map-marker-alt"></i> Hong Kong - 1588 Feet</a>
+                    <a href="#location" data-address='Hong Kong' class="location article__location"><i class="fas fa-map-marker-alt"></i> Hong Kong - 1588 Feet</a>
                 </article>
             </div>
             <div class="article__item">
@@ -616,19 +616,19 @@
         <h1 class="title title--projects">gallery</h1>
         <div class="gallery">
             <div class="gallery__wrapper gallery__wrapper--big">
-                <img src="./img/gallery-360.jpg" alt="Our Office" class="gallery__img">
+                <img src="./img/gallery-360.jpg" alt="Our Office" class="gallery__img preload">
             </div>
             <div class="gallery__wrapper">
-                <img src="./img/gallery-2.jpg" alt="Our main building" class="gallery__img">
+                <img src="./img/gallery-2.jpg" alt="Our main building" class="gallery__img preload">
             </div>
             <div class="gallery__wrapper">
-                <img src="./img/gallery-3.jpg" alt="You saw this before" class="gallery__img">
+                <img src="./img/gallery-3.jpg" alt="You saw this before" class="gallery__img preload">
             </div>
             <div class="gallery__wrapper">
-                <img src="./img/gallery-4.jpg" alt="Hmmm... European Union?" class="gallery__img">
+                <img src="./img/gallery-4.jpg" alt="Hmmm... European Union?" class="gallery__img preload">
             </div>
             <div class="gallery__wrapper">
-                <img src="./img/gallery-5.jpg" alt="It's my favorite" class="gallery__img">
+                <img src="./img/gallery-5.jpg" alt="It's my favorite" class="gallery__img preload">
             </div>
         </div>
         <a href="#gallery" class="btn btn--gallery">see more</a>
@@ -638,9 +638,28 @@
     <!-- location -->
 
     <section class="section section--location" id="location">
+        <div class="map-wrapper">
+            <div id="map"></div>
+        </div>
 
-        <!-- contact -->
-
+        <div id="contact" class="contact">
+            <h2 class="title title--projects title--contact">get in touch</h2>
+            <main class="contact__box">
+                <div class="contact__links">
+                    <a href="#location" data-address='New York City, United States' class="location article__location">
+                    <a href="#location" data-address='Brooklyn, NY 11207
+                    USA' class="contact__link"><i class="fas fa-map-marker-alt"></i> 91 Nolan Extensions Suite 670</a>
+                    <a href="tel:+001 356-868-2454" class="contact__link"><i class="fas fa-phone-alt"></i> +001 356-868-2454</a>
+                    <a href="mailto:gahuy93@gmail.com" class="contact__link"><i class="fas fa-envelope"></i> gahuy93@gmail.com</a>
+                    <a href="#contact" id="contact-link-time" class="contact__link"><i class="far fa-clock"></i> From 07:05AM to 07:30PM</a>
+                </div>
+                <form class="contact__form" method="POST">
+                    <input type="text" name="name" placeholder="Full Name" class="contact__input contact__input--text" required>
+                    <input type="email" name="email" placeholder="Email" class="contact__input contact__input--text" required>
+                    <button type="submit" id="contact-form-submit" class="contact__input contact__input--btn btn">submit</button>
+                </form>
+            </main>
+        </div>
     </section>
 
 
@@ -677,11 +696,12 @@
     </footer>
 
 
-
-
+    <script src="./js/stylemap.js"></script>
     <script src="./js/jquery.min.js" ></script>
     <script src="./js/swiper.min.js" ></script>
-    <script src="./js/scripts.js" ></script>
+    <script src="./js/scripts.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJmjdfPUiMi3SNb1AaOL7DSscaJTjfgwI&callback=initMap"
+    async defer></script>
 </body>
 
 </html>
