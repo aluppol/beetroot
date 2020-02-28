@@ -1368,7 +1368,8 @@ footer {
     transform: translate(-50%, 0);
     bottom: 0;
     min-height: auto;
-    height: 80%; }
+    height: 80%;
+    z-index: -1; }
   .contact__box {
     position: relative;
     display: -webkit-box;
