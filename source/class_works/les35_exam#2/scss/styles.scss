@@ -24,7 +24,7 @@ body {
     min-height: 100%;
     @include font(1.8rem, $text-color, 400, $text-ff, 1.6);
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    // overflow: hidden;
+    overflow-x: hidden;
 }
 
 

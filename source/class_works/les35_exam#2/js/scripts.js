@@ -30,7 +30,7 @@
   }
 
   function sliderNews() {
-    var sliderHero = new Swiper('.swiper-container.slider-news', {
+    var sliderNews = new Swiper('.swiper-container.slider-news', {
       loop: true,
       allowTouchMove: false,
       // centeredSlides: true,
@@ -193,9 +193,6 @@
       allowTouchMove: false,
       autoplay: {
         delay: 3000
-      },
-      navigation: {
-        nextEl: '.slider--hero__next'
       },
       pagination: {
         el: '.slider--hero__pag',

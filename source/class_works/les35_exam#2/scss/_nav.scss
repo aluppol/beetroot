@@ -217,3 +217,12 @@
         }
     } 
 }
+
+
+/* IE10+ CSS styles go here */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    
+    .nav {
+        left: 30%;
+    }
+}

@@ -102,6 +102,19 @@
     background: rgba(255,255,255,1);
 }
 
+.slider--hero__bullet {
+    & span{
+        @include tr;
+        background: rgba(255,255,255,0);
+    }
+    
+    @include hover{
+        & span {
+            background: rgba(255,255,255,1);
+        }
+    }
+}
+
 
 @media screen and (max-width:1000px) {
     .title{
