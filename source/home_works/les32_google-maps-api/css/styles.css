@@ -6,6 +6,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:700|Raleway:400,500|Roboto:700,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -338,6 +339,108 @@ body {
   margin: 0 auto; }
 
 #map {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden; }
+
+.map {
+  width: 100%;
+  min-height: 100vh;
+  position: relative; }
+
+.navigation {
+  position: absolute;
+  left: 10px;
+  bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: none;
+  flex-wrap: nowrap; }
+  .navigation__btn {
+    direction: ltr;
+    overflow: hidden;
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: white;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+    border-left: 0px;
+    font-size: 0;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out; }
+    .navigation__btn svg {
+      -webkit-transition: all .25s ease-in-out;
+      -o-transition: all .25s ease-in-out;
+      transition: all .25s ease-in-out;
+      fill: #333; }
+    .navigation__btn:hover, .navigation__btn:focus, .navigation__btn:active {
+      -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 7px -1px;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 7px -1px;
+      background-color: #ebebeb; }
+      .navigation__btn:hover svg, .navigation__btn:focus svg, .navigation__btn:active svg {
+        fill: #000; }
+  .navigation__input {
+    height: 40px;
+    padding: 0 10px;
+    direction: ltr;
+    overflow: hidden;
+    color: #565656;
+    font-family: Roboto, Arial, sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 18px;
+    background-color: white;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    background-clip: padding-box;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+    border-left: 0px;
+    margin-left: 10px;
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out; }
+    .navigation__input:hover, .navigation__input:focus, .navigation__input:active {
+      color: black; }
+
+@media screen and (max-width: 660px) {
+  .navigation {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 290px; }
+    .navigation__btn {
+      margin-top: 5px; }
+      .navigation__btn:last-child {
+        -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+        order: 0; }
+      .navigation__btn:first-child {
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2; }
+    .navigation__input {
+      margin-top: 5px; }
+      .navigation__input:nth-child(2) {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1; }
+      .navigation__input:nth-child(3) {
+        -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+        order: 0; } }
+
+/* IE10+ CSS styles go here */
