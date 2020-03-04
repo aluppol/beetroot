@@ -298,7 +298,34 @@ function clickDOMListener(e) {
 
   if (e.target == document.getElementById('contact-form-submit')) {
     e.preventDefault();
-    alert('Submited!');
+
+    if (document.forms[0].name.matches('*:valid') && document.forms[0].email.matches('*:valid')) {
+      //send form to server
+      document.forms[0].name.value = "";
+      document.forms[0].email.value = '';
+      var modal = document.createElement('div');
+      modal.style.cssText = "\n                width: 320px;\n                height: 150px;\n                position: fixed;\n                top: 50%;\n                left: 50%;\n                border-radius: 20px;\n                background: #fff;\n                line-height: 50px;\n                text-align: center;\n                z-index: 9999;\n                transition: all .4s ease-in-out;\n                transform: translate(-50%, -50%);\n                box-shadow: 0 0 5px 0 rgba(0,0,0,.5);\n                overflow: hidden;\n                font-size: 16px;\n                padding: 25px 10px;\n                opacity: 0;\n            ";
+      modal.innerHTML = "Thank You! <br> We will contact you as soon as possible!";
+      document.body.append(modal);
+      setTimeout(function () {
+        modal.style.opacity = 1;
+      }, 0);
+      setTimeout(function () {
+        modal.addEventListener('transitionend', function (e) {
+          e.target.remove();
+        }, {
+          once: true
+        });
+        modal.style.opacity = 0;
+      }, 2000);
+    } else {
+      if (document.forms[0].name.matches('*:valid')) {
+        document.forms[0].email.focus();
+      } else {
+        document.forms[0].name.focus();
+      }
+    }
+
     return;
   }
 
