@@ -3,23 +3,28 @@
 var gulp       	 = require('gulp');
 var browserSync	 = require('browser-sync').create();
 var sass       	 = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var babel = require('gulp-babel');
+var autoprefixer = require('gulp-autoprefixer'),
+var babel = require('gulp-babel'),
+    sourcemaps      = require('gulp-sourcemaps');
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
     return gulp.src("scss/*.scss")
+        .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
             cascade: false
         }))
+        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest("css"))
         .pipe(browserSync.stream());
 });
 
 gulp.task('js', function() {
     return gulp.src("js/src/*.js")
+        .pipe(sourcemaps.init())
         .pipe(babel({ presets: ['@babel/env'] }))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest("js"))
         .pipe(browserSync.stream());
 });

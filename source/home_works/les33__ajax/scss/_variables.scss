@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
 
+//top size dependencies
+
+$search-btn-size: 50px;
+
+// internal 
+
+$_search-btn-scale: 1.1;
+$_search-field-padding: calc(#{$search-btn-size} / 5);
+
+//color schemas
 
 $page-bg-color: #292d3e;
 $tab-bg-color: #212534;
@@ -13,6 +23,9 @@ $border-rank-gradient:  linear-gradient(
     #01d5bc
   ) 0 100%;
 
+
+
+//other
 
 $b-size: 1px;
 

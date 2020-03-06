@@ -16,143 +16,135 @@
    
 
     <div class="tabs">
+
         <form name="search" class="search">
+
             <div class="search__inputs">
+
                 <div class="search__field">
-                    <input type="text" name="name" class="search__name">
                     <input type="text" name="autofill" class="search__name">
+                    <input type="text" name="name" class="search__name" required>
                 </div>
-                <div class="search__radios">
-                    <label for="video-type-movie" class="search__radio">
-                        <input type="radio" name="video-type" value="movie" id="video-type-movie" checked>
-                        Movie
-                    </label>
-                    <label for="video-type-series" class="search__radio">
-                        <input type="radio" name="video-type" value="series" id="video-type-series">
-                        Series
-                    </label>
-                    <label for="video-type-episode" class="search__radio">
-                        <input type="radio" name="video-type" value="episode" id="video-type-episode">
-                        Episode
-                    </label>
-    
-                </div>
-            </div>
-            <button type="submit" class="search__btn">
-                <svg  viewBox="0 0 58 58">
-                    <g id="Page-1" fill="none" fill-rule="evenodd">
-                        <g id="038---Search-Videos" fill-rule="nonzero">
-                            <path id="Shape" d="m42.14 46.38 3.18 3.18 3.12 3.12 4.44 4.44c.5617198.5632738 1.3245087.8798486 2.12.8798486s1.5582802-.3165748 2.12-.8798486c1.1698135-1.1712702 1.1698135-3.0687298 0-4.24l-4.44-4.44-3.12-3.12-3.18-3.18z" fill="#2b5781"/>
-                            <path id="Rectangle-path" d="m46.002 46.794h5.996v4.412h-5.996z" fill="#f1d24b" transform="matrix(.707 -.707 .707 .707 -20.297 49)"/>
-                            <path id="Shape" d="m52 26c0 14.3594035-11.6405965 26-26 26s-26-11.6405965-26-26 11.6405965-26 26-26c6.9075468-.03911897 13.5435018 2.68759516 18.4279533 7.57204669 4.8844515 4.88445151 7.6111657 11.52040651 7.5720467 18.42795331z" fill="#3180bc"/>
-                            <path id="Shape" d="m37.63 7.34c-10.92 2.22-26.15 8.14-33.02 23.81-2.09799214-8.683016 1.2662092-17.7722769 8.5118417-22.99694402 7.2456325-5.22466717 16.9321823-5.5460176 24.5081583-.81305598z" fill="#6eb8cd"/>
-                            <path id="Shape" d="m48 26c.0026892 11.1492784-8.3354334 20.5378671-19.4069992 21.8519617-11.0715659 1.3140946-21.3757452-5.8618218-23.9830008-16.7019617 6.87-15.67 22.1-21.59 33.02-23.81 6.4329512 4.0253195 10.3487446 11.0714819 10.37 18.66z" fill="#3ea8cd"/>
-                            <path id="Shape" d="m40 32v4c0 1.6568542-1.3431458 3-3 3h-22c-1.6568542 0-3-1.3431458-3-3v-4z" fill="#464f5e"/>
-                            <path id="Shape" d="m40 16v16h-28v-16c0-1.6568542 1.3431458-3 3-3h22c1.6568542 0 3 1.3431458 3 3z" fill="#e04c34"/>
-                            <path id="Shape" d="m28.282 24.151-3.042 1.656c-.4398767.2615113-.9833627.2782874-1.438531.044404-.4551684-.2338834-.7579683-.6855145-.801469-1.195404v-3.312c.0435007-.5098895.3463006-.9615206.801469-1.195404.4551683-.2338834.9986543-.2171073 1.438531.044404l3.042 1.656c.4391344.2153916.7174444.6618859.7174444 1.151s-.27831.9356084-.7174444 1.151z" fill="#ebeff0"/>
-                            <path id="Shape" d="m40 33h-28c-.5522847 0-1-.4477153-1-1s.4477153-1 1-1h28c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1z" fill="#393f4b"/>
-                            <path id="Shape" d="m27 34c-.5522847 0-1-.4477153-1-1v-2c0-.5522847.4477153-1 1-1s1 .4477153 1 1v2c0 .5522847-.4477153 1-1 1z" fill="#bcc2c6"/>
+
+                <button type="submit" class="search__btn">
+                    <svg  viewBox="0 0 58 58">
+                        <g id="Page-1" fill="none" fill-rule="evenodd">
+                            <g id="038---Search-Videos" fill-rule="nonzero">
+                                <path id="Shape" d="m42.14 46.38 3.18 3.18 3.12 3.12 4.44 4.44c.5617198.5632738 1.3245087.8798486 2.12.8798486s1.5582802-.3165748 2.12-.8798486c1.1698135-1.1712702 1.1698135-3.0687298 0-4.24l-4.44-4.44-3.12-3.12-3.18-3.18z" fill="#2b5781"/>
+                                <path id="Rectangle-path" d="m46.002 46.794h5.996v4.412h-5.996z" fill="#f1d24b" transform="matrix(.707 -.707 .707 .707 -20.297 49)"/>
+                                <path id="Shape" d="m52 26c0 14.3594035-11.6405965 26-26 26s-26-11.6405965-26-26 11.6405965-26 26-26c6.9075468-.03911897 13.5435018 2.68759516 18.4279533 7.57204669 4.8844515 4.88445151 7.6111657 11.52040651 7.5720467 18.42795331z" fill="#3180bc"/>
+                                <path id="Shape" d="m37.63 7.34c-10.92 2.22-26.15 8.14-33.02 23.81-2.09799214-8.683016 1.2662092-17.7722769 8.5118417-22.99694402 7.2456325-5.22466717 16.9321823-5.5460176 24.5081583-.81305598z" fill="#6eb8cd"/>
+                                <path id="Shape" d="m48 26c.0026892 11.1492784-8.3354334 20.5378671-19.4069992 21.8519617-11.0715659 1.3140946-21.3757452-5.8618218-23.9830008-16.7019617 6.87-15.67 22.1-21.59 33.02-23.81 6.4329512 4.0253195 10.3487446 11.0714819 10.37 18.66z" fill="#3ea8cd"/>
+                                <path id="Shape" d="m40 32v4c0 1.6568542-1.3431458 3-3 3h-22c-1.6568542 0-3-1.3431458-3-3v-4z" fill="#464f5e"/>
+                                <path id="Shape" d="m40 16v16h-28v-16c0-1.6568542 1.3431458-3 3-3h22c1.6568542 0 3 1.3431458 3 3z" fill="#e04c34"/>
+                                <path id="Shape" d="m28.282 24.151-3.042 1.656c-.4398767.2615113-.9833627.2782874-1.438531.044404-.4551684-.2338834-.7579683-.6855145-.801469-1.195404v-3.312c.0435007-.5098895.3463006-.9615206.801469-1.195404.4551683-.2338834.9986543-.2171073 1.438531.044404l3.042 1.656c.4391344.2153916.7174444.6618859.7174444 1.151s-.27831.9356084-.7174444 1.151z" fill="#ebeff0"/>
+                                <path id="Shape" d="m40 33h-28c-.5522847 0-1-.4477153-1-1s.4477153-1 1-1h28c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1z" fill="#393f4b"/>
+                                <path id="Shape" d="m27 34c-.5522847 0-1-.4477153-1-1v-2c0-.5522847.4477153-1 1-1s1 .4477153 1 1v2c0 .5522847-.4477153 1-1 1z" fill="#bcc2c6"/>
+                            </g>
                         </g>
-                    </g>
-                </svg>
-            </button>
+                    </svg>
+                </button>
+
+            </div>
+
+            <div class="search__radios">
+
+                <div class="search__stub search__stub--left"></div>
+
+                <input type="radio" name="video-type" value="movie" id="video-type-movie" checked>
+                <label for="video-type-movie" class="search__radio">
+                    Movies
+                </label>
+
+                <input type="radio" name="video-type" value="series" id="video-type-series">
+                <label for="video-type-series" class="search__radio">
+                    Series
+                </label>
+
+                <input type="radio" name="video-type" value="episode" id="video-type-episode">
+                <label for="video-type-episode" class="search__radio">
+                    Episodes
+                </label>
+
+                <div class="search__stub search__stub--right"></div>
+
+            </div>
+
         </form>
-        <nav class="tabs__nav">
-            <a class="tabs__btn" data-name="info" data-state="active">
-                <svg  width="2.2375rem" height="2.2375rem" viewBox="0 0 22.375 22.375">
-                    <path d="M362.4,197h-3.62l-3.79,3.79h0a1.4,1.4,0,0,1-1.98,0h0L349.22,197H345.6a2.8,2.8,0,0,1-2.8-2.8V181.6a2.8,2.8,0,0,1,2.8-2.8h16.8a2.8,2.8,0,0,1,2.8,2.8v12.6A2.8,2.8,0,0,1,362.4,197Zm0-14a1.4,1.4,0,0,0-1.4-1.4H347a1.4,1.4,0,0,0-1.4,1.4v9.8a1.4,1.4,0,0,0,1.4,1.4h2.8a1.4,1.4,0,0,1,.99.41h0l3.21,3.209,3.21-3.209h0a1.392,1.392,0,0,1,.99-0.41H361a1.4,1.4,0,0,0,1.4-1.4V183Zm-4.2,8.4h-8.4a1.4,1.4,0,0,1,0-2.8h8.4A1.4,1.4,0,1,1,358.2,191.4Zm0-4.2h-8.4a1.4,1.4,0,0,1,0-2.8h8.4A1.4,1.4,0,1,1,358.2,187.2Z" transform="translate(-342.813 -178.813)"></path>
-                </svg>
-                <div>
-                    <p>information</p>
-                </div>
-            </a>
-            <a class="tabs__btn" data-name="rating" data-state="disabled">
-                <svg  width="1.9rem" height="2.1rem" viewBox="0 0 19 21">
-                    <path fill-rule="evenodd"
-                     d="M18.993,11.308 C18.993,13.986 16.868,16.157 14.246,16.157 C12.692,16.157 11.332,15.382 10.472,14.200 L10.449,14.217 L9.500,12.924 L8.550,14.217 L8.537,14.207 C7.671,15.384 6.306,16.157 4.753,16.157 C2.132,16.157 0.007,13.986 0.007,11.308 C0.007,10.216 0.373,9.218 0.969,8.408 L0.956,8.398 C0.956,8.398 7.918,-0.008 9.500,-0.008 C11.082,-0.008 18.043,8.398 18.043,8.398 L18.030,8.408 C18.626,9.218 18.993,10.216 18.993,11.308 ZM7.918,17.773 L7.918,16.157 C7.918,15.265 8.626,14.540 9.500,14.540 C10.374,14.540 11.082,15.265 11.082,16.157 L11.082,17.773 C11.956,17.773 12.664,18.497 12.664,19.390 C12.664,20.282 11.956,21.007 11.082,21.007 L7.918,21.007 C7.044,21.007 6.336,20.282 6.336,19.390 C6.336,18.497 7.044,17.773 7.918,17.773 Z"></path>
-                </svg>
-                <div>
-                    <p>rating info</p>
-                </div>
-            </a>
-            <a class="tabs__btn" data-name="buy" data-state="disabled">
-                <svg width="2rem" height="2rem" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"  
-                    d="M19.946,7.765 L19.970,7.771 L17.470,19.021 L17.446,19.015 C17.321,19.574 16.846,19.999 16.250,19.999 L3.750,19.999 C3.154,19.999 2.679,19.574 2.554,19.015 L2.530,19.021 L0.030,7.771 L0.054,7.765 C0.034,7.677 -0.000,7.594 -0.000,7.500 C-0.000,6.809 0.560,6.250 1.250,6.250 L3.750,6.250 C3.750,2.798 6.548,-0.001 10.000,-0.001 C13.452,-0.001 16.250,2.798 16.250,6.250 L18.750,6.250 C19.440,6.250 20.000,6.809 20.000,7.500 C20.000,7.594 19.966,7.677 19.946,7.765 ZM10.000,2.499 C7.929,2.499 6.250,4.178 6.250,6.250 L13.750,6.250 C13.750,4.178 12.071,2.499 10.000,2.499 ZM15.000,11.250 C14.310,11.250 13.750,10.690 13.750,9.999 L13.750,8.750 L6.250,8.750 L6.250,9.999 C6.250,10.690 5.690,11.250 5.000,11.250 C4.310,11.250 3.750,10.690 3.750,9.999 L3.750,8.750 L2.808,8.750 L4.753,17.499 L15.247,17.499 L17.192,8.750 L16.250,8.750 L16.250,9.999 C16.250,10.690 15.690,11.250 15.000,11.250 Z"></path>
-                </svg>
-                <div>
-                    <p>where to buy</p>
-                </div>
-            </a>
-        </nav>
-        <main class="tabs__tabs">
-            <article class="tabs__tab" id="info">
-                Search
-            </article>
-            <article class="tabs__tab" id="rating" hidden>
-                <div class="container">
-                    <div class="poster">
-                        <div class="poster__wrap">
-                            <img src="img/poster.jpg" alt="Farcry 4" class="poster__img">
-                        </div>
-                        <div class="poster__stars">
-                            <svg class="poster__star poster__star--full">
-                                <use xlink:href="#star"></use>
-                            </svg>
-                            <svg class="poster__star poster__star--full">
-                                <use xlink:href="#star"></use>
-                            </svg>
-                            <svg class="poster__star poster__star--full">
-                                <use xlink:href="#star"></use>
-                            </svg>
-                            <svg class="poster__star poster__star--full">
-                                <use xlink:href="#star"></use>
-                            </svg>
-                            <svg class="poster__star">
-                                <use xlink:href="#star"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <header class="description__header">
-                            <div class="description__titles">
-                                <h1 class="description__title">FarCry 4</h1>
-                                <h2 class="description__subtitle">First Released Nov 17, 2014</h2>
-                            </div>
-                            <div class="description__rank">
-                                <div class="rate">
-                                    <div class="rate__maximal"></div>
-                                    <svg class="rate__current">
-                                        <defs>
-                                            <linearGradient id="rate__gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                                <stop offset="5%" stop-color="#01d5bc" ></stop>
-                                                <stop offset="95%" stop-color="#1ae681"></stop>
-                                            </linearGradient>
-                                        </defs>
-                                        <circle stroke="url(#rate__gradient)"></circle>
-                                    </svg>  
-                                    <span class="rate__amount">7.8</span>
-                                </div>
-                            </div>
-                        </header>
-                        <div class="description__main">
-                            <p>In Far Cry 4, players find themselves in Kyrat, a breathtaking, perilous and wild region of the Hima
-                                layas struggling under the regime of a despotic self-appointed king.</p>
-                        </div>
-                        <footer class="description__footer">
-                        <div class="description__pricing">
-                            <span class="description__sale">20% off!</span>
-                            <span class="description__price">&#36;59.96</span>
-                        </div> 
-                        <button class="description__btn">buy it now</button>
-                        </footer>
-                    </div>
-                </div>
-            </article>
-            <article class="tabs__tab" id="buy" hidden>Where to Buy</article>
+
+
+        <main class="tabs__tabs" id="tabs-container">
         </main>
     </div>
-    
+
+    <!-- additional html -->
+
+    <article class="tabs__tab" id="search-start" hidden>
+        Find movie you need!
+    </article>
+    <article class="tabs__tab" id="search-no-result" hidden>
+        There is no such movie!
+    </article>
+    <article class="tabs__tab" id="article" hidden>
+        <div class="container">
+            <div class="poster">
+                <div class="poster__wrap">
+                    <img src="img/poster.jpg" alt="Farcry 4" class="poster__img">
+                </div>
+                <div class="poster__stars">
+                    <svg class="poster__star poster__star--full">
+                        <use xlink:href="#star"></use>
+                    </svg>
+                    <svg class="poster__star poster__star--full">
+                        <use xlink:href="#star"></use>
+                    </svg>
+                    <svg class="poster__star poster__star--full">
+                        <use xlink:href="#star"></use>
+                    </svg>
+                    <svg class="poster__star poster__star--full">
+                        <use xlink:href="#star"></use>
+                    </svg>
+                    <svg class="poster__star">
+                        <use xlink:href="#star"></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="description">
+                <header class="description__header">
+                    <div class="description__titles">
+                        <h1 class="description__title">FarCry 4</h1>
+                        <h2 class="description__subtitle">First Released Nov 17, 2014</h2>
+                    </div>
+                    <div class="description__rank">
+                        <div class="rate">
+                            <div class="rate__maximal"></div>
+                            <svg class="rate__current">
+                                <defs>
+                                    <linearGradient id="rate__gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="5%" stop-color="#01d5bc" ></stop>
+                                        <stop offset="95%" stop-color="#1ae681"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <circle stroke="url(#rate__gradient)"></circle>
+                            </svg>  
+                            <span class="rate__amount">7.8</span>
+                        </div>
+                    </div>
+                </header>
+                <div class="description__main">
+                    <p>In Far Cry 4, players find themselves in Kyrat, a breathtaking, perilous and wild region of the Hima
+                        layas struggling under the regime of a despotic self-appointed king.</p>
+                </div>
+                <footer class="description__footer">
+                <div class="description__pricing">
+                    <span class="description__sale">20% off!</span>
+                    <span class="description__price">&#36;59.96</span>
+                </div> 
+                <button class="description__btn">buy it now</button>
+                </footer>
+            </div>
+        </div>
+    </article>
 
     <svg hidden>
         <symbol viewBox="0 0 20 20" id="star">
