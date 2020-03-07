@@ -65,7 +65,9 @@
 
 
     function handleInput(e){
+    
         //apikey bcd2d5b4
+
         document.forms.search.autofill.value = "";
         let urlObject = new URL('http://www.omdbapi.com');
 
@@ -168,13 +170,20 @@
             showNextTab();
             loadMoreResults();
 
+            if(searchResults.length == 0) return;
+
             if(preloadedTabs.length > 5) return;
 
             let tab = defaultArticleTab.cloneNode(true),
                 movie = searchResults.shift(),
                 img = tab.querySelector('.poster__img');
 
-            img.src = movie['Poster'];
+            if(movie['Poster'] != 'N/A') {
+                img.src = movie['Poster'];
+            } else {
+                img.src = './img/no-cover.png';
+            }
+            
             img.alt = movie['Title'];
 
             // console.log(img);
@@ -185,16 +194,68 @@
                     // console.log('+1 preload');
                     preloadedTabs.push(tab);
 
-    //Task --->>>  Hide Loader
+                    // Hide Loader
+                document.getElementById('tab-loader').style.opacity = 0;
 
                     preloadNextTab();
                 }, 0);
             }, {once: true});
 
-            tab.querySelector('.description__title').innerHTML = `Release in <b>${movie['Year']}</b> `;
+            tab.querySelector('.description__title').innerHTML = `${movie['Title']}`;
+            tab.querySelector('.description__subtitle').innerHTML = `Released in ${movie['Year']} year`;
 
             tab.id = "";
             tab.dataset.imdbID = movie['imdbID'];
+
+            tab.querySelector('.description__btn').addEventListener('click', showFullMovieInfo, {once: true});
+        }
+
+
+        function showFullMovieInfo(e){
+            let tab = e.target.closest('.tabs__tab'),
+                btn = e.target.closest('.description__btn'),
+                movieID = tab.getAttribute('data-imdb-i-d'),
+                urlObject = new URL('http://www.omdbapi.com');
+        
+            urlObject.searchParams.set('apikey', 'bcd2d5b4');
+            urlObject.searchParams.set('i', movieID);
+
+            fetch(urlObject)
+            .then(response=>response.json())
+            .then(movie=>{
+                // console.log(movie);
+                tab.querySelector('.description__main').innerHTML = `<p>${movie['Plot'] != "N/A" ? movie['Plot'] : "" }</p>`;
+                if(movie['imdbRating'] != 'N/A'){
+
+                    tab.querySelector('.rate__amount').innerHTML = movie['imdbRating'];
+
+                    setRate(tab);
+
+                    setStars(tab);
+                }
+                
+
+            });
+
+            tab.classList.remove('tabs__tab--small');
+            btn.style.opacity = 0;
+            btn.addEventListener('transitionend', ()=>{
+                btn.remove();
+            }, {once: true});
+            tab.querySelectorAll('[class*="--small"]').forEach(el=>{
+                el.classList.remove(el.classList[0] + '--small');
+            });
+        }
+
+
+        function setStars(tab){
+            let starsAmount = Math.round(tab.querySelector('.rate__amount').innerHTML / 2),
+                stars = tab.querySelectorAll('.poster__star');
+
+            while(starsAmount){
+                starsAmount--;
+                stars[starsAmount].classList.add('poster__star--full');
+            }
         }
 
 
@@ -202,13 +263,16 @@
 
             if(preloadedTabs.length == 0) {
 
-    //Task --->>> show Loader
+                //Task show Loader
 
+                document.getElementById('tab-loader').style.opacity = 1;
+                
                 return;
             }
 
+            if(document.body.scrollHeight - (pageYOffset + document.documentElement.clientHeight) > 100) return;
+
             // alert(document.body.scrollHeight - (pageYOffset + document.documentElement.clientHeight));
-            if(document.body.scrollHeight - (pageYOffset + document.documentElement.clientHeight) > 0) return;
 
             let tab = preloadedTabs.shift();
 
@@ -241,6 +305,8 @@
                 urlObject.searchParams.set('page', +urlObject.searchParams.get('page') + 1);
     
                 searchResults.push(...movies['Search']);
+
+                preloadNextTab();
     
             }).catch(err=>{
                 if(err.name != 'AbortError') throw err;
@@ -258,104 +324,14 @@
         });
     }
 
+    function setRate(tab){
 
-
-
-
-
-
-
-
-
-
-
-
-    // hideAllTabs();
-    // document.getElementById('search-start').hidden = false;
-    // setHeightOfCurentTab();
-    // document.body.querySelector('.tabs__tabs').addEventListener('transitionend', setRate);
-    // window.addEventListener('resize', resize);
-
-    // tabsInOut();
-
-
-    // functions
-
-    function hideAllTabs(tabs    = document.body.querySelectorAll('.tabs__tab')){
-        tabs.forEach(tab => tab.hidden = true);
-    }
-
-
-    function setHeightOfCurentTab(tab , box = document.body.querySelector('.tabs__tabs')){
-        if (tab == undefined){
-            let tabs = document.body.querySelectorAll('.tabs__tab');
-
-            tabs.forEach(t => {
-                if(!t.hidden) 
-                tab = t;
-            });  
-        }
-
-        box.style.height = `${tab.offsetHeight}px`;
-    }
-
-
-    function tabsInOut(){
-        let tabBtns = document.body.querySelectorAll('.tabs__btn'),
-            box     = document.body.querySelector('.tabs__tabs');
-
-        tabBtns.forEach(tab=>tab.addEventListener('click', (e)=>changeTab(e)));
-
-
-        function changeTab(event){
-            event.preventDefault();
-            let clickBtn = event.target.closest('.tabs__btn'),
-                clickTab = document.getElementById(`${clickBtn.dataset.name}`);
-
-            if(clickTab.hidden == true){
-                tabBtns.forEach(tab=>tab.dataset.state = 'disabled');
-                clickBtn.dataset.state = 'active';
-                box.style.height = "0px";
-                box.addEventListener('transitionend', switchTabs);
-
-
-                function switchTabs(){
-                    if(box.offsetHeight == 0){
-                        hideAllTabs();
-                        clickTab.hidden = false;
-                        box.removeEventListener('transitionend', switchTabs);
-                        setHeightOfCurentTab(clickTab, box);
-                    }
-                }
-            }
-        }
-
-    }
-
-
-    function setRate(){
-
-        document.body.querySelector('.tabs__tabs').removeEventListener('transitionend', setRate);
-        if(document.getElementById('info').hidden == false){
-            let circle = document.querySelector('.rate__current > circle'),
-            circleLength = document.querySelector('.rate__maximal').offsetHeight * 3.14,
-            rate = +document.querySelector('.rate__amount').textContent,
+        let circle = tab.querySelector('.rate__current > circle'),
+            circleLength = tab.querySelector('.rate__maximal').offsetHeight * 3.14,
+            rate = +tab.querySelector('.rate__amount').textContent,
             offset = ((10 - rate) / 10) * circleLength;
             
-            circle.style.strokeDashoffset = offset;
-        } else {
-
-            let circle = document.querySelector('.rate__current > circle'),
-            circleLength = document.querySelector('.rate__maximal').offsetHeight * 3.14;
-
-            circle.style.strokeDashoffset = circleLength;
-        }
-
-        
-    }
-
-
-    function resize(){
-        setHeightOfCurentTab();
+        circle.style.strokeDashoffset = offset;
+       
     }
 })();

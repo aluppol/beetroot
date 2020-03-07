@@ -13,6 +13,12 @@
         width: 16.5rem;
         height: 23.5rem;
         object-fit: cover;
+        @include tr;
+
+        &--small{
+            width: 5.27rem;
+            height: 7.5rem;
+        }
     }
 
     &__wrap{
@@ -44,6 +50,16 @@
             right: 0;
             top: -2px;
         }
+
+        &--small{
+            &:after{
+                opacity: 0;
+            }
+    
+            &:before{
+                opacity: 0;
+            }
+        }
     }
 
     &__stars{
@@ -67,21 +83,28 @@
     margin-left: 4rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    width: 100%;
+    // width: 90%;
     &__header{
         display: flex;
         justify-content: space-between;
     }
 
+    
     &__title{
         font-size: 3.2rem;
-        line-height: .625;
-        margin: 1.5rem 0;
+        max-width: 24rem;
+        line-height: 1.4;
+        padding-right: 10px;
+        margin: 0;
+        max-height: 5rem;
+        overflow: hidden;
     }
     &__subtitle{
         font-size: 1.4rem;
         line-height: 1.4;
         margin: 0;
+        max-height: 2rem;
     }
     &__rank{
         user-select: none;
@@ -89,6 +112,7 @@
         font-size: 2rem;
         line-height: 1.1;
         width: 7.5rem;
+        min-width: 7.5rem;
         height: 7.5rem;
         overflow: hidden;
     }
@@ -128,18 +152,22 @@
         user-select: none;
         text-transform: uppercase;
         color: #fff;
-        width: 16.5rem;
-        height: 5.5rem;
+        min-width: 7.5rem;
+        width: 7.5rem;
+        height: 7.5rem;
         margin: auto 0 0 auto;
-        border-radius: 2px;
+        border-radius: 2rem;
         font-weight: 700;
-        font-size: 1.6rem;
-        line-height: 2.5;
+        font-size: 3.75rem;
+        vertical-align: middle;
+        line-height: 1;
+        opacity: 1;
         background-color: #13e28d;
         border: 0;
         overflow: hidden;
         cursor: pointer;
         padding: 1rem;
+        @include tr;
         @include hover{
             color: #13e28d;
             background-color: #fff;
@@ -186,82 +214,5 @@
 
     &__amount {
         margin: auto;
-    }
-}
-
-
-@media screen and (max-width: 576px){
-    .container{
-        flex-direction: column;
-    }
-
-    .poster {
-        margin: 0 auto;
-
-        &__img{
-            width: calc(16.5rem * 3);
-            height: calc(23.5rem * 3);
-        }
-    
-        &__wrap{
-    
-            &:after{
-                height: calc(3 * 8rem);
-                bottom: calc(3 * -4rem);
-            }
-    
-            &:before{
-                right: -1px;
-                top: calc(3 * -2px);
-            }
-        }
-    
-        &__stars{
-            margin-top: calc(3 * 2.5rem);
-        }
-
-        &__star{
-            width: calc(2 * 2rem);
-            height: calc(2 * 2rem);
-        }
-    }
-
-    .description{
-        margin: 12rem 0 0 0;
-       
-        &__title{
-            font-size: calc(2 * 3.2rem);
-            margin: calc(2 * 1.5rem) 0;
-        }
-        &__subtitle{
-            font-size: calc(2 * 1.4rem);
-        }
-        &__rank{
-            font-size: calc(2 * 2rem);
-            width: calc(2 * 7.5rem);
-            height: calc(2 * 7.5rem);
-        }
-    
-        &__main{
-            font-size: calc(2 * 1.4rem);
-            margin: calc(2 * 3rem) auto calc(2 * 4rem);
-        }
-    
-        &__sale{
-            font-size: calc(2 * 1.2rem);
-        }
-    
-        &__price{
-            font-size: calc(2 * 3.2rem);
-        }
-    
-        &__btn{
-            width: calc(1.7 * 16.5rem);
-            height: calc(2 * 5.5rem);
-            border-radius: calc(2 * 2px);
-            font-size: calc(2 * 1.6rem);
-        }
-    
-    
     }
 }

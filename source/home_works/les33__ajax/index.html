@@ -49,24 +49,24 @@
 
             <div class="search__radios">
 
-                <div class="search__stub search__stub--left"></div>
+                <div class="search__stub search__stub--left" data-tab='1'></div>
 
                 <input type="radio" name="video-type" value="movie" id="video-type-movie" checked>
-                <label for="video-type-movie" class="search__radio">
+                <label for="video-type-movie" class="search__radio" data-tab='1'>
                     Movies
                 </label>
 
                 <input type="radio" name="video-type" value="series" id="video-type-series">
-                <label for="video-type-series" class="search__radio">
+                <label for="video-type-series" class="search__radio" data-tab='1'>
                     Series
                 </label>
 
                 <input type="radio" name="video-type" value="episode" id="video-type-episode">
-                <label for="video-type-episode" class="search__radio">
+                <label for="video-type-episode" class="search__radio" data-tab='1'>
                     Episodes
                 </label>
 
-                <div class="search__stub search__stub--right"></div>
+                <div class="search__stub search__stub--right" data-tab='1'></div>
 
             </div>
 
@@ -77,6 +77,21 @@
         </main>
     </div>
 
+    <svg id="tab-loader"  style="margin: auto; background: rgba(241, 242, 243, 0); display: block; shape-rendering: auto;" width="200px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+        <rect x="17.5" y="29.379" width="15" height="41.2419" fill="#084f5a">
+          <animate attributeName="y" repeatCount="indefinite" dur="1s" calcMode="spline" keyTimes="0;0.5;1" values="18;30;30" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.2s"></animate>
+          <animate attributeName="height" repeatCount="indefinite" dur="1s" calcMode="spline" keyTimes="0;0.5;1" values="64;40;40" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.2s"></animate>
+        </rect>
+        <rect x="42.5" y="28.65" width="15" height="42.7" fill="#38737f">
+          <animate attributeName="y" repeatCount="indefinite" dur="1s" calcMode="spline" keyTimes="0;0.5;1" values="20.999999999999996;30;30" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.1s"></animate>
+          <animate attributeName="height" repeatCount="indefinite" dur="1s" calcMode="spline" keyTimes="0;0.5;1" values="58.00000000000001;40;40" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.1s"></animate>
+        </rect>
+        <rect x="67.5" y="27.215" width="15" height="45.5699" fill="#6099a5">
+          <animate attributeName="y" repeatCount="indefinite" dur="1s" calcMode="spline" keyTimes="0;0.5;1" values="20.999999999999996;30;30" keySplines="0 0.5 0.5 1;0 0.5 0.5 1"></animate>
+          <animate attributeName="height" repeatCount="indefinite" dur="1s" calcMode="spline" keyTimes="0;0.5;1" values="58.00000000000001;40;40" keySplines="0 0.5 0.5 1;0 0.5 0.5 1"></animate>
+        </rect>
+    </svg>
+
     <!-- additional html -->
 
     <article class="tabs__tab" id="search-start" hidden>
@@ -85,23 +100,23 @@
     <article class="tabs__tab" id="search-no-result" hidden>
         There is no such movie!
     </article>
-    <article class="tabs__tab" id="article" hidden>
+    <article class="tabs__tab tabs__tab--small" id="article" hidden>
         <div class="container">
             <div class="poster">
-                <div class="poster__wrap">
-                    <img src="img/poster.jpg" alt="Farcry 4" class="poster__img">
+                <div class="poster__wrap poster__wrap--small">
+                    <img src="img/poster.jpg" alt="Farcry 4" class="poster__img poster__img--small">
                 </div>
                 <div class="poster__stars">
-                    <svg class="poster__star poster__star--full">
+                    <svg class="poster__star">
                         <use xlink:href="#star"></use>
                     </svg>
-                    <svg class="poster__star poster__star--full">
+                    <svg class="poster__star">
                         <use xlink:href="#star"></use>
                     </svg>
-                    <svg class="poster__star poster__star--full">
+                    <svg class="poster__star">
                         <use xlink:href="#star"></use>
                     </svg>
-                    <svg class="poster__star poster__star--full">
+                    <svg class="poster__star">
                         <use xlink:href="#star"></use>
                     </svg>
                     <svg class="poster__star">
@@ -116,6 +131,7 @@
                         <h2 class="description__subtitle">First Released Nov 17, 2014</h2>
                     </div>
                     <div class="description__rank">
+                        <button class="description__btn"><i class="fas fa-angle-double-down"></i></button>
                         <div class="rate">
                             <div class="rate__maximal"></div>
                             <svg class="rate__current">
@@ -127,21 +143,11 @@
                                 </defs>
                                 <circle stroke="url(#rate__gradient)"></circle>
                             </svg>  
-                            <span class="rate__amount">7.8</span>
+                            <span class="rate__amount">0</span>
                         </div>
                     </div>
                 </header>
-                <div class="description__main">
-                    <p>In Far Cry 4, players find themselves in Kyrat, a breathtaking, perilous and wild region of the Hima
-                        layas struggling under the regime of a despotic self-appointed king.</p>
-                </div>
-                <footer class="description__footer">
-                <div class="description__pricing">
-                    <span class="description__sale">20% off!</span>
-                    <span class="description__price">&#36;59.96</span>
-                </div> 
-                <button class="description__btn">buy it now</button>
-                </footer>
+                <div class="description__main"></div>
             </div>
         </div>
     </article>

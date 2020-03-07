@@ -1,11 +1,11 @@
 'use strict';
 
-var gulp       	 = require('gulp');
-var browserSync	 = require('browser-sync').create();
-var sass       	 = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer'),
-var babel = require('gulp-babel'),
-    sourcemaps      = require('gulp-sourcemaps');
+var gulp       	 = require('gulp'),
+    browserSync	 = require('browser-sync').create(),
+    sass       	 = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    babel        = require('gulp-babel'),
+    sourcemaps   = require('gulp-sourcemaps');
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
