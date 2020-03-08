@@ -69,7 +69,7 @@
         //apikey bcd2d5b4
 
         document.forms.search.autofill.value = "";
-        let urlObject = new URL('http://www.omdbapi.com');
+        let urlObject = new URL('https://www.omdbapi.com');
 
         urlObject.searchParams.set('apikey', 'bcd2d5b4');
         urlObject.searchParams.set('type', `${document.forms.search.querySelector('input[name="video-type"]:checked').value}`);
@@ -100,7 +100,7 @@
         // console.log('submited!');
         document.forms.search.name.select();
 
-        let urlObject = new URL('http://www.omdbapi.com');
+        let urlObject = new URL('https://www.omdbapi.com');
         
         urlObject.searchParams.set('apikey', 'bcd2d5b4');
         urlObject.searchParams.set('type', `${document.forms.search.querySelector('input[name="video-type"]:checked').value}`);
@@ -215,7 +215,7 @@
             let tab = e.target.closest('.tabs__tab'),
                 btn = e.target.closest('.description__btn'),
                 movieID = tab.getAttribute('data-imdb-i-d'),
-                urlObject = new URL('http://www.omdbapi.com');
+                urlObject = new URL('https://www.omdbapi.com');
         
             urlObject.searchParams.set('apikey', 'bcd2d5b4');
             urlObject.searchParams.set('i', movieID);

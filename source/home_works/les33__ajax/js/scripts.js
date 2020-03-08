@@ -63,7 +63,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   function handleInput(e) {
     //apikey bcd2d5b4
     document.forms.search.autofill.value = "";
-    var urlObject = new URL('http://www.omdbapi.com');
+    var urlObject = new URL('https://www.omdbapi.com');
     urlObject.searchParams.set('apikey', 'bcd2d5b4');
     urlObject.searchParams.set('type', "".concat(document.forms.search.querySelector('input[name="video-type"]:checked').value));
     urlObject.searchParams.set('t', "".concat(document.forms.search.name.value));
@@ -90,7 +90,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     e.preventDefault(); // console.log('submited!');
 
     document.forms.search.name.select();
-    var urlObject = new URL('http://www.omdbapi.com');
+    var urlObject = new URL('https://www.omdbapi.com');
     urlObject.searchParams.set('apikey', 'bcd2d5b4');
     urlObject.searchParams.set('type', "".concat(document.forms.search.querySelector('input[name="video-type"]:checked').value));
     urlObject.searchParams.set('s', "".concat(document.forms.search.name.value));
@@ -178,7 +178,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       var tab = e.target.closest('.tabs__tab'),
           btn = e.target.closest('.description__btn'),
           movieID = tab.getAttribute('data-imdb-i-d'),
-          urlObject = new URL('http://www.omdbapi.com');
+          urlObject = new URL('https://www.omdbapi.com');
       urlObject.searchParams.set('apikey', 'bcd2d5b4');
       urlObject.searchParams.set('i', movieID);
       fetch(urlObject).then(function (response) {
