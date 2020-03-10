@@ -61,7 +61,44 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   }
 
   function handleInput(e) {
-    //apikey bcd2d5b4
+    if (e.target.closest('input[name="video-type"]')) {
+      var getPreviousBorder = function getPreviousBorder(checkedInput) {
+        var currentElement = checkedInput.previousElementSibling;
+
+        while (currentElement != null) {
+          if (currentElement.matches('.search__radio')) {
+            return currentElement;
+          }
+
+          currentElement = currentElement.previousElementSibling;
+        }
+
+        return document.forms.search.querySelector('.search__stub--left');
+      };
+
+      var getNextBorder = function getNextBorder(checkedInput) {
+        var currentElement = checkedInput.nextElementSibling.nextElementSibling; //skip current label;
+
+        while (currentElement != null) {
+          if (currentElement.matches('.search__radio')) {
+            return currentElement;
+          }
+
+          currentElement = currentElement.nextElementSibling;
+        }
+
+        return document.forms.search.querySelector('.search__stub--right');
+      };
+
+      document.forms.search.querySelector('.search__radio--before').classList.remove('search__radio--before');
+      document.forms.search.querySelector('.search__radio--after').classList.remove('search__radio--after');
+      var previosRoundBorderEl = getPreviousBorder(e.target.closest('input[name="video-type"]')),
+          nextRoundBorderEl = getNextBorder(e.target.closest('input[name="video-type"]'));
+      previosRoundBorderEl.classList.add('search__radio--before');
+      nextRoundBorderEl.classList.add('search__radio--after');
+    } //apikey bcd2d5b4
+
+
     document.forms.search.autofill.value = "";
     var urlObject = new URL('https://www.omdbapi.com');
     urlObject.searchParams.set('apikey', 'bcd2d5b4');
@@ -197,6 +234,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       btn.style.opacity = 0;
       btn.addEventListener('transitionend', function () {
         btn.remove();
+        tab.scrollIntoView();
       }, {
         once: true
       });
@@ -220,12 +258,14 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         //Task show Loader
         document.getElementById('tab-loader').style.opacity = 1;
         return;
-      }
+      } // alert(document.body.scrollHeight - (pageYOffset + document.documentElement.clientHeight));
+
 
       if (document.body.scrollHeight - (pageYOffset + document.documentElement.clientHeight) > 100) return; // alert(document.body.scrollHeight - (pageYOffset + document.documentElement.clientHeight));
 
       var tab = preloadedTabs.shift(); //Task --->>> animate tab
 
+      tab.classList.add('flipInX');
       tab.hidden = false;
       tabsConatainer.append(tab);
     }

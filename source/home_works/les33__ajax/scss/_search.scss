@@ -90,6 +90,7 @@
         user-select: none;
         border-top-left-radius: calc(#{$_search-field-padding} / 2);
         border-top-right-radius: calc(#{$_search-field-padding} / 2);
+        z-index: 0;
 
         &:after{
             content: "";
@@ -140,6 +141,14 @@
                 border-left: 1px solid rgba(255,255,255,1);
                 box-shadow: calc(#{$_search-field-padding} / 1 * -1) 0px 0px 0px $tab-bg-color;
             }
+        }
+
+        &--before{
+            border-bottom-right-radius: calc(#{$_search-field-padding});
+        }
+
+        &--after{
+            border-bottom-left-radius: calc(#{$_search-field-padding});
         }
     }
 

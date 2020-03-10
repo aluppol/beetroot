@@ -65,6 +65,50 @@
 
 
     function handleInput(e){
+
+        if(e.target.closest('input[name="video-type"]')){
+            
+            document.forms.search.querySelector('.search__radio--before').classList.remove('search__radio--before');
+
+            document.forms.search.querySelector('.search__radio--after').classList.remove('search__radio--after');
+
+            let previosRoundBorderEl = getPreviousBorder(e.target.closest('input[name="video-type"]')),
+                nextRoundBorderEl = getNextBorder(e.target.closest('input[name="video-type"]'));
+
+            previosRoundBorderEl.classList.add('search__radio--before');
+            nextRoundBorderEl.classList.add('search__radio--after');
+
+            function getPreviousBorder(checkedInput){
+                let currentElement = checkedInput.previousElementSibling;
+
+                while(currentElement != null){
+            
+                    if(currentElement.matches('.search__radio')){
+                        return currentElement;
+                    }
+
+                    currentElement = currentElement.previousElementSibling;
+                }
+
+                return document.forms.search.querySelector('.search__stub--left');
+            }
+
+            function getNextBorder(checkedInput){
+                let currentElement = checkedInput.nextElementSibling.nextElementSibling; //skip current label;
+
+                while(currentElement != null){
+
+                    if(currentElement.matches('.search__radio')){
+                        return currentElement;
+                    }
+
+                    currentElement = currentElement.nextElementSibling;
+                }
+
+                return document.forms.search.querySelector('.search__stub--right');
+            }
+
+        }
     
         //apikey bcd2d5b4
 
@@ -195,7 +239,7 @@
                     preloadedTabs.push(tab);
 
                     // Hide Loader
-                document.getElementById('tab-loader').style.opacity = 0;
+                    document.getElementById('tab-loader').style.opacity = 0;
 
                     preloadNextTab();
                 }, 0);
@@ -241,6 +285,7 @@
             btn.style.opacity = 0;
             btn.addEventListener('transitionend', ()=>{
                 btn.remove();
+                tab.scrollIntoView();
             }, {once: true});
             tab.querySelectorAll('[class*="--small"]').forEach(el=>{
                 el.classList.remove(el.classList[0] + '--small');
@@ -270,6 +315,8 @@
                 return;
             }
 
+            // alert(document.body.scrollHeight - (pageYOffset + document.documentElement.clientHeight));
+
             if(document.body.scrollHeight - (pageYOffset + document.documentElement.clientHeight) > 100) return;
 
             // alert(document.body.scrollHeight - (pageYOffset + document.documentElement.clientHeight));
@@ -277,6 +324,7 @@
             let tab = preloadedTabs.shift();
 
     //Task --->>> animate tab
+            tab.classList.add('flipInX');
             
             tab.hidden = false;
 
