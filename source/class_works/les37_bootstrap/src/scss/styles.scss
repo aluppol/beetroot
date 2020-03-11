@@ -1,0 +1,19 @@
+@import 'bootstrap/bootstrap';
+
+@import 'variables';
+
+@import 'mixins';
+
+
+* {
+    box-sizing: border-box;
+    // outline: none;
+}
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    // @include font(1.4rem, $text-color, 500, $text-ff, 1.8);
+}

@@ -1,0 +1,162 @@
+.search{
+    @include flexbox;
+    @include flex-direction(column);
+
+    &__inputs{
+        @include flexbox;
+        @include justify-content(space-between);
+        // width: calc(100% - #{$search-btn-size} * #{$_search-btn-scale});
+        width: 100%;
+        padding: $_search-field-padding;
+    }
+
+    &__field{
+        
+        position: relative;
+        margin: $_search-field-padding;
+        height: calc(#{$search-btn-size} - 2 * #{$_search-field-padding});
+        width: 100%;
+    }
+
+    &__name{
+        position: absolute;
+        @include font(calc((#{$search-btn-size} - 2 * #{$_search-field-padding}) * .5), $text-color, 500, $ff, calc(#{$search-btn-size} - 2 * #{$_search-field-padding}));
+        width: 100%;
+        height: 100%;
+        border-radius: calc(#{$_search-field-padding} / 2);
+        overflow: hidden;
+
+        &[name="autofill"]{
+            background-color: rgba(33, 37, 52, .7);
+            padding: 0 $_search-field-padding;
+            color: rgba(255, 255, 255, .5);
+        }
+
+        &[name="name"]{
+            border-color: rgba(0,0,0,0);
+            background-color: rgba(0,0,0,0);
+            padding: 0 $_search-field-padding;
+        }
+    }
+
+    &__btn{
+        font-size: 0;
+        margin: 0;
+        margin-left: calc(#{$search-btn-size} / 10);
+        padding: 0;
+        border: none;
+        @include flexbox;
+        background: rgba(0,0,0,0);
+
+        & svg{
+            transform: scale(1);
+            margin: auto;
+            height: $search-btn-size;
+            width: $search-btn-size;
+            @include tr;
+            cursor: pointer;
+        }
+
+        @include hover {
+            & svg{
+                transform: scale($_search-btn-scale);
+            }
+            
+        }
+    }
+
+
+    &__radios{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        @include flexbox;
+
+        & input {
+            display: none;
+        }
+    }
+
+    &__radio{
+
+        width: calc((100% - #{$_search-field-padding} * 4) / 3);
+        text-align: center;
+        padding: calc(#{$_search-field-padding} / 2) 0;
+        border: 1px solid rgba(255,255,255,0);
+        border-bottom: 1px solid #fff;
+        cursor: pointer;
+        border-bottom: 1px solid rgba(255,255,255,1);
+        user-select: none;
+        border-top-left-radius: calc(#{$_search-field-padding} / 2);
+        border-top-right-radius: calc(#{$_search-field-padding} / 2);
+        z-index: 0;
+
+        &:after{
+            content: "";
+            @include tr;
+        }
+
+        &:before{
+            content: "";
+            @include tr;
+        }
+
+        @include hover {
+            background-color: #21253494;
+        }
+
+        input:checked+&{
+            border: 1px solid rgba(255,255,255,1);
+            border-bottom: 1px solid rgba(255,255,255,0);
+            background-color: $tab-bg-color;
+            position: relative;
+            z-index: 1;
+
+            &:before{
+                content: "";
+                position: absolute;
+                z-index: 2;
+                left: calc(#{$_search-field-padding} * -1 - 1px);
+                bottom: -1px;
+                width: calc(#{$_search-field-padding});
+                height: calc(#{$_search-field-padding});
+                border-bottom-right-radius: calc(#{$_search-field-padding});
+                border-bottom: 1px solid rgba(255,255,255,1);
+                border-right: 1px solid rgba(255,255,255,1);
+                box-shadow: calc(#{$_search-field-padding}) 0px 0px 0px $tab-bg-color;
+            }
+
+            &:after{
+                content: "";
+                position: absolute;
+                @include tr;
+                z-index: 2;
+                right: calc(#{$_search-field-padding} / -1 - 1px);
+                bottom: -1px;
+                width: calc(#{$_search-field-padding} / 1);
+                height: calc(#{$_search-field-padding} / 1);
+                border-bottom-left-radius: calc(#{$_search-field-padding} / 1);
+                border-bottom: 1px solid rgba(255,255,255,1);
+                border-left: 1px solid rgba(255,255,255,1);
+                box-shadow: calc(#{$_search-field-padding} / 1 * -1) 0px 0px 0px $tab-bg-color;
+            }
+        }
+
+        &--before{
+            border-bottom-right-radius: calc(#{$_search-field-padding});
+        }
+
+        &--after{
+            border-bottom-left-radius: calc(#{$_search-field-padding});
+        }
+    }
+
+    &__stub{
+        width: calc(#{$_search-field-padding} * 2);
+        border-bottom: 1px solid #fff;
+        // &--left{}
+
+        // &--right{}
+    }
+}
