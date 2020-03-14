@@ -5,42 +5,105 @@ var gulp       	 = require('gulp'),
     sass       	 = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     babel        = require('gulp-babel'),
-    sourcemaps   = require('gulp-sourcemaps');
+    sourcemaps   = require('gulp-sourcemaps'),
+    rigger          = require('gulp-rigger'),
+    rename          = require("gulp-rename"),
+    uglify          = require("gulp-uglify-es").default,
+    pngquant        = require('imagemin-pngquant'),
+    zopfli          = require('imagemin-zopfli'),
+    mozjpeg         = require('imagemin-mozjpeg'),
+    giflossy        = require('imagemin-giflossy'),
+    jpegtran        = require('imagemin-jpegtran'),
+    imagemin        = require('gulp-imagemin'),
+    clean           = require('gulp-clean');
 
 // Compile sass into CSS & auto-inject into browsers
-gulp.task('sass', function() {
-    return gulp.src("scss/*.scss")
-        .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer({
-            cascade: false
-        }))
-        .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest("css"))
+
+gulp.task('html', gulp.series(function(){
+    return gulp.src('src/**/*.html')
+        .pipe(rigger())
+        .pipe(gulp.dest('dist/'))
         .pipe(browserSync.stream());
-});
-
-gulp.task('js', function() {
-    return gulp.src("js/src/*.js")
-        .pipe(sourcemaps.init())
-        .pipe(babel({ presets: ['@babel/env'] }))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest("js"))
-        .pipe(browserSync.stream());
-});
-
-
-// Static Server + watching scss/html files
-gulp.task('serve', gulp.series('sass', 'js', function() {
-
-    browserSync.init({
-        server: "./"
-    });
-
-    gulp.watch("scss/*.scss", gulp.parallel('sass'));
-    gulp.watch("*.html").on('change', browserSync.reload);
-    gulp.watch("js/src/*.js", gulp.parallel('js'));
 }));
 
 
-gulp.task('default', gulp.series('serve'));
+gulp.task('sass', function() {
+    return gulp.src("src/scss/**/*.scss")
+        .pipe(sourcemaps.init())
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(autoprefixer({
+            cascade: false
+        }))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest("dist/css"))
+        .pipe(browserSync.stream());
+});
+
+
+gulp.task('js', function (){
+    return gulp.src('src/js/**/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(rigger())
+        .pipe(babel({ presets: ['@babel/env'] }))
+        .pipe(uglify())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest("dist/js"))
+        .pipe(browserSync.stream());
+});
+
+
+gulp.task('img', gulp.series( function() {
+    return gulp.src('src/img/**/*.*')
+        .pipe(imagemin([
+            pngquant({
+                speed: 1,
+                quality: [0.95, 1]
+            }),
+            zopfli({more: true}),
+            giflossy({
+                optimizationLevel: 3,
+                optimize: 3,
+                lossy: 2
+            }),
+            imagemin.svgo({
+                plugins: [{
+                    removeViewBox: false
+                }]
+            }),
+            jpegtran({
+                progressive: true
+            }),
+            mozjpeg({
+                quality: 90
+            })
+        ]))
+        .pipe(gulp.dest('dist/img'))
+        .pipe(browserSync.stream());
+}));
+
+
+gulp.task('clean', function (){
+    return gulp.src('dist', {allowEmpty: true, read: false}).pipe(clean());
+});
+
+// Static Server + watching scss/html files
+gulp.task('serve', gulp.series('html', 'sass', 'js', 'img', function() {
+
+    browserSync.init({
+        server: "./dist"
+    });
+
+    gulp.watch("./src/**/*.html",  gulp.parallel('html'));
+    gulp.watch("./src/scss/**/*.scss", gulp.parallel('sass'));
+    gulp.watch("./src/js/**/*.js", gulp.parallel('js'));
+    gulp.watch("./src/img/**/*.*", gulp.parallel('img'));
+}));
+
+
+gulp.task('default', gulp.series('clean', 'serve'));

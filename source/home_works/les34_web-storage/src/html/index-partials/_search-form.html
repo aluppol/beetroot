@@ -1,0 +1,47 @@
+<form name="search" class="search">
+
+    <div class="search__inputs">
+
+        <div class="search__field">
+            <input type="text" name="autofill" class="search__name">
+            <input type="text" name="name" class="search__name" required>
+        </div>
+
+        <button type="submit" class="search__btn">
+            <svg>
+                <use xlink:href="#search"></use>
+            </svg>
+        </button>
+
+    </div>
+
+    <div class="search__radios">
+
+        <div class="search__stub search__stub--left search__radio--before" data-tab='1'></div>
+
+        <input type="radio" name="video-type" value="movie" id="video-type-movie" checked>
+        <label for="video-type-movie" class="search__radio" data-tab='1'>
+            Movies
+        </label>
+
+        <input type="radio" name="video-type" value="series" id="video-type-series">
+        <label for="video-type-series" class="search__radio search__radio--after" data-tab='1'>
+            Series
+        </label>
+
+        <input type="radio" name="video-type" value="episode" id="video-type-episode">
+        <label for="video-type-episode" class="search__radio" data-tab='1'>
+            Episodes
+        </label>
+
+        <input type="radio" name="video-type" value="favorite" id="video-type-favorite">
+        <label for="video-type-favorite" class="search__radio" data-tab='1'>
+            Favorite
+        </label>
+
+
+        <div class="search__stub search__stub--right" data-tab='1'></div>
+
+    </div>
+
+</form>

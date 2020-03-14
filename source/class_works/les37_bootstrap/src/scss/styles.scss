@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:400,400i,800&display=swap');
+
 @import 'bootstrap/bootstrap';
 
 @import 'variables';
@@ -11,9 +13,102 @@
 }
 html {
     height: 100%;
+    font-size: 14px;
 }
 
 body {
     min-height: 100%;
     // @include font(1.4rem, $text-color, 500, $text-ff, 1.8);
+}
+
+.marked{
+    position: relative;
+    display: inline-block;
+
+    &:before{
+        content: '';
+        display: inline-block;
+        height: 20px;
+        width: 70px;
+        background: $primary;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: -1;
+    }
+}
+
+.benefit-icon{
+    background-color: $primary;
+    font-size: 2.15rem;
+    color: $white;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    margin-right: $spacer * .75;
+
+    &+span{
+        vertical-align: middle;
+    }
+}
+
+.person{
+    padding-top: 140%;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        @include pCenter;
+        min-width: 100%;
+        min-height: 100%;
+    }
+}
+
+.client{
+    padding-top: 60%;
+    position: relative;
+    margin-bottom: $spacer * 2;
+
+
+    img{
+        @include pCenter;
+        max-width: 90%;
+        max-height: 90%;
+    }
+}
+
+.review{
+    &__img{
+        position: relative;
+        border-radius: 50%;
+        display: inline-block;
+        overflow: hidden;
+        width: 85px;
+        height: 85px;
+
+       img{
+            @include pCenter;
+            min-width: 100%;
+            min-height: 100%;
+        }
+    }
+}
+
+.pseudo-btn{
+
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size, $btn-line-height, $border-radius);
+    @include gradient-bg($primary);
+    text-transform: uppercase;
+    display: inline-block;
+    font-family: $btn-font-family;
+    font-weight: $btn-font-weight;
+    color: $body-color;
+    text-align: center;
+    white-space: $btn-white-space;
+    vertical-align: middle;
+    background-color: $primary;
+    color: $white;
 }

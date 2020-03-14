@@ -1,0 +1,72 @@
+<article class="tabs__tab" id="search-start" hidden>
+    Find movie you need!
+</article>
+
+<article class="tabs__tab" id="search-no-result" hidden>
+    There is no such movie!
+</article>
+
+<article class="tabs__tab" id="search-no-favorites" hidden>
+    There is no Movies In Your Favorites!
+</article>
+
+<article class="tabs__tab tabs__tab--small" id="article" hidden>
+    <div class="container">
+        <div class="poster">
+            <div class="poster__wrap poster__wrap--small">
+                <img src="" alt="No poster" class="poster__img poster__img--small">
+            </div>
+            <div class="poster__stars">
+                <svg class="poster__star">
+                    <use xlink:href="#star"></use>
+                </svg>
+                <svg class="poster__star">
+                    <use xlink:href="#star"></use>
+                </svg>
+                <svg class="poster__star">
+                    <use xlink:href="#star"></use>
+                </svg>
+                <svg class="poster__star">
+                    <use xlink:href="#star"></use>
+                </svg>
+                <svg class="poster__star">
+                    <use xlink:href="#star"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="description">
+            <header class="description__header">
+                <div class="description__titles">
+                    <h1 class="description__title">FarCry 4</h1>
+                    <h2 class="description__subtitle">First Released Nov 17, 2014</h2>
+                </div>
+
+                <div class="description__rank-box">
+                    <button class="description__favorite">
+                        <svg class="description__favorite-star">
+                            <use xlink:href="#star"></use>
+                        </svg>
+                    </button>
+
+                    <div class="description__rank">
+                        <button class="description__btn"><i class="fas fa-angle-double-down"></i></button>
+                        <div class="rate">
+                            <div class="rate__maximal"></div>
+                            <svg class="rate__current">
+                                <defs>
+                                    <linearGradient id="rate__gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="5%" stop-color="#01d5bc" ></stop>
+                                        <stop offset="95%" stop-color="#1ae681"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <circle stroke="url(#rate__gradient)"></circle>
+                            </svg>  
+                            <span class="rate__amount">0</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="description__main"></div>
+        </div>
+    </div>
+</article>

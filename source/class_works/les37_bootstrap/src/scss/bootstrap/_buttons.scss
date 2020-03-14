@@ -5,6 +5,9 @@
 //
 
 .btn {
+  text-transform: uppercase;
+  // white-space: nowrap;
+
   display: inline-block;
   font-family: $btn-font-family;
   font-weight: $btn-font-weight;
