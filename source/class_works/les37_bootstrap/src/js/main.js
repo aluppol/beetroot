@@ -1,8 +1,8 @@
 //= libs/popper.js
 //= bootstrap/util.js
 //= bootstrap/carousel.js
+//= bootstrap/collapse.js
 ​
-///= bootstrap/collapse.js
 ///= bootstrap/dropdown.js
 ///= bootstrap/alert.js
 ///= bootstrap/button.js

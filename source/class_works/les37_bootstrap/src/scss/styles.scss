@@ -112,3 +112,31 @@ body {
     background-color: $primary;
     color: $white;
 }
+
+.list-grey {
+    a{
+        color: $gray-600;
+
+        @include hover {
+            text-decoration: none;
+            color: $primary;
+        }
+    }
+}
+
+.list-with-after .list-inline-item:not(:last-child){
+    margin-right: 1rem;
+
+    &:after{
+        content: "-";
+        color: $gray-600;
+        margin-left: 1rem;
+    }
+}
+
+.hero{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../img/hero__bg.jpg);
+}
