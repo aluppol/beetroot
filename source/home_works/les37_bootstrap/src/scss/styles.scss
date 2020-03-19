@@ -1,0 +1,24 @@
+@import 'libs/bootstrap/bootstrap';
+
+@import 'libs/variables';
+
+@import 'libs/mixins';
+
+
+* {
+    box-sizing: border-box;
+    // outline: none;
+}
+html {
+    height: 100%;
+    font-size: 14px;
+}
+
+body {
+    min-height: 100%;
+    // @include font(1.4rem, $text-color, 500, $text-ff, 1.8);
+}
+
+
+@import 'about';
+@import 'index';

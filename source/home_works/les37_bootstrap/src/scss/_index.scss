@@ -1,0 +1,130 @@
+.hero{
+    &--index{
+        background-image: url(../img/index/hero__bg.jpg);
+    }
+    
+    &__title{
+
+        & h1{
+            border-width: 10px !important;
+            position: relative;
+            font-size: 3.4rem;
+
+            &:after{
+                content: "we're";
+                background-color: $primary;
+                position: absolute;
+                font-size: 1.2rem;
+                left: 50%;
+                top: -10px;
+                transform: translate(-50%, -100%);
+                padding: 10px 20px 7px;
+            }
+        }
+
+        & p{
+            display: inline-block;
+            max-width: 560px;
+        }
+    }
+
+    &__img{
+        &--index{
+            display: inline-block;
+            padding-top: 90%;
+            overflow: hidden;
+
+            & img{
+                @include pCenter;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.transform-down{
+    position: relative;
+    transform: translate(0, 10vh);
+}
+
+.padding-top-30vh{
+    padding-top: 30vh;
+}
+
+.home{
+    &__advantage{
+
+        ion-icon{
+            font-size: $font-size-base * 3;
+        }
+
+        &--img{
+            padding-top: 100%;
+            & img{
+                @include pCenter;
+                min-width: 100%;
+                min-height: 100%;
+            }
+        }
+    }
+}
+
+.fz-0{
+    font-size: 0;
+}
+
+.marked{
+    &--portfolio{
+        height: 120px;
+        margin: 0;
+        line-height: 1.5;
+        
+        &::before{
+            content:"ALL";
+            font-size: 1rem;
+            color: white;
+            top: 100%;
+            text-align: center;
+        }
+
+        &+ul{
+            font-family: $headings-font-family;
+        }
+    }
+}
+
+.gallery{
+
+    column-count: 3;
+    column-gap: 30px;
+
+    & div{
+        display: inline-block;
+        width: 100%;
+        padding-bottom: 30px;
+    }
+}
+
+
+@media screen and (max-width:992px){
+    .gallery{
+
+        column-count: 2;
+        column-gap: 20px;
+    
+        & div{
+            padding-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width:400px){
+    .gallery{
+
+        column-count: 1;
+
+        & div{
+            padding-bottom: 10px;
+        }
+    }
+}
