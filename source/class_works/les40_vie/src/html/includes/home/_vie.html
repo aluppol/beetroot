@@ -1,0 +1,59 @@
+<div id="app">
+    <div class="container">
+        <h1>{{message}}</h1>
+
+        <div class="row">
+            <div class="col-md-12">
+                <form @submit="create">
+                    <div class="input-group mb-3">
+                        <input v-model="newItem" type="text" class="form-control" placeholder="Введите название товара" aria-label="Введите название товара" aria-describedby="addon">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="submit" id="addon" v-bind:disabled="newItem.length < 3">Добавить</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-12 text-danger">
+                {{errorMessage}}
+            </div>
+            <div class="col-6">
+                <h2>List to Buy <span v-if="countToBuy">({{countToBuy}})</span></h2>
+                <ul class="list-unstyled">
+                    <li 
+                    v-for="item of items" 
+                    v-if="!item.done">
+                        <div class="form-check">
+                            <input 
+                            class="form-check-input" 
+                            type="checkbox" 
+                            name="exampleRadios" 
+                            v-bind:id="item.id" 
+                            value="true"
+                            v-model="item.done">
+
+                            <label 
+                            class="form-check-label" 
+                            v-bind:for="item.id">
+                                {{item.name}}
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+                <span v-if="!countToBuy">There is nothing to buy!</span>
+            </div>
+            <div class="col-6">
+                <h2>Bought <span v-if="countBought">({{countBought}})</span></h2>
+                <ul>
+                    <li 
+                    v-for="item of items" 
+                    v-if="item.done">
+                    <span>{{item.name}}</span></li>
+                </ul>
+                <span v-if="!countBought">You have all you need!</span>
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+
