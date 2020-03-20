@@ -1,10 +1,10 @@
 @keyframes hero-shop-all{
     from,to {
-        transform: translate(-50%);
+        transform: translate(0%);
         animation-timing-function: ease-in;
     }
     50%{
-        transform: translate(50%);
+        transform: translate(100%);
         animation-timing-function: ease-out;
     }
 }
