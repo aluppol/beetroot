@@ -1,17 +1,20 @@
 @import 'libs/bootstrap/bootstrap';
 
-@import 'styles/main';
-
-
 * {
     box-sizing: border-box;
     // outline: none;
 }
 html {
     height: 100%;
+    font-size: 10px;
 }
 
 body {
     min-height: 100%;
     // @include font(1.4rem, $text-color, 500, $text-ff, 1.8);
 }
+
+
+@import 'styles/main';
+
+

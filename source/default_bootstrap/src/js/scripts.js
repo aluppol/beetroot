@@ -1,5 +1,4 @@
-(()=>{
-    'use strict';
+//= libs/popper.js
+//= libs/bootstrap.js
 
-    alert('Hi there!');
-})();
+//= scripts/_main.js

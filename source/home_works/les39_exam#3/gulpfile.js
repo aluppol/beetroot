@@ -41,7 +41,7 @@ gulp.task('sass', function() {
 
 
 gulp.task('js', function (){
-    return gulp.src(['src/js/scripts.js','src/js/libs/jquery.js', '!src/js/**/_*.js'])
+    return gulp.src(['src/js/scripts.js','src/js/libs/*.js', '!src/js/**/_*.js'])
         .pipe(sourcemaps.init())
         .pipe(rigger())
         .pipe(uglify())
