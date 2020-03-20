@@ -98,3 +98,21 @@
         } 
     }
 }
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+    .home__section{
+        .container{
+            height: 100vh;
+            position: relative;
+            
+            .row{
+                position: absolute;
+                width: 100%;
+                transform: translate(0,-50%);
+                top: 50%
+            }
+        }
+    }
+}
