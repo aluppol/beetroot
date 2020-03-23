@@ -25,10 +25,123 @@
         </symbol>
     
     
-    </svg>
+        <symbol id="search-icon" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+            <g>
+                <g>
+                    <path d="M508.875,493.792L353.089,338.005c32.358-35.927,52.245-83.296,52.245-135.339C405.333,90.917,314.417,0,202.667,0
+                        S0,90.917,0,202.667s90.917,202.667,202.667,202.667c52.043,0,99.411-19.887,135.339-52.245l155.786,155.786
+                        c2.083,2.083,4.813,3.125,7.542,3.125c2.729,0,5.458-1.042,7.542-3.125C513.042,504.708,513.042,497.958,508.875,493.792z
+                        M202.667,384c-99.979,0-181.333-81.344-181.333-181.333S102.688,21.333,202.667,21.333S384,102.677,384,202.667
+                        S302.646,384,202.667,384z"/>
+                </g>
+            </g>
+        </symbol>
     
+    
+        <symbol id="nav-burger" x="0px" y="0px" viewBox="0 0 341.333 341.333" style="enable-background:new 0 0 341.333 341.333;" xml:space="preserve">
+            <g>
+                <g>
+                    <rect y="277.333" width="341.333" height="42.667"/>
+                </g>
+            </g>
+            <g>
+                <g>
+                    <rect y="149.333" width="341.333" height="42.667"/>
+                </g>
+            </g>
+            <g>
+                <g>
+                    <rect y="21.333" width="341.333" height="42.667"/>
+                </g>
+            </g>
+        </symbol>
+    
+    
+    </svg>
+    <header>
+        <nav class="navigation-header-menu d-flex justify-content-between navbar navbar-expand-lg navbar-light">
+         
+        
+        
+            <div class="nav-menu">
+        
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <svg>
+                        <use xlink:href="#nav-burger"></use>
+                    </svg>
+                </button>
+        
+        
+                <div class="collapse navbar-collapse">
+        
+                    <ul class="navbar-nav mr-auto">
+            
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+            
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Products</a>
+                        </li>
+            
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">faqs</a>
+                        </li>
+            
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">contact us</a>
+                        </li>
+            
+                    </ul>
+            
+                </div>
+        
+            </div>
+        
+        
+        
+            <div class="nav-logo d-none d-md-block">
+        
+                <a class="navbar-brand" href="home.html">cbd</a>
+        
+            </div>
+        
+        
+        
+            <div class="nav-controls align-self-stretch">
+        
+        
+                <ul class="list-group list-group-horizontal-sm contros-btns-container">
+        
+                    <li class="list-group-item">
+                        <button class="">login</button>
+                    </li>
+            
+                    <li class="list-group-item">
+                        <form name="nav" data-opened="false" class="search-form form-inline">
+                            <button class="search-form__button" type="submit">
+                                <svg>
+                                    <use xlink:href="#search-icon"></use>
+                                </svg>
+                                <span>Search</span> 
+                            </button>
+                            <input hidden class="search-form__input form-control" type="search" placeholder="SEARCH" aria-label="Search">
+                        </form>
+                    </li>
+                    
+                    <li class="list-group-item">
+                        <button class="">cart (<span id="cart-amount">0</span>)</button>
+                    </li>
+            
+                </ul>
+        
+            </div>
+        
+          </nav>
+    </header>
 
-    <section class="background min-vh-100 d-flex flex-column home__section justify-content-center text-secondary" id="hero">
+    <section class="background section--hero vh-100 d-flex flex-column home__section justify-content-center text-secondary" id="hero">
             <picture class="background__picture">
                 <source srcset="../../img/home/hero__bg--md.jpg" media="(max-width: 768px)">
                 <source srcset="../../img/home/hero__bg--lg.jpg" media="(max-width: 992px)">

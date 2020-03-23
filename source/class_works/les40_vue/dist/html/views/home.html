@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/styles.min.css">
     <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <script src="https://kit.fontawesome.com/0dd4081373.js" crossorigin="anonymous"></script>
     <title>Vie</title>
 </head>
 <body>
@@ -68,6 +69,41 @@
             </div>
         </div>
         
+    </div>
+
+    <div class="container">
+        <div id="components">
+    
+            <article class="my-5">
+                <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, provident.</h1>
+                <time class="text-muted mr-2"><i class="far fa-clock"></i> March 22, 2020</time>
+                <span class="text-muted"><i class="far fa-comments"></i> 0</span>
+                <div class="my-3">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, itaque. Ratione minus aperiam, deleniti odio iste molestias corporis at nostrum eveniet aliquid tempora nulla repudiandae accusantium eligendi qui a quis, voluptatum illum ipsa harum facere numquam! Ab error sequi eaque alias! Ipsum quas, blanditiis quibusdam sit vero optio vel fugit!</p>
+                    <p>Rem nesciunt, quam eos ullam nulla laudantium quia ab ea aspernatur quos maxime illum veritatis tempora adipisci nihil soluta magni at voluptates. Debitis asperiores veritatis non numquam neque nisi deleniti cum fugiat. Itaque sed cupiditate consectetur corporis nam voluptatum necessitatibus, saepe in inventore ipsa dolorem earum mollitia ipsam corrupti est.</p>
+                    <p>Minima explicabo dolor asperiores nihil tempora neque. Blanditiis minima voluptatibus explicabo consequuntur sapiente cupiditate quod illum quos repellendus, facilis consectetur doloribus perferendis pariatur temporibus eligendi maiores modi aut rerum. Fugit natus labore fugiat molestiae, numquam quo accusamus nostrum, cupiditate alias suscipit vitae ea, velit soluta repellat doloremque at cumque nisi.</p>
+                </div>
+            </article>
+    
+            <section class="my-5">
+                <h2>Comments (0)</h2>
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <label for="comment">Comment</label>
+                        <textarea class="form-control" id="comment" rows="3"></textarea>
+                        
+                        <div class="text-right my-3">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="my-5">
+                    <vue-comment-list 
+                    :comments='comments'></vue-comment-list>
+                </div>
+            </section>
+            
+        </div>
     </div>
 
     <footer>My Footer</footer>
