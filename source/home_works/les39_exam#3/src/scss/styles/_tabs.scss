@@ -52,6 +52,7 @@
     &__content{
         
         & h5{
+            text-transform: uppercase;
             font-size: 2.4rem;
             color: #000;
             letter-spacing: .5rem;
@@ -148,7 +149,6 @@
         &__content{
         
             & h5{
-                text-transform: uppercase;
                 font-size: 1.4rem;
                 letter-spacing: .3rem;
                 margin: 2rem 0;
@@ -178,10 +178,4 @@
     
         }
     }
-}
-
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    /* IE10+ CSS styles go here */
-    
 }
