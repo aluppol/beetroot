@@ -1,0 +1,230 @@
+footer{
+    padding-top: 13rem;
+    padding-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0);
+    -webkit-text-stroke: 0px $primary;
+    
+    & svg{
+        transform: scale(1);
+        @include tr;
+    }
+
+    & a{
+        @include hover{
+            color: $secondary;
+            text-decoration: none;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.37);
+            -webkit-text-stroke: 1px $primary;
+
+            & svg{
+                fill: rgb(83, 128, 0);
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    
+}
+
+.footer{
+    &__list{
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        list-style: none;
+        font-weight: 300;
+        letter-spacing: .3rem;
+        padding: 0;
+
+        &>li{
+            margin: 1rem 0;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__line{
+        position: relative;
+        
+        &--horizontal{
+            &:before, &:after{
+                content: "";
+                display: inline-block;
+                position: absolute;
+                width: 100%;
+                border: 1px solid $primary;
+                transform: translate(0, -50%);
+                top: 50%;
+            }
+
+            &:before{
+                left: calc(-100% - 30px);
+            }
+
+            &:after{
+                right: calc(-100% - 30px);
+            }
+        }
+
+        &--vertical{
+            flex-grow: 1;
+
+            &:after{
+                content: "";
+                position: absolute;
+                display: inline-block;
+                height: 100%;
+                border: 1px solid $primary;
+                transform: translate(-50%, 0);
+                left: 50%;
+                top: 0;
+            }
+        }
+    }
+
+    &__subscribe{
+        & h6{
+            margin: 2rem auto;
+            text-transform: uppercase;
+            letter-spacing: .3rem;
+            color: #000;
+        }
+
+        & svg{
+            width: 30px;
+            height: 30px;
+            fill: $primary;
+        }
+
+        & .input-group{
+            border: 1px solid #ced6af;
+
+            & button{
+               padding: 0 3rem;
+               background-color: rgba(0, 0, 0, 0);
+               border: none;
+               position: relative;
+
+               &:after{
+                   content: none;
+               }
+
+               &:before{
+                    content: "";
+                    position: absolute;
+                    display: inline-block;
+                    border-left: 1px solid #ced6af;
+                    height: 95%;
+                    left: 0;
+                    top: 2.5%;
+               }
+
+                @include hover{
+                    & svg{
+                        fill: #000;
+                    }
+                }
+            
+            }
+
+            & input{
+                background-color: rgba(0, 0, 0, 0);
+                border: none;
+                font-size: 1.6rem;
+                font-weight: 300;
+                letter-spacing: .3rem;
+            }
+        }
+
+        & span{
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: .2rem;
+        }
+    }
+}
+
+.socials{
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+
+    & a{
+        padding: 1rem;
+    }
+
+    & svg{
+        width: 3rem;
+        height: 3rem;
+        fill: $primary;
+    }
+
+}
+
+
+@media screen and (max-width: 768px){
+    footer{
+        padding-top: 7rem;
+        padding-bottom: 0rem;
+    }
+
+    .footer{
+        &__list{
+            position: relative;
+
+            &--left{
+                &:after{
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    height: 100%;
+                    border-right: 1px solid $primary;
+                    top: 0;
+                    right: -15px;
+                }
+            }
+            &--right{
+                &:after{
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    height: 100%;
+                    border-left: 1px solid $primary;
+                    top: 0;
+                    left: -15px;
+                }
+            }
+        }
+
+        &__line{
+            &--vertical{
+                display: none;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 576px){
+    footer{
+        padding-top: 2rem;
+    }
+
+    .footer{
+        &__list{
+            font-size: 1rem;
+            letter-spacing: .2rem;
+    
+            &>li{
+                margin: .8rem 0;
+            }
+        }
+    }
+}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+    
+}
