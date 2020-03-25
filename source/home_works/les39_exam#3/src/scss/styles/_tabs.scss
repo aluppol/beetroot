@@ -1,0 +1,187 @@
+.tabs{
+
+    &__nav{
+        margin-top: 2rem;
+        margin-bottom: 8rem;
+        position: relative;
+        font-size: 3rem;
+        letter-spacing: .5rem;
+
+        & a{
+            color: #000;
+            position: relative;
+
+            &:after{
+                content: "";
+                position: absolute;
+                width: 100%;
+                border: 1px solid rgba(0, 0, 0, 0);
+                left: 0;
+                bottom: 0;
+                transform: translate(0, 50%);
+            }
+
+            &.active{
+                background: rgba(0, 0, 0, 0) !important;
+                color: #000 !important;
+
+                &:after{
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    border: 1px solid #000;
+                    left: 0;
+                    bottom: 0;
+                    transform: translate(0, 50%);
+                }
+            }
+        }
+
+        &:after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            border: 1px solid #ced6af;
+            left: 0;
+            bottom: 0;
+            transform: translate(0, 50%);
+            z-index: -1;
+        }
+    }
+
+    &__content{
+        
+        & h5{
+            font-size: 2.4rem;
+            color: #000;
+            letter-spacing: .5rem;
+            margin: 3rem 0;
+            line-height: 1.8;
+        }
+
+        & p{
+            font-weight: 300;
+            font-size: 1.8rem;
+            line-height: 2.5;
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__img{
+        position: relative;
+        width: 100%;
+        margin: 3rem 0;
+
+        
+        transform: translate(calc( (100vw / 2 - (100% + 30px)) * 0.4 ), 0);
+
+        &:first-child{
+            margin-top: 0;
+        }
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+
+        & img{
+            width: 100%;
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px){
+
+    .tabs{
+
+        &__nav{
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            letter-spacing: .3rem;
+    
+        }
+
+        &__content{
+        
+            & h5{
+                font-size: 1.8rem;
+                letter-spacing: .3rem;
+                margin: 2rem 0;
+                line-height: 1.5;
+            }
+    
+            & p{
+                font-weight: 300;
+                font-size: 1.5rem;
+                line-height: 2;
+                margin-bottom: 2rem;
+            }
+        }
+
+        &__img{
+            margin: 5rem 0;
+    
+            &:first-child{
+                margin-top: 5rem;
+            }
+    
+            &:last-child{
+                margin-bottom: 5rem;
+            }
+    
+        }
+    }
+}
+
+
+@media screen and (max-width: 576px){
+
+    .tabs{
+
+        &__nav{
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            letter-spacing: .1rem;
+    
+        }
+
+        &__content{
+        
+            & h5{
+                text-transform: uppercase;
+                font-size: 1.4rem;
+                letter-spacing: .3rem;
+                margin: 2rem 0;
+                line-height: 1.5;
+            }
+    
+            & p{
+                font-weight: 300;
+                letter-spacing: .05rem;
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        &__img{
+
+            transform: translate(0, 0);
+            margin: 0rem 0 1rem;
+    
+            &:first-child{
+                margin-top: 0rem;
+            }
+    
+            &:last-child{
+                margin-bottom: 1rem;
+            }
+    
+        }
+    }
+}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+    
+}
