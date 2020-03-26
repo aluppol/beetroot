@@ -3,3 +3,5 @@
 //= _footer.js
 
 //= _tabs.js
+
+//= _products.js

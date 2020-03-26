@@ -1,0 +1,184 @@
+.section--products{
+    padding: 13rem 0 10rem;
+}
+
+.product{
+    text-align: center;
+    color: #000;
+    border: none;
+
+    &__info{
+        border: 1px solid #ced6af;
+    }
+
+    &__title{
+
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+        margin: 0;
+        margin-top: 1.5rem;
+    }
+
+    &__img{
+        height: 25rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+
+        & img{
+            height: 100%;
+        }
+    }
+
+    &__stars{
+        margin-top: 2rem;
+        & svg{
+            width: 1.8rem;
+            height: 1.8rem;
+            fill: $primary;
+            padding: .2rem;
+        }
+    }
+
+    &__links{
+        background-color: #f1f1f1;
+        border: 1px solid #e1e1e1;
+        border-top: none;
+        padding-left: 3rem;
+    }
+
+    &__price{
+
+        letter-spacing: .1rem;
+
+        &:before{
+            content: "$ ";
+        }
+
+        &:after{
+            content: " USD";
+        }
+    }
+
+    &__btn{
+        background-color: $primary;
+        border: 1px solid $primary;
+        border-bottom: none;
+        border-right: none;
+        position: relative;
+
+        @include hover{
+            box-shadow: none;
+        }
+
+        &:before{
+            content: "";
+            display: inline-block;
+            position: absolute;
+            width: calc(100% + 2px);
+            height: calc(100% + 2px);;
+            border-bottom: 1px solid $primary;
+            border-right: 1px solid $primary;
+            left: -1px;
+            bottom: -1px;
+        }
+
+    }
+}
+
+.products{ 
+
+    &__title{
+        text-transform: uppercase;
+        color: #000;
+        letter-spacing: .5rem;
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 7rem;
+    }
+
+    &__prev{
+        top: 100%;
+        height: 10rem;
+        width: 6rem;
+        left: calc(50% - 2.5rem);
+        transform: translate(-100%, 0);
+
+        & svg{
+            width: 4rem;
+            height: 4rem;
+            position: relative;
+            transform-origin: center;
+            transform: rotate(180deg);
+            fill: $primary;
+        }
+    }
+
+    &__next{
+        top: 100%;
+        height: 10rem;
+        width: 6rem;
+        left: calc(50% + 2.5rem);
+
+        & svg{
+            width: 4rem;
+            height: 4rem;
+            fill: $primary;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 768px){
+
+    .products{
+
+        &__title{
+            margin-bottom: 5rem;
+        }
+    }
+
+    .section--products{
+        padding: 10rem 0 13rem;
+    }
+
+    .product{
+    
+        &__links{
+            padding-left: 2rem;
+        }
+    }
+    
+
+}
+
+
+@media screen and (max-width: 576px){
+
+    .products{
+
+        &__title{
+            letter-spacing: .3rem;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+        }
+    
+    }
+
+    .section--products{
+        padding: 5rem 0 10rem;
+    }
+
+    .product{
+    
+        &__links{
+            padding-left: 1rem;
+        }
+    }
+}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+    
+}

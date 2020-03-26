@@ -4,9 +4,9 @@
 //= bootstrap/button.js
 //= bootstrap/tooltip.js
 //= bootstrap/tab.js
+//= bootstrap/carousel.js
 
 ///= bootstrap/alert.js
-///= bootstrap/carousel.js
 ///= bootstrap/modal.js
 ///= bootstrap/popover.js
 ///= bootstrap/scrollspy.js
