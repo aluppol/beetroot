@@ -413,6 +413,7 @@ body {
   color: #333; }
 
 .container {
+  width: 100%;
   max-width: 1140px;
   margin: 0 auto;
   padding: 2rem 1rem; }
@@ -436,3 +437,7 @@ body {
     border: 1px solid purple; }
   .table tbody td {
     padding: 0 1rem; }
+
+h2 {
+  text-align: right;
+  letter-spacing: .2rem; }
