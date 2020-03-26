@@ -7,11 +7,11 @@
 html {
     height: 100%;
     font-size: 10px;
+    scroll-behavior: smooth;
 }
 
 body {
     min-height: 100%;
-    scroll-behavior: smooth;
     // @include font(1.4rem, $text-color, 500, $text-ff, 1.8);
 }
 

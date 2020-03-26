@@ -28,20 +28,19 @@
                     <ul class="navbar-nav mr-auto">
             
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#hero">Home <span class="sr-only">(current)</span></a>
                         </li>
             
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Products</a>
-                        </li>
-            
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">faqs</a>
+                            <a class="nav-link" href="#section__products">Products</a>
                         </li>
             
                         <li class="nav-item">
-                            <a class="nav-link" href="#">contact us</a>
+                            <a class="nav-link" href="#section__faqs">faqs</a>
+                        </li>
+            
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section__contacts">contact us</a>
                         </li>
             
                     </ul>
@@ -106,8 +105,8 @@
                         <div class="col-lg-9 offset-lg-3 text-right">
                             <h2 class="home__title">Enhancing Life<br> Excelling in Care</h2>
                             <h5 class="home__subtitle font-weight-light">Choose Wisely. Choose CBD</h5>
-                            <a class="home__btn btn text-white" href="#products">Start Shopping</a><br>
-                            <a class="home__link d-inline-block      font-weight-light text-white" href="./products.html" onclick="return false">
+                            <a class="home__btn btn text-white" href="#section__products">Start Shopping</a><br>
+                            <a class="home__link d-inline-block font-weight-light text-white" href="#section__products">
                                 See all products 
                                 <svg>
                                     <use xlink:href="#arrow-right"></use>
@@ -214,7 +213,7 @@
             </div>
         
         </div>
-        <section class="container-fluid section--products">
+        <section class="container-fluid section--products" id="section__products">
         
             <h3 class="products__title">CBD Featured Products</h3>
         
@@ -657,18 +656,18 @@
         </section>
     </main>
     
-    <footer>
+    <footer id="section__contacts">
         <div class="container py-5 text-center">
             <div class="row mb-4 mb-md-5">
-                <div class="col-4 offset-4"><a href="home.html"><h1 class="footer__line footer__line--horizontal">CBD</h1></a></div>
+                <div class="col-4 offset-4"><a href="#hero"><h1 class="footer__line footer__line--horizontal">CBD</h1></a></div>
             </div>
             <div class="row">
     
                 <div class="col-md-4 col-6 order-2 order-md-1">
                     <ul class="footer__list footer__list--left">
-                        <li><a href="">Privacy Policy</a></li>
-                        <li><a href="">Terms of Use</a></li>
-                        <li><a href="">Return Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Return Policy</a></li>
                     </ul>
                 </div>
     
@@ -708,9 +707,9 @@
     
                 <div class="col-md-4 col-6 order-3">
                     <ul class="footer__list footer__list--right">
-                        <li><a href="">SHIPPING INFO</a></li>
-                        <li><a href="">RETURNS / EXCHANGES</a></li>
-                        <li><a href="">CONTACT</a></li>
+                        <li><a href="#">SHIPPING INFO</a></li>
+                        <li><a href="#">RETURNS / EXCHANGES</a></li>
+                        <li><a href="#section__contacts">CONTACT</a></li>
                     </ul>
                 </div>
     
@@ -737,10 +736,10 @@
         </div>
     </footer>
 
-    <svg hidden>
+    <svg style="display: none;">
     
     
-        <symbol id="arrow-right" x="0px" y="0px"
+        <symbol id="arrow-right"
     	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
             <g>
                 <g>
@@ -753,7 +752,7 @@
         </symbol>
     
     
-        <symbol id="search-icon" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+        <symbol id="search-icon" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
             <g>
                 <g>
                     <path d="M508.875,493.792L353.089,338.005c32.358-35.927,52.245-83.296,52.245-135.339C405.333,90.917,314.417,0,202.667,0
@@ -766,7 +765,7 @@
         </symbol>
     
     
-        <symbol id="nav-burger" x="0px" y="0px" viewBox="0 0 341.333 341.333" style="enable-background:new 0 0 341.333 341.333;" xml:space="preserve">
+        <symbol id="nav-burger" viewBox="0 0 341.333 341.333" style="enable-background:new 0 0 341.333 341.333;" xml:space="preserve">
             <g>
                 <g>
                     <rect y="277.333" width="341.333" height="42.667"/>
@@ -795,7 +794,7 @@
         </symbol>
     
     
-        <symbol id="youtube" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+        <symbol id="youtube" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
             <g>
                 <g>
                     <path d="M490.24,113.92c-13.888-24.704-28.96-29.248-59.648-30.976C399.936,80.864,322.848,80,256.064,80
