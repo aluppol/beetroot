@@ -2,18 +2,6 @@
 
 @import 'mixins';
 
-@import 'home';
-
-@import 'nav';
-
-@import 'footer';
-
-@import 'tabs';
-
-@import 'we-are';
-
-@import 'products';
-
 .background{
     position: relative;
     overflow: hidden;
@@ -55,6 +43,22 @@
         vertical-align: middle;
     }
 }
+
+
+@import 'home';
+
+@import 'nav';
+
+@import 'footer';
+
+@import 'tabs';
+
+@import 'we-are';
+
+@import 'products';
+
+@import 'reviews';
+
 
 
 @media screen and (max-width: 768px){

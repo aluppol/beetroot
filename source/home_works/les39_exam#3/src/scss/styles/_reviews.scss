@@ -1,0 +1,178 @@
+.section--reviews{
+    background-color: rgba(28, 32, 11, .6);
+    padding: 0;
+}
+
+.section-label--reviews{
+    transform-origin: right center;
+    transform:translate(-110%, -50%) rotate(90deg);
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: .3rem;
+    font-size: 2.4rem;
+
+    &:before{
+        content: none;
+    }
+}
+
+.review{
+    text-align: center;
+    color: #fff;
+
+    &__stars{
+        margin-bottom: 2rem;
+        & svg{
+            width: 1.8rem;
+            height: 1.8rem;
+            fill: #aab384;
+            padding: .2rem;
+        }
+    }
+
+    &__text{
+        font-size: 2.2rem;
+        font-weight: 300;
+        letter-spacing: .4rem;
+    }
+
+    &__author{
+        margin-top: 2rem;
+        font-size: 2.4rem;
+        text-transform: uppercase;
+        letter-spacing: .6rem;
+
+        & span{
+            position: relative;
+
+        &::before{
+            content: "";
+            display: inline-block;
+            width: 4.5rem;
+            position: absolute;
+            transform: translate(-100%, -50%);
+            border: 1px solid #fff;
+            left: -2rem;
+            top: 50%;
+        }
+        }
+    }
+
+}
+
+.reviews{ 
+    padding: 5rem 0 10rem;
+    min-height: 100vh;
+
+    &__prev, &__next{
+        top: 100%;
+        height: 10rem;
+        width: 13rem;
+        border: 1px solid #fff;
+
+        & svg{
+            width: 4rem;
+            height: 4rem;
+            fill: #fff;
+        }
+    }
+
+    &__prev{
+        left: 50%;
+        transform: translate(-100%, -100%);
+
+        & svg{
+            position: relative;
+            transform-origin: center;
+            transform: rotate(180deg);
+        }
+    }
+
+    &__next{
+        left: calc(50% - 1px);
+        transform: translate(0, -100%);
+    }
+}
+
+
+
+@media screen and (max-width: 768px){
+
+    .review{
+    
+        &__text{
+            font-size: 1.8rem;
+            letter-spacing: .3rem;
+        }
+    
+        &__author{
+            font-size: 2.0rem;
+            letter-spacing: .5rem;
+    
+            &::before{
+               
+                width: 4rem;
+                
+            }
+        }
+    
+    }
+    
+    .reviews{ 
+    
+        &__prev, &__next{
+            height: 8rem;
+            width: 10rem;
+        }
+    
+    }
+    
+
+}
+
+
+@media screen and (max-width: 576px){
+
+    .review{
+    
+        &__text{
+            font-size: 1.5rem;
+            letter-spacing: .2rem;
+        }
+    
+        &__author{
+            font-size: 1.8rem;
+            letter-spacing: .4rem;
+    
+            &::before{
+               
+                width: 3.5rem;
+                
+            }
+        }
+    
+    }
+    
+    .reviews{ 
+    
+        &__prev, &__next{
+            height: 6rem;
+            width: 8rem;
+    
+            & svg{
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+    
+    }    
+}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+    
+    .reviews{ 
+        height: 100vh;
+    }
+}
