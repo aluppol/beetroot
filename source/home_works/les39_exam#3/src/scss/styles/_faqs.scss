@@ -1,0 +1,184 @@
+.section--faqs{
+    padding-top: 12rem;
+    padding-bottom: 13rem;
+}
+
+.faqs{
+    background: none;
+
+    & *{
+        background: none;
+        text-transform: none;
+        border: none;
+        box-shadow: none;
+    }
+    
+    &__title{
+        text-align: center;
+        font-size: 3rem;
+        text-transform: uppercase;
+        color: #000;
+        letter-spacing: .5rem;
+        margin-bottom: 4rem;
+    }
+}
+
+.faq{
+    border-bottom: 1px solid #eaedde;
+    border-top: 1px solid #eaedde;
+
+
+    &__question{
+        & button{
+            width: 100%;
+            font-weight: 300;
+            font-size: 1.8rem;
+            text-align: left;
+            letter-spacing: .3rem;
+            padding-left: 3rem;
+            &::after{
+                content: none;
+                display: none;
+            }
+
+            @include hover{
+                text-decoration: none;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.452);
+                &::after{
+                    content: none;
+                    display: none;
+                }
+            }
+        }
+
+        & h2{
+            position: relative;
+            margin: 0;
+            font-size: 0;
+            &::before, &::after{
+                content: "";
+                position: absolute;
+                transform: translate(-50%, -50%);
+                left: 1rem;
+                top: 50%;
+            }
+
+            &::before{
+                width: 2rem;
+                border-bottom: 1px solid $primary;
+            }
+
+            &::after{
+                height: 2rem;
+                border-right: 1px solid $primary;
+            }
+        }
+    }
+
+    &__answer{
+        padding: 1rem 1rem 3rem 5.2rem;
+        font-weight: 300;
+        color: #000;
+        letter-spacing: .1rem;
+    }
+}
+
+
+@media screen and (max-width: 768px){
+
+    .section--faqs{
+        padding-top: 7rem;
+        padding-bottom: 8rem;
+    }
+    
+    .faqs{
+        
+        &__title{
+            font-size: 2.5rem;
+            letter-spacing: .5rem;
+            margin-bottom: 4rem;
+        }
+    }
+    
+    .faq{
+    
+        &__question{
+            & button{
+                font-size: 1.7rem;
+                letter-spacing: .2rem;
+            }
+    
+            & h2{
+    
+                &::before{
+                    width: 1.7rem;
+                }
+    
+                &::after{
+                    height: 1.7rem;
+                }
+            }
+        }
+    
+        &__answer{
+            padding: 1rem 1rem 3rem 4.5rem;
+            font-weight: 300;
+            font-size: 1.6;
+            color: #000;
+            letter-spacing: .1rem;
+        }
+    }
+}
+
+
+@media screen and (max-width: 576px){
+
+    .section--faqs{
+        padding-top: 7rem;
+        padding-bottom: 8rem;
+    }
+    
+    .faqs{
+        
+        &__title{
+            font-size: 2rem;
+            letter-spacing: .3rem;
+            margin-bottom: 3rem;
+        }
+    }
+    
+    .faq{
+    
+        &__question{
+            & button{
+                font-size: 1.6rem;
+                letter-spacing: .2rem;
+            }
+    
+            & h2{
+    
+                &::before{
+                    width: 1.4rem;
+                }
+    
+                &::after{
+                    height: 1.4rem;
+                }
+            }
+        }
+    
+        &__answer{
+            padding: 1rem 1rem 3rem 4.5rem;
+            font-weight: 300;
+            font-size: 1.5;
+            color: #000;
+            letter-spacing: 0rem;
+        }
+    }
+}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+    
+}
