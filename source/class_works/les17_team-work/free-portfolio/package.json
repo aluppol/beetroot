@@ -5,10 +5,11 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "browser-sync": "^2.26.3",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-sass": "^4.0.2"
+    "browser-sync": "^3.0.4",
+    "gulp": "^5.0.1",
+    "gulp-autoprefixer": "^10.0.0",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.101.0"
   },
   "browserslist": [
     "last 3 versions",
@@ -20,5 +21,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kate Kharchenko, Ievgen Minko, Inna Bereshuck, Vladislav Shevchenko, Katerine Zhdanova, Alexander, Olga Zhdanova, Artem Verovskiy, Aleksii Stepanov, Albert",
-  "license": "ISC"
+  "license": "ISC",
+  "overrides": {
+    "immutable": "^5.1.9"
+  }
 }

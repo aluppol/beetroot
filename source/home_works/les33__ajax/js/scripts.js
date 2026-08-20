@@ -1,31 +1,29 @@
 "use strict";
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 (function () {
   'use strict';
 
   var initTab = document.getElementById('search-start'),
-      noResultsTab = document.getElementById('search-no-result'),
-      defaultArticleTab = document.getElementById('article'),
-      tabsConatainer = document.getElementById('tabs-container'),
-      fetchController = new AbortController(),
-      submitController = new AbortController(),
-      loadResultsFlag = false; // remove the Flag >> handelld by listener
+    noResultsTab = document.getElementById('search-no-result'),
+    defaultArticleTab = document.getElementById('article'),
+    tabsConatainer = document.getElementById('tabs-container'),
+    fetchController = new AbortController(),
+    submitController = new AbortController(),
+    loadResultsFlag = false; // remove the Flag >> handelld by listener
+  initSearch();
 
-  initSearch(); // functions
+  // functions
 
   function initSearch() {
     document.forms.search.name.focus();
     setInitialTab();
   }
-
   function setInitialTab() {
     document.body.querySelector('.tabs__tabs').append(initTab);
     initTab.hidden = false;
@@ -34,7 +32,6 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     document.forms.search.addEventListener('keydown', handleKeys);
     document.forms.search.addEventListener('touchstart', handleTouches);
   }
-
   function handleTouches(e) {
     if (e.target.closest('input[name="name"].search__name') && document.forms.search.autofill.value) {
       document.forms.search.addEventListener('touchend', handleTouchend, {
@@ -46,36 +43,29 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         });
       }, 1000);
     }
-
     function handleTouchend() {
       document.forms.search.name.value = document.forms.search.autofill.value;
       document.forms.search.autofill.value = "";
     }
   }
-
   function handleKeys(e) {
     if (e.code == 'ArrowRight') {
       document.forms.search.name.value = document.forms.search.autofill.value;
       document.forms.search.autofill.value = "";
     }
   }
-
   function handleInput(e) {
     if (e.target.closest('input[name="video-type"]')) {
       var getPreviousBorder = function getPreviousBorder(checkedInput) {
         var currentElement = checkedInput.previousElementSibling;
-
         while (currentElement != null) {
           if (currentElement.matches('.search__radio')) {
             return currentElement;
           }
-
           currentElement = currentElement.previousElementSibling;
         }
-
         return document.forms.search.querySelector('.search__stub--left');
       };
-
       var getNextBorder = function getNextBorder(checkedInput) {
         var currentElement = checkedInput.nextElementSibling.nextElementSibling; //skip current label;
 
@@ -83,21 +73,19 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
           if (currentElement.matches('.search__radio')) {
             return currentElement;
           }
-
           currentElement = currentElement.nextElementSibling;
         }
-
         return document.forms.search.querySelector('.search__stub--right');
       };
-
       document.forms.search.querySelector('.search__radio--before').classList.remove('search__radio--before');
       document.forms.search.querySelector('.search__radio--after').classList.remove('search__radio--after');
       var previosRoundBorderEl = getPreviousBorder(e.target.closest('input[name="video-type"]')),
-          nextRoundBorderEl = getNextBorder(e.target.closest('input[name="video-type"]'));
+        nextRoundBorderEl = getNextBorder(e.target.closest('input[name="video-type"]'));
       previosRoundBorderEl.classList.add('search__radio--before');
       nextRoundBorderEl.classList.add('search__radio--after');
-    } //apikey bcd2d5b4
+    }
 
+    //apikey bcd2d5b4
 
     document.forms.search.autofill.value = "";
     var urlObject = new URL('https://www.omdbapi.com');
@@ -111,10 +99,9 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     }).then(function (response) {
       return response.json();
     }).then(function (movies) {
-      if (movies['Response'] != 'True') return; // console.log(movies);
-
+      if (movies['Response'] != 'True') return;
+      // console.log(movies);
       var title = movies['Title'];
-
       if (document.forms.search.name.value.toLowerCase() == title.slice(0, document.forms.search.name.value.length).toLowerCase()) {
         document.forms.search.autofill.value = document.forms.search.name.value + title.slice(document.forms.search.name.value.length);
       }
@@ -122,10 +109,10 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       if (err.name != 'AbortError') throw err;
     });
   }
-
   function handleSubmit(e) {
-    e.preventDefault(); // console.log('submited!');
+    e.preventDefault();
 
+    // console.log('submited!');
     document.forms.search.name.select();
     var urlObject = new URL('https://www.omdbapi.com');
     urlObject.searchParams.set('apikey', 'bcd2d5b4');
@@ -145,57 +132,60 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         noResults();
         return;
       }
-
       urlObject.searchParams.set('page', +urlObject.searchParams.get('page') + 1);
       showResults(movies, urlObject);
     }).catch(function (err) {
       if (err.name != 'AbortError') throw err;
     });
   }
-
   function noResults() {
     // console.log('No such movie!');
+
     removeCurrentTabs();
     var tab = noResultsTab.cloneNode(true);
     tab.id = '';
     tab.hidden = false;
     tabsConatainer.append(tab);
   }
-
   function showResults(results, urlObject) {
     // console.log(results);
+
     removeCurrentTabs();
     var preloadedTabs = [],
-        searchResults = results['Search'];
+      searchResults = results['Search'];
     loadResultsFlag = true;
     window.addEventListener('scroll', preloadNextTab);
-    preloadNextTab(); // functions
+    preloadNextTab();
+
+    // functions
 
     function preloadNextTab() {
       // console.log(loadResultsFlag);
+
       if (!loadResultsFlag) return;
       showNextTab();
       loadMoreResults();
       if (searchResults.length == 0) return;
       if (preloadedTabs.length > 5) return;
       var tab = defaultArticleTab.cloneNode(true),
-          movie = searchResults.shift(),
-          img = tab.querySelector('.poster__img');
-
+        movie = searchResults.shift(),
+        img = tab.querySelector('.poster__img');
       if (movie['Poster'] != 'N/A') {
         img.src = movie['Poster'];
       } else {
         img.src = './img/no-cover.png';
       }
+      img.alt = movie['Title'];
 
-      img.alt = movie['Title']; // console.log(img);
+      // console.log(img);
       // console.log(img.src);
 
       img.addEventListener('load', function (e) {
         setTimeout(function () {
           // console.log('+1 preload');
-          preloadedTabs.push(tab); // Hide Loader
+          preloadedTabs.push(tab);
 
+          // Hide Loader
           document.getElementById('tab-loader').style.opacity = 0;
           preloadNextTab();
         }, 0);
@@ -210,12 +200,11 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         once: true
       });
     }
-
     function showFullMovieInfo(e) {
       var tab = e.target.closest('.tabs__tab'),
-          btn = e.target.closest('.description__btn'),
-          movieID = tab.getAttribute('data-imdb-i-d'),
-          urlObject = new URL('https://www.omdbapi.com');
+        btn = e.target.closest('.description__btn'),
+        movieID = tab.getAttribute('data-imdb-i-d'),
+        urlObject = new URL('https://www.omdbapi.com');
       urlObject.searchParams.set('apikey', 'bcd2d5b4');
       urlObject.searchParams.set('i', movieID);
       fetch(urlObject).then(function (response) {
@@ -223,7 +212,6 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       }).then(function (movie) {
         // console.log(movie);
         tab.querySelector('.description__main').innerHTML = "<p>".concat(movie['Plot'] != "N/A" ? movie['Plot'] : "", "</p>");
-
         if (movie['imdbRating'] != 'N/A') {
           tab.querySelector('.rate__amount').innerHTML = movie['imdbRating'];
           setRate(tab);
@@ -242,34 +230,35 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         el.classList.remove(el.classList[0] + '--small');
       });
     }
-
     function setStars(tab) {
       var starsAmount = Math.round(tab.querySelector('.rate__amount').innerHTML / 2),
-          stars = tab.querySelectorAll('.poster__star');
-
+        stars = tab.querySelectorAll('.poster__star');
       while (starsAmount) {
         starsAmount--;
         stars[starsAmount].classList.add('poster__star--full');
       }
     }
-
     function showNextTab() {
       if (preloadedTabs.length == 0) {
         //Task show Loader
+
         document.getElementById('tab-loader').style.opacity = 1;
         return;
-      } // alert(document.body.scrollHeight - (pageYOffset + document.documentElement.clientHeight));
+      }
 
+      // alert(document.body.scrollHeight - (pageYOffset + document.documentElement.clientHeight));
 
-      if (document.body.scrollHeight - (pageYOffset + document.documentElement.clientHeight) > 100) return; // alert(document.body.scrollHeight - (pageYOffset + document.documentElement.clientHeight));
+      if (document.body.scrollHeight - (pageYOffset + document.documentElement.clientHeight) > 100) return;
 
-      var tab = preloadedTabs.shift(); //Task --->>> animate tab
+      // alert(document.body.scrollHeight - (pageYOffset + document.documentElement.clientHeight));
 
+      var tab = preloadedTabs.shift();
+
+      //Task --->>> animate tab
       tab.classList.add('flipInX');
       tab.hidden = false;
       tabsConatainer.append(tab);
     }
-
     function loadMoreResults() {
       if (searchResults.length > 5) return;
       submitController = new AbortController();
@@ -284,7 +273,6 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
           window.removeEventListener('scroll', preloadNextTab);
           return;
         }
-
         urlObject.searchParams.set('page', +urlObject.searchParams.get('page') + 1);
         searchResults.push.apply(searchResults, _toConsumableArray(movies['Search']));
         preloadNextTab();
@@ -293,20 +281,17 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       });
     }
   }
-
   function removeCurrentTabs() {
     var tabs = tabsConatainer.querySelectorAll('.tabs__tab');
     tabs.forEach(function (tab) {
       tab.remove();
     });
   }
-
   function setRate(tab) {
     var circle = tab.querySelector('.rate__current > circle'),
-        circleLength = tab.querySelector('.rate__maximal').offsetHeight * 3.14,
-        rate = +tab.querySelector('.rate__amount').textContent,
-        offset = (10 - rate) / 10 * circleLength;
+      circleLength = tab.querySelector('.rate__maximal').offsetHeight * 3.14,
+      rate = +tab.querySelector('.rate__amount').textContent,
+      offset = (10 - rate) / 10 * circleLength;
     circle.style.strokeDashoffset = offset;
   }
-})();
-//# sourceMappingURL=scripts.js.map
+})();//# sourceMappingURL=maps/scripts.js.map

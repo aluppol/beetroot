@@ -2,30 +2,25 @@
 
 var gulp       	 = require('gulp'),
     browserSync	 = require('browser-sync').create(),
-    sass       	 = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    babel        = require('gulp-babel'),
-    sourcemaps   = require('gulp-sourcemaps');
+    sass       	 = require('gulp-sass')(require('sass')),
+    autoprefixer = require('gulp-autoprefixer').default,
+    babel        = require('gulp-babel');
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
-    return gulp.src("scss/*.scss")
-        .pipe(sourcemaps.init())
+    return gulp.src("scss/*.scss", { sourcemaps: true })
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
             cascade: false
         }))
-        .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest("css"))
+        .pipe(gulp.dest("css", { sourcemaps: './maps' }))
         .pipe(browserSync.stream());
 });
 
 gulp.task('js', function() {
-    return gulp.src("js/src/*.js")
-        .pipe(sourcemaps.init())
+    return gulp.src("js/src/*.js", { sourcemaps: true })
         .pipe(babel({ presets: ['@babel/env'] }))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest("js"))
+        .pipe(gulp.dest("js", { sourcemaps: './maps' }))
         .pipe(browserSync.stream());
 });
 
